@@ -1,0 +1,48 @@
+name: scsa-bot
+
+services:
+
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scsa-bot
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/discord_bot
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN}
+      DISCORD_GUILD_ID: ${DISCORD_GUILD_ID}
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: scsa-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: discord_bot
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d discord_bot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  postgres_data:
