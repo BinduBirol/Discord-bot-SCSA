@@ -1,14 +1,23 @@
 package com.scsabot.discordbot.voice;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
 
+import java.awt.Color;
+import java.time.Instant;
+
 @Service
 public class VoiceActivityLogger {
 
     private static final String VOICE_ACTIVITY_CHANNEL_ID = "1544618036047122442";
+
+    private static final Color GREEN = new Color(46, 204, 113);
+    private static final Color RED = new Color(231, 76, 60);
+    private static final Color BLUE = new Color(52, 152, 219);
+    private static final Color GRAY = new Color(149, 165, 166);
 
     private final ObjectProvider<JDA> jdaProvider;
 
@@ -16,20 +25,28 @@ public class VoiceActivityLogger {
         this.jdaProvider = jdaProvider;
     }
 
+    private TextChannel getActivityChannel() {
+        return jdaProvider.getObject()
+                .getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+    }
+
     public void logJoin(String username, String channelName) {
 
-        JDA jda = jdaProvider.getObject();
-
-        TextChannel channel =
-                jda.getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+        TextChannel channel = getActivityChannel();
 
         if (channel == null) {
             return;
         }
 
-        channel.sendMessage(
-                "🟢 **" + username + "** joined **" + channelName + "**"
-        ).queue();
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(GREEN)
+                .setTitle("Voice Activity")
+                .setDescription(
+                        "**" + username + "** joined **" + channelName + "**"
+                )
+                .setTimestamp(Instant.now());
+
+        channel.sendMessageEmbeds(embed.build()).queue();
     }
 
     public void logLeave(
@@ -37,10 +54,7 @@ public class VoiceActivityLogger {
             String channelName,
             long durationSeconds) {
 
-        JDA jda = jdaProvider.getObject();
-
-        TextChannel channel =
-                jda.getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+        TextChannel channel = getActivityChannel();
 
         if (channel == null) {
             return;
@@ -48,87 +62,97 @@ public class VoiceActivityLogger {
 
         long minutes = durationSeconds / 60;
 
-        channel.sendMessage(
-                "🔴 **" + username + "** left **" + channelName +
-                        "** — ⏱️ " + minutes + " minutes"
-        ).queue();
-    }
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(RED)
+                .setTitle("Voice Activity")
+                .setDescription(
+                        "**" + username + "** left **" + channelName + "**"
+                )
+                .addField(
+                        "Duration",
+                        minutes + " minutes",
+                        true
+                )
+                .setTimestamp(Instant.now());
 
+        channel.sendMessageEmbeds(embed.build()).queue();
+    }
 
     public void logMemberJoin(String username) {
 
-        JDA jda = jdaProvider.getObject();
-
-        TextChannel channel =
-                jda.getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+        TextChannel channel = getActivityChannel();
 
         if (channel == null) {
             return;
         }
 
-        channel.sendMessage(
-                "👋 **" + username + "** joined the server!"
-        ).queue();
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(BLUE)
+                .setTitle("New Member")
+                .setDescription(
+                        "**" + username + "** joined the community."
+                )
+                .setTimestamp(Instant.now());
+
+        channel.sendMessageEmbeds(embed.build()).queue();
     }
 
     public void logMemberLeave(String username) {
 
-        JDA jda = jdaProvider.getObject();
-
-        TextChannel channel =
-                jda.getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+        TextChannel channel = getActivityChannel();
 
         if (channel == null) {
             return;
         }
 
-        channel.sendMessage(
-                "👋 **" + username + "** left the server."
-        ).queue();
-    }
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(GRAY)
+                .setTitle("Member Left")
+                .setDescription(
+                        "**" + username + "** left the community."
+                )
+                .setTimestamp(Instant.now());
 
+        channel.sendMessageEmbeds(embed.build()).queue();
+    }
 
     public void logBotOnline() {
 
-        JDA jda = jdaProvider.getObject();
-
-        TextChannel channel =
-                jda.getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+        TextChannel channel = getActivityChannel();
 
         if (channel == null) {
             return;
         }
 
-        channel.sendMessage(
-                """
-                        🟢 **Hey everyone! I’m online! 🤖👋**
-                        
-                        I’ll be here keeping an eye on the server, recording voice-practice activity, and helping keep our community safe and friendly.
-                        
-                        🎤 **Practice your speech, join the conversations, and support each other!**
-                        📊 Your voice activity may be recorded for practice tracking and community stats.
-                        📜 And please remember — **follow the rules and be respectful to everyone.**
-                        
-                        Let’s make this a safe place where nobody has to worry about being judged. ❤️
-                        
-                        — **SCSA ModBot 🤖**
-                        """
-        ).queue();
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(GREEN)
+                .setTitle("SCSA ModBot is Online")
+                .setDescription(
+                        "The bot is online and ready to help keep the community safe and friendly."
+                )
+                .setTimestamp(Instant.now())
+                .setFooter("SCSA ModBot");
+
+        channel.sendMessageEmbeds(embed.build()).queue();
     }
 
     public void logBotOffline() {
 
-        JDA jda = jdaProvider.getObject();
-
-        TextChannel channel =
-                jda.getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
+        TextChannel channel = getActivityChannel();
 
         if (channel == null) {
             return;
         }
 
-        channel.sendMessage(
-                "🔴 **SCSA ModBot is offline.**"
-        ).queue();
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(RED)
+                .setTitle("SCSA ModBot is Offline")
+                .setDescription(
+                        "Some automated features may be temporarily unavailable."
+                )
+                .setTimestamp(Instant.now())
+                .setFooter("SCSA ModBot");
+
+        channel.sendMessageEmbeds(embed.build()).queue();
     }
 }

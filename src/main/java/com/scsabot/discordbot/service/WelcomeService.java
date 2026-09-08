@@ -1,5 +1,6 @@
 package com.scsabot.discordbot.service;
 
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.springframework.beans.factory.ObjectProvider;
@@ -31,25 +32,25 @@ public class WelcomeService {
             return;
         }
 
-        channel.sendMessage(
+        EmbedBuilder embed = new EmbedBuilder();
+
+        embed.setTitle("👋 Welcome to SCSA! ❤️");
+
+        embed.setDescription(
                 """
-                👋 **Welcome to SCSA, %s!** ❤️
-    
-                We’re really happy to have you here! This is a friendly, judgment-free community for people who stutter or stammer.
-    
-                Before you jump in:
-    
-                👤 **Introduce yourself**
-                🌍 **Tell us where you're from**
-                🗣️ **Share your stuttering level**
-                📜 **Read the rules**
-                🎤 **Join a voice room and practice when you're ready!**
-    
-                Take your time, speak freely, and most importantly — **don't be afraid to stutter.** 🫶
-    
-                Welcome to the community! 🤗
-                """.formatted(member.getAsMention())
-        ).queue(
+                        Welcome, %s!
+                        
+                        We’re really happy to have you here! This is a friendly, judgment-free community for people who stutter or stammer.
+                        
+                        Take your time, speak freely, and most importantly — **don't be afraid to stutter.** 🫶
+                        
+                        Welcome to the community! 🤗
+                        """.formatted(member.getAsMention())
+        );
+
+        embed.setFooter("Stuttering Community South Asia • SCSA");
+
+        channel.sendMessageEmbeds(embed.build()).queue(
                 success -> System.out.println(
                         "✅ Welcome message sent to " + member.getEffectiveName()
                 ),
