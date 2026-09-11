@@ -61,17 +61,12 @@ public class VoiceActivityLogger {
         }
 
         long minutes = durationSeconds / 60;
-
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(RED)
                 .setTitle("Voice Activity")
                 .setDescription(
-                        "**" + username + "** left **" + channelName + "**"
-                )
-                .addField(
-                        "Duration",
-                        minutes + " minutes",
-                        true
+                        "**" + username + "** left **" + channelName + "**\n" +
+                                "**Duration:** " + minutes + " minutes"
                 )
                 .setTimestamp(Instant.now());
 

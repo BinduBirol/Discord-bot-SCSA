@@ -127,7 +127,8 @@ public class VoiceStateListener extends ListenerAdapter {
                         String channelName = "Unknown";
 
                         var channel = event.getGuild()
-                                .getVoiceChannelById(
+                                .getChannelById(
+                                        net.dv8tion.jda.api.entities.channel.middleman.AudioChannel.class,
                                         session.getVoiceChannelId()
                                 );
 

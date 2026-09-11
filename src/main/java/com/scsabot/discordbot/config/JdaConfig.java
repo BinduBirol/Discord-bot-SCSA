@@ -42,7 +42,8 @@ public class JdaConfig {
                 GatewayIntent.GUILD_MESSAGES,
                 GatewayIntent.DIRECT_MESSAGES,
                 GatewayIntent.GUILD_VOICE_STATES,
-                GatewayIntent.MESSAGE_CONTENT
+                GatewayIntent.MESSAGE_CONTENT,
+                GatewayIntent.GUILD_MODERATION
         );
 
         JDA jda = JDABuilder.createDefault(token, intents)

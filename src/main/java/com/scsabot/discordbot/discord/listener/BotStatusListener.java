@@ -1,6 +1,8 @@
 package com.scsabot.discordbot.discord.listener;
 
+import com.scsabot.discordbot.discord.command.EventCommandHandler;
 import com.scsabot.discordbot.voice.VoiceActivityLogger;
+import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.events.session.ReadyEvent;
 import net.dv8tion.jda.api.events.session.ShutdownEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -15,9 +17,14 @@ public class BotStatusListener extends ListenerAdapter {
             LoggerFactory.getLogger(BotStatusListener.class);
 
     private final VoiceActivityLogger voiceActivityLogger;
+    private final EventCommandHandler eventCommandHandler;
 
-    public BotStatusListener(VoiceActivityLogger voiceActivityLogger) {
+    public BotStatusListener(
+            VoiceActivityLogger voiceActivityLogger,
+            EventCommandHandler eventCommandHandler) {
+
         this.voiceActivityLogger = voiceActivityLogger;
+        this.eventCommandHandler = eventCommandHandler;
     }
 
     @Override
@@ -34,5 +41,13 @@ public class BotStatusListener extends ListenerAdapter {
         log.info("Discord bot is going offline.");
 
         voiceActivityLogger.logBotOffline();
+    }
+
+    @Override
+    public void onButtonInteraction(ButtonInteractionEvent event) {
+
+        if (event.getComponentId().startsWith("event_interested:")) {
+            eventCommandHandler.handleInterestedButton(event);
+        }
     }
 }
