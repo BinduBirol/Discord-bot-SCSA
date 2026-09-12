@@ -44,6 +44,9 @@ public class Event {
     @Column(name = "post_message_id")
     private String postMessageId;
 
+    @Column(name = "eventLink", unique = true, nullable = false)
+    private String eventLink;
+
     @Column(name = "reminder_24h_sent", nullable = false, columnDefinition = "BOOLEAN DEFAULT FALSE")
     private boolean reminder24hSent = false;
 
@@ -63,7 +66,7 @@ public class Event {
     private Instant createdAt;
 
     public Event(String guildId, String title, String description, Instant eventTime,
-                 String eventChannelId, String postChannelId, String createdBy) {
+                 String eventChannelId, String postChannelId, String createdBy, String eventLink) {
         this.guildId = guildId;
         this.title = title;
         this.description = description;
@@ -71,6 +74,7 @@ public class Event {
         this.eventChannelId = eventChannelId;
         this.postChannelId = postChannelId;
         this.createdBy = createdBy;
+        this.eventLink = eventLink;
         this.createdAt = Instant.now();
     }
 }

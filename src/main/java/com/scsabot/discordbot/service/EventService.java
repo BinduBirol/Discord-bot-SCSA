@@ -28,7 +28,7 @@ public class EventService {
 
     @Transactional
     public Event createEvent(String guildId, String title, String description, Instant eventTime,
-                            String eventChannelId, String postChannelId, String createdBy) {
+                             String eventChannelId, String postChannelId, String createdBy, String eventLink) {
         if (guildId == null || guildId.isBlank() || title == null || title.isBlank()) {
             throw new BusinessException("Guild ID and event title are required.");
         }
@@ -39,7 +39,7 @@ public class EventService {
             throw new BusinessException("Event time cannot be in the past.");
         }
 
-        Event event = new Event(guildId, title, description, eventTime, eventChannelId, postChannelId, createdBy);
+        Event event = new Event(guildId, title, description, eventTime, eventChannelId, postChannelId, createdBy, eventLink);
         Event saved = eventRepository.save(event);
         log.info("Created event: {} (ID: {}) in guild {}", title, saved.getId(), guildId);
         return saved;
@@ -58,6 +58,9 @@ public class EventService {
         }
         if (updateData.getPostMessageId() != null && !updateData.getPostMessageId().isBlank()) {
             event.setPostMessageId(updateData.getPostMessageId());
+        }
+        if (updateData.getEventLink() != null) {
+            event.setEventLink(updateData.getEventLink());
         }
 
         return eventRepository.save(event);

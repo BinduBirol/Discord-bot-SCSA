@@ -1,25 +1,23 @@
 package com.scsabot.discordbot.discord.command;
 
-import com.scsabot.discordbot.discord.service.EventInterestService;
-import com.scsabot.discordbot.event.EventCardBuilder;
 import com.scsabot.discordbot.service.EventPostService;
 import com.scsabot.discordbot.service.EventService;
+import com.scsabot.discordbot.entity.Event;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.ScheduledEvent;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
-import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.components.ActionRow;
 import net.dv8tion.jda.api.interactions.components.text.TextInput;
 import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
 import net.dv8tion.jda.api.interactions.modals.Modal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
-import java.awt.*;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -40,19 +38,13 @@ public class EventCommandHandler {
     private static final ZoneId INPUT_ZONE = ZoneId.of("Asia/Dhaka");
 
     private final EventService eventService;
-    private final EventInterestService eventInterestService;
-    private final EventCardBuilder eventCardBuilder;
     private final EventPostService eventPostService;
 
     public EventCommandHandler(
             EventService eventService,
-            EventInterestService eventInterestService,
-            EventCardBuilder eventCardBuilder,
             EventPostService eventPostService) {
 
         this.eventService = eventService;
-        this.eventInterestService = eventInterestService;
-        this.eventCardBuilder = eventCardBuilder;
         this.eventPostService = eventPostService;
     }
 
@@ -90,7 +82,6 @@ public class EventCommandHandler {
             replyEphemeral(event, "You need moderator or administrator permissions to create events.");
             return;
         }
-
 
         event.replyModal(buildCreateEventModal(event.getUser().getId())).queue();
     }
@@ -133,6 +124,12 @@ public class EventCommandHandler {
                 .setRequired(true)
                 .build();
 
+        TextInput linkInput = TextInput.create("event_link", "Event Link", TextInputStyle.SHORT)
+                .setPlaceholder("e.g., https://meet.google.com/...")
+                .setMaxLength(300)
+                .setRequired(false)
+                .build();
+
         return Modal.create("event_create_modal_" + userId + "_" + System.currentTimeMillis(), "Create an Event")
                 .addComponents(
                         ActionRow.of(titleInput),
@@ -140,7 +137,8 @@ public class EventCommandHandler {
                         ActionRow.of(dateInput),
                         ActionRow.of(timeInput),
                         ActionRow.of(channelInput),
-                        ActionRow.of(postChannelInput)
+                        ActionRow.of(postChannelInput),
+                        ActionRow.of(linkInput)
                 )
                 .build();
     }
@@ -157,6 +155,9 @@ public class EventCommandHandler {
             String eventChannelId = event.getValue("event_channel").getAsString();
             String postChannelId = event.getValue("post_channel").getAsString();
 
+            var linkValue = event.getValue("event_link");
+            String eventLink = linkValue != null ? linkValue.getAsString() : null;
+
             Instant eventTime = parseEventDateTime(dateStr, timeStr);
 
             var createdEvent = eventService.createEvent(
@@ -166,7 +167,8 @@ public class EventCommandHandler {
                     eventTime,
                     eventChannelId,
                     postChannelId,
-                    event.getUser().getId()
+                    event.getUser().getId(),
+                    eventLink
             );
 
             eventPostService.postEventAnnouncement(createdEvent);
@@ -200,27 +202,14 @@ public class EventCommandHandler {
                 return;
             }
 
-            // Discord allows a maximum of 5 action rows per message.
             var eventsToShow = upcomingEvents.stream()
                     .limit(5)
                     .toList();
 
-            // Acknowledge the interaction first.
             event.deferReply().queue(hook -> {
 
                 for (var upcomingEvent : eventsToShow) {
-
-                    hook.sendMessageEmbeds(
-                                    eventCardBuilder
-                                            .build(upcomingEvent)
-                                            .build()
-                            )
-                            .addActionRow(
-                                    eventCardBuilder
-                                            .buttons(upcomingEvent)
-                                            .getComponents()
-                            )
-                            .queue();
+                    hook.sendMessage(formatEventText(upcomingEvent)).queue();
                 }
 
             });
@@ -244,7 +233,6 @@ public class EventCommandHandler {
     /**
      * Handles the /event upcoming subcommand to show the single next event.
      */
-
     private void handleUpcomingEvent(SlashCommandInteractionEvent event) {
 
         try {
@@ -265,17 +253,7 @@ public class EventCommandHandler {
 
             eventPostService.postEventAnnouncement(upcomingEvent);
 
-            event.replyEmbeds(
-                            eventCardBuilder
-                                    .build(upcomingEvent)
-                                    .build()
-                    )
-                    .addActionRow(
-                            eventCardBuilder
-                                    .buttons(upcomingEvent)
-                                    .getComponents()
-                    )
-                    .queue();
+            event.reply(formatEventText(upcomingEvent)).queue();
 
         } catch (Exception e) {
 
@@ -293,63 +271,31 @@ public class EventCommandHandler {
         }
     }
 
-    public void handleInterestedButton(ButtonInteractionEvent event) {
-
-        String componentId = event.getComponentId();
-
-        if (!componentId.startsWith("event_interested:")) {
-            return;
-        }
-
-        try {
-
-            Long eventId = Long.parseLong(
-                    componentId.substring("event_interested:".length())
-            );
-
-            String userId = event.getUser().getId();
-
-            boolean nowInterested =
-                    eventInterestService.toggleInterest(
-                            eventId,
-                            userId
-                    );
-
-            int count =
-                    eventInterestService.getInterestedCount(eventId);
-
-            if (nowInterested) {
-
-                event.reply(
-                        "✅ You're now **interested** in this event!\n" +
-                                "👥 **" + count +
-                                "** people are interested."
-                ).setEphemeral(true).queue();
-
-            } else {
-
-                event.reply(
-                        "❌ You're no longer interested in this event.\n" +
-                                "👥 **" + count +
-                                "** people are interested."
-                ).setEphemeral(true).queue();
-            }
-
-        } catch (NumberFormatException e) {
-
-            log.warn(
-                    "Invalid event ID in interested button: {}",
-                    componentId
-            );
-
-            event.reply(
-                    "❌ This event button is invalid."
-            ).setEphemeral(true).queue();
-        }
-    }
-
-
     // ---------- Formatting helpers ----------
+
+    /**
+     * Builds a plain-text (non-embed) view of an event. The link is placed on its own
+     * line with no surrounding markdown so Discord renders its native link preview.
+     */
+    private String formatEventText(Event event) {
+        String description = event.getDescription();
+        if (description == null || description.isBlank()) {
+            description = "Join us for our next community session!";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("🎤 **").append(event.getTitle()).append("**\n\n");
+        sb.append(description).append("\n\n");
+        sb.append("📅 **When:** ").append(discordTimestamp(event.getEventTime())).append("\n");
+        sb.append("Event #").append(event.getId());
+
+        String eventLink = event.getEventLink();
+        if (eventLink != null && !eventLink.isBlank()) {
+            sb.append("\n\n").append(eventLink);
+        }
+
+        return sb.toString();
+    }
 
     /**
      * Renders an Instant as a Discord timestamp tag. Discord displays this in each
@@ -410,8 +356,12 @@ public class EventCommandHandler {
 
     /**
      * Persists each Discord Scheduled Event as a bot Event so it shows up in /event list and /event upcoming.
-     * NOTE: no dedupe check is performed here — running this twice will create duplicate rows unless
-     * the Event entity tracks the originating Discord scheduled-event ID.
+     * <p>
+     * Dedupe strategy: eventLink is built deterministically as
+     * "https://discord.com/events/{guildId}/{scheduledEventId}" and is UNIQUE + NOT NULL
+     * on the Event entity. Re-running import on an already-imported scheduled event will
+     * therefore hit a unique constraint violation, which we catch and report as "already
+     * imported" rather than a genuine failure — no separate existence check needed.
      */
     private void importScheduledEvents(SlashCommandInteractionEvent event, String guildId, String postChannelId,
                                        List<ScheduledEvent> scheduledEvents) {
@@ -423,6 +373,7 @@ public class EventCommandHandler {
 
         StringBuilder sb = new StringBuilder("**Import Results:**\n\n");
         int imported = 0;
+        int alreadyImported = 0;
         int skipped = 0;
 
         for (var scheduledEvent : scheduledEvents) {
@@ -436,6 +387,11 @@ public class EventCommandHandler {
                 continue;
             }
 
+            // Discord's own scheduled event page — used as the link since imported events
+            // don't have a separate link entered by an organizer. Also doubles as the
+            // dedupe key via the unique constraint on eventLink.
+            String eventLink = "https://discord.com/events/" + guildId + "/" + scheduledEvent.getId();
+
             try {
                 var createdEvent = eventService.createEvent(
                         guildId,
@@ -444,22 +400,27 @@ public class EventCommandHandler {
                         scheduledEvent.getStartTime().toInstant(),
                         channel.getId(),
                         postChannelId,
-                        event.getUser().getId()
+                        event.getUser().getId(),
+                        eventLink
                 );
 
                 eventPostService.postEventAnnouncement(createdEvent);
 
-
                 imported++;
+            } catch (DataIntegrityViolationException e) {
+                // Unique constraint on eventLink — this scheduled event was already imported.
+                log.info("Skipping already-imported scheduled event {} ({})", scheduledEvent.getId(), scheduledEvent.getName());
+                sb.append("🔁 Already imported: **").append(scheduledEvent.getName()).append("**\n");
+                alreadyImported++;
             } catch (Exception e) {
                 log.error("Failed to import scheduled event {}", scheduledEvent.getId(), e);
                 sb.append("❌ Failed to import **").append(scheduledEvent.getName()).append("**\n");
             }
         }
 
-        sb.append("\n**").append(imported).append(" imported, ").append(skipped).append(" skipped.**");
+        sb.append("\n**").append(imported).append(" imported, ")
+                .append(alreadyImported).append(" already imported, ")
+                .append(skipped).append(" skipped.**");
         replyEphemeral(event, sb.toString());
     }
-
-
 }

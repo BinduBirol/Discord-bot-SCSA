@@ -43,11 +43,5 @@ public class BotStatusListener extends ListenerAdapter {
         voiceActivityLogger.logBotOffline();
     }
 
-    @Override
-    public void onButtonInteraction(ButtonInteractionEvent event) {
 
-        if (event.getComponentId().startsWith("event_interested:")) {
-            eventCommandHandler.handleInterestedButton(event);
-        }
-    }
 }

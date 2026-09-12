@@ -2,8 +2,6 @@ package com.scsabot.discordbot.service;
 
 import com.scsabot.discordbot.common.exception.BusinessException;
 import com.scsabot.discordbot.entity.Event;
-import com.scsabot.discordbot.event.EventCardBuilder;
-import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
@@ -11,8 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
-
-import java.time.Instant;
 
 @Service
 public class EventPostService {
@@ -24,14 +20,11 @@ public class EventPostService {
             "1543886877512175711";
 
     private final ObjectProvider<JDA> jdaProvider;
-    private final EventCardBuilder eventCardBuilder;
 
     public EventPostService(
-            ObjectProvider<JDA> jdaProvider,
-            EventCardBuilder eventCardBuilder) {
+            ObjectProvider<JDA> jdaProvider) {
 
         this.jdaProvider = jdaProvider;
-        this.eventCardBuilder = eventCardBuilder;
     }
 
     /**
@@ -55,15 +48,8 @@ public class EventPostService {
             );
         }
 
-        EmbedBuilder embed =
-                eventCardBuilder.build(event);
+        channel.sendMessage(formatEventText(event))
 
-        channel.sendMessageEmbeds(embed.build())
-                .addActionRow(
-                        eventCardBuilder
-                                .buttons(event)
-                                .getComponents()
-                )
                 .queue(
                         message -> log.info(
                                 "Posted event announcement for event ID {} with message ID {}",
@@ -116,14 +102,14 @@ public class EventPostService {
                         ? eventChannel.getName()
                         : "Unknown Channel";
 
-        EmbedBuilder embed =
-                createReminderEmbed(
+        String reminderText =
+                formatReminderText(
                         event,
                         channelName,
                         reminderType
                 );
 
-        channel.sendMessageEmbeds(embed.build())
+        channel.sendMessage(reminderText)
                 .queue(
                         success -> log.info(
                                 "Posted {} reminder for event ID {}",
@@ -141,11 +127,11 @@ public class EventPostService {
     }
 
     /**
-     * Creates a reminder embed based on reminder type.
-     * Discord timestamps display the event time
-     * according to each user's local timezone.
+     * Builds a plain-text (non-embed) reminder message. The link is appended on its own
+     * line with no surrounding markdown so Discord renders its native link preview.
+     * Discord timestamps display the event time according to each user's local timezone.
      */
-    private EmbedBuilder createReminderEmbed(
+    private String formatReminderText(
             Event event,
             String channelName,
             String reminderType) {
@@ -199,14 +185,16 @@ public class EventPostService {
                     "**";
         };
 
-        return new EmbedBuilder()
-                .setDescription(reminderText)
-                .setFooter("SCSA Events")
-                .setTimestamp(Instant.now());
+        String eventLink = event.getEventLink();
+        if (eventLink != null && !eventLink.isBlank()) {
+            reminderText += "\n\n" + eventLink;
+        }
+
+        return reminderText;
     }
 
     /**
-     * Posts an updated event card to the dedicated event channel.
+     * Posts an updated event announcement to the dedicated event channel.
      */
     public void postEventUpdate(Event event) {
 
@@ -230,25 +218,44 @@ public class EventPostService {
             return;
         }
 
-        channel.sendMessageEmbeds(
-                eventCardBuilder
-                        .build(event)
-                        .build()
-        ).addActionRow(
-                eventCardBuilder
-                        .buttons(event)
-                        .getComponents()
-        ).queue(
-                success -> log.info(
-                        "Posted event update for event ID {}",
-                        event.getId()
-                ),
-                error -> log.error(
-                        "Failed to post event update for event ID {}: {}",
-                        event.getId(),
-                        error.getMessage(),
-                        error
-                )
-        );
+        channel.sendMessage(formatEventText(event))
+                .queue(
+                        success -> log.info(
+                                "Posted event update for event ID {}",
+                                event.getId()
+                        ),
+                        error -> log.error(
+                                "Failed to post event update for event ID {}: {}",
+                                event.getId(),
+                                error.getMessage(),
+                                error
+                        )
+                );
+    }
+
+    /**
+     * Builds a plain-text (non-embed) view of an event. The link is placed on its own
+     * line with no surrounding markdown so Discord renders its native link preview.
+     */
+    private String formatEventText(Event event) {
+        String description = event.getDescription();
+        if (description == null || description.isBlank()) {
+            description = "Join us for our next community session!";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("🎤 **").append(event.getTitle()).append("**\n\n");
+        sb.append(description).append("\n\n");
+        sb.append("📅 **When:** ")
+                .append("<t:").append(event.getEventTime().getEpochSecond()).append(":F>")
+                .append("\n");
+        sb.append("Event #").append(event.getId());
+
+        String eventLink = event.getEventLink();
+        if (eventLink != null && !eventLink.isBlank()) {
+            sb.append("\n\n").append(eventLink);
+        }
+
+        return sb.toString();
     }
 }
