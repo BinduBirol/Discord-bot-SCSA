@@ -4,9 +4,11 @@ import com.scsabot.discordbot.discord.command.DiscordCommandRegistrar;
 import com.scsabot.discordbot.voice.VoiceActivityLogger;
 import net.dv8tion.jda.api.JDA;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
 
 @Component
+@ConditionalOnBean(JDA.class)
 public class DiscordStartup implements CommandLineRunner {
 
     private final JDA jda;

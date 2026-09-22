@@ -1,8 +1,10 @@
 package com.scsabot.discordbot.voice;
 
+import java.util.Optional;
+
 public interface VoiceTrackingService {
 
-    void trackJoin(String guildId, String userId, String channelId);
+    Optional<ActiveVoiceSession> trackJoin(String guildId, String userId, String channelId);
 
-    void trackLeave(String guildId, String userId);
+    Optional<ActiveVoiceSession> trackLeave(String guildId, String userId);
 }

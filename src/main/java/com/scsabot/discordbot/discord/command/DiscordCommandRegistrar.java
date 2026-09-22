@@ -1,16 +1,19 @@
 package com.scsabot.discordbot.discord.command;
 
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@ConditionalOnBean(JDA.class)
 public class DiscordCommandRegistrar {
 
     private static final Logger log =
@@ -46,7 +49,12 @@ public class DiscordCommandRegistrar {
                                         "Show the next upcoming event"
                                 ),
                                 new SubcommandData("import", "Import Discord Scheduled Events")
-                        )
+                        ),
+                Commands.slash("topic", "Get a random speaking practice topic")
+                        .addOption(OptionType.STRING, "category",
+                                "Optional topic category", false)
+                        .addOption(OptionType.STRING, "difficulty",
+                                "Optional difficulty: easy, medium, hard", false)
         );
 
         var guild = jda.getGuildById(GUILD_ID);

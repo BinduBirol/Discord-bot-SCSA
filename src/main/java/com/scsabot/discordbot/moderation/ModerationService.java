@@ -1,23 +1,25 @@
 package com.scsabot.discordbot.moderation;
 
-import com.scsabot.discordbot.entity.DiscordMember;
-import com.scsabot.discordbot.entity.ModerationAction;
-import com.scsabot.discordbot.repository.ModerationActionRepository;
+import net.dv8tion.jda.api.entities.Member;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ModerationService {
 
-    private final ModerationActionRepository moderationActionRepository;
+    private static final Logger log = LoggerFactory.getLogger(ModerationService.class);
 
-    public ModerationService(ModerationActionRepository moderationActionRepository) {
-        this.moderationActionRepository = moderationActionRepository;
-    }
-
-    @Transactional
-    public ModerationAction recordAction(DiscordMember member, DiscordMember moderator, String actionType, String reason, String metadata) {
-        ModerationAction action = new ModerationAction(member, moderator, actionType, reason, metadata);
-        return moderationActionRepository.save(action);
+    public void recordAction(Member member, Member moderator, String actionType, String reason, String metadata) {
+        log.info(
+                "Moderation action {} on {} ({}) by {} ({}): {} {}",
+                actionType,
+                member != null ? member.getEffectiveName() : "unknown",
+                member != null ? member.getId() : "unknown",
+                moderator != null ? moderator.getEffectiveName() : "unknown",
+                moderator != null ? moderator.getId() : "unknown",
+                reason,
+                metadata != null ? metadata : ""
+        );
     }
 }

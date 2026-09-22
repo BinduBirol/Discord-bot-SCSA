@@ -1,104 +1,70 @@
 package com.scsabot.discordbot.event;
 
-import com.scsabot.discordbot.entity.Event;
 import com.scsabot.discordbot.service.EventPostService;
 import com.scsabot.discordbot.service.EventService;
+import net.dv8tion.jda.api.entities.ScheduledEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class EventReminderScheduler {
 
     private static final Logger log = LoggerFactory.getLogger(EventReminderScheduler.class);
 
-    // Reminder windows (in seconds before event)
-    private static final long REMINDER_24H = 24 * 60 * 60;      // 86400 seconds
-    private static final long REMINDER_1H = 60 * 60;            // 3600 seconds
-    private static final long REMINDER_15M = 15 * 60;           // 900 seconds
-    private static final long REMINDER_START = 0;               // At event start
-
     private final EventService eventService;
     private final EventPostService eventPostService;
+    private final Set<String> sentReminders = ConcurrentHashMap.newKeySet();
 
     public EventReminderScheduler(EventService eventService, EventPostService eventPostService) {
         this.eventService = eventService;
         this.eventPostService = eventPostService;
     }
 
-    /**
-     * Runs every 30 seconds to check for due reminders and send them.
-     * Uses a window-based approach to avoid missing reminders during bot restarts.
-     */
-    @Scheduled(fixedRate = 30000) // 30 seconds
-    @Transactional
+    @Scheduled(fixedRate = 30000)
     public void checkAndSendReminders() {
         log.debug("Checking for due event reminders...");
 
-        List<Event> futureEvents = eventService.getAllFutureEvents();
+        List<ScheduledEvent> futureEvents = eventService.getAllFutureEvents();
 
-        for (Event event : futureEvents) {
+        for (ScheduledEvent event : futureEvents) {
             Instant now = Instant.now();
-            long secondsUntilEvent = (event.getEventTime().getEpochSecond() - now.getEpochSecond());
+            long secondsUntilEvent = event.getStartTime().toInstant().getEpochSecond() - now.getEpochSecond();
 
-            log.debug("Event '{}' (ID: {}) - seconds until event: {}", event.getTitle(), event.getId(), secondsUntilEvent);
+            log.debug("Event '{}' (ID: {}) - seconds until event: {}", event.getName(), event.getId(), secondsUntilEvent);
 
-            // Check 24-hour reminder
-            if (!event.isReminder24hSent() && isReminderDue(secondsUntilEvent, REMINDER_24H)) {
-                sendReminder(event, "24h", "24h");
+            if (ReminderWindows.isDue(secondsUntilEvent, ReminderWindows.REMINDER_24H)) {
+                sendReminderOnce(event, "24h");
             }
-
-            // Check 1-hour reminder
-            if (!event.isReminder1hSent() && isReminderDue(secondsUntilEvent, REMINDER_1H)) {
-                sendReminder(event, "1h", "1h");
+            if (ReminderWindows.isDue(secondsUntilEvent, ReminderWindows.REMINDER_1H)) {
+                sendReminderOnce(event, "1h");
             }
-
-            // Check 15-minute reminder
-            if (!event.isReminder15mSent() && isReminderDue(secondsUntilEvent, REMINDER_15M)) {
-                sendReminder(event, "15m", "15m");
+            if (ReminderWindows.isDue(secondsUntilEvent, ReminderWindows.REMINDER_15M)) {
+                sendReminderOnce(event, "15m");
             }
-
-            // Check event start reminder
-            if (!event.isReminderStartSent() && isReminderDue(secondsUntilEvent, REMINDER_START)) {
-                sendReminder(event, "start", "start");
-            }
-
-            // Skip events that are too far in the past
-            if (secondsUntilEvent < -3600) { // More than 1 hour past
-                log.debug("Event '{}' (ID: {}) is in the past and all reminders have been sent.", event.getTitle(), event.getId());
+            if (ReminderWindows.isDue(secondsUntilEvent, ReminderWindows.REMINDER_START)) {
+                sendReminderOnce(event, "start");
             }
         }
     }
 
-    /**
-     * Determines if a reminder is due based on the time until event and the reminder window.
-     * Uses a window approach: reminder is due if we're within the window and haven't sent it yet.
-     */
-    private boolean isReminderDue(long secondsUntilEvent, long reminderWindow) {
-        if (reminderWindow == 0) {
-            // For event start, check if we're within 60 seconds of start time (allows for scheduler interval variations)
-            return secondsUntilEvent >= -30 && secondsUntilEvent <= 30;
+    private void sendReminderOnce(ScheduledEvent event, String reminderType) {
+        String key = event.getId() + ":" + reminderType;
+        if (!sentReminders.add(key)) {
+            return;
         }
-        // For other reminders, check if we're within the window
-        // Allow a 60-second window to account for scheduler runs and bot restarts
-        return secondsUntilEvent >= reminderWindow - 60 && secondsUntilEvent <= reminderWindow + 30;
-    }
-
-    /**
-     * Sends a reminder and updates the reminder status in the database.
-     */
-    private void sendReminder(Event event, String reminderType, String displayType) {
         try {
-            log.info("Sending {} reminder for event '{}' (ID: {})", displayType, event.getTitle(), event.getId());
-            eventPostService.postReminder(event, displayType);
-            eventService.updateReminderStatus(event.getId(), reminderType, true);
+            log.info("Sending {} reminder for event '{}' (ID: {})", reminderType, event.getName(), event.getId());
+            eventPostService.postReminder(event, reminderType);
         } catch (Exception e) {
-            log.error("Failed to send {} reminder for event ID {}: {}", displayType, event.getId(), e.getMessage(), e);
+            sentReminders.remove(key);
+            log.error("Failed to send {} reminder for event ID {}: {}", reminderType, event.getId(), e.getMessage(), e);
         }
     }
 }
