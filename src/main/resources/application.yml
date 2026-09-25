@@ -13,3 +13,7 @@ discord:
 
 server:
   shutdown: graceful
+
+pexels:
+  api:
+    key: ${PEXELS_API_KEY:}

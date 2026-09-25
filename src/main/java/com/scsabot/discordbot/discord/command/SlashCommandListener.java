@@ -1,5 +1,7 @@
 package com.scsabot.discordbot.discord.command;
 
+import com.scsabot.discordbot.story.StoryImageCommand;
+import com.scsabot.discordbot.story.StoryWordsCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicCommand;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -17,13 +19,17 @@ public class SlashCommandListener extends ListenerAdapter {
 
     private final EventCommandHandler eventCommandHandler;
     private final TableTopicCommand tableTopicCommand;
+    private final StoryWordsCommand storyWordsCommand;
+    private final StoryImageCommand storyImageCommand;
 
     public SlashCommandListener(
             EventCommandHandler eventCommandHandler,
-            TableTopicCommand tableTopicCommand
+            TableTopicCommand tableTopicCommand, StoryWordsCommand storyWordsCommand, StoryImageCommand storyImageCommand
     ) {
         this.eventCommandHandler = eventCommandHandler;
         this.tableTopicCommand = tableTopicCommand;
+        this.storyWordsCommand = storyWordsCommand;
+        this.storyImageCommand = storyImageCommand;
     }
 
     @Override
@@ -58,6 +64,14 @@ public class SlashCommandListener extends ListenerAdapter {
             case "event" -> eventCommandHandler.handleEventCommand(event);
 
             case "topic" -> tableTopicCommand.handleTopicCommand(event);
+
+            case "story" -> {
+                if ("words".equals(event.getSubcommandName())) {
+                    storyWordsCommand.handleStoryCommand(event);
+                } else if ("image".equals(event.getSubcommandName())) {
+                    storyImageCommand.handleStoryCommand(event);
+                }
+            }
 
             default -> event.reply("Unknown command.")
                     .setEphemeral(true)

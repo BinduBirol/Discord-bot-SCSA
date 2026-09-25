@@ -121,12 +121,12 @@ public class VoiceActivityLogger {
 
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(GREEN)
-                .setTitle("SCSA ModBot is Online")
+                .setTitle("StamUnity bot is Online")
                 .setDescription(
                         "The bot is online and ready to help keep the community safe and friendly."
                 )
                 .setTimestamp(Instant.now())
-                .setFooter("SCSA ModBot");
+                .setFooter("StamUnity bot");
 
         channel.sendMessageEmbeds(embed.build()).queue();
     }
@@ -141,12 +141,12 @@ public class VoiceActivityLogger {
 
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(RED)
-                .setTitle("SCSA ModBot is Offline")
+                .setTitle("StamUnity bot is Offline")
                 .setDescription(
                         "Some automated features may be temporarily unavailable."
                 )
                 .setTimestamp(Instant.now())
-                .setFooter("SCSA ModBot");
+                .setFooter("StamUnity bot");
 
         channel.sendMessageEmbeds(embed.build()).queue();
     }

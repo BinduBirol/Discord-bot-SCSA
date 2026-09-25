@@ -54,7 +54,19 @@ public class DiscordCommandRegistrar {
                         .addOption(OptionType.STRING, "category",
                                 "Optional topic category", false)
                         .addOption(OptionType.STRING, "difficulty",
-                                "Optional difficulty: easy, medium, hard", false)
+                                "Optional difficulty: easy, medium, hard", false),
+                Commands.slash("story", "Story speaking practice")
+                        .addSubcommands(
+                                new SubcommandData(
+                                        "words",
+                                        "Get 3 random words for story speaking practice"
+                                ),
+                                new SubcommandData(
+                                        "image",
+                                        "Get a random image for story speaking practice"
+                                )
+                        )
+
         );
 
         var guild = jda.getGuildById(GUILD_ID);
