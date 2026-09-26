@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.entities.Member;
 public class WelcomeService {
 
     private static final String WELCOME_CHANNEL_ID = "1543886877512175710";
+    private static final String PRACTICE_GUIDE_CHANNEL_ID = "1552920324591321190";
 
     private final ObjectProvider<JDA> jdaProvider;
 
@@ -34,7 +35,7 @@ public class WelcomeService {
 
         EmbedBuilder embed = new EmbedBuilder();
 
-        embed.setTitle("👋 Welcome to SCSA! ❤️");
+        embed.setTitle("👋 Welcome to StamUnity! ❤️");
 
         embed.setDescription(
                 """
@@ -44,11 +45,13 @@ public class WelcomeService {
                         
                         Take your time, speak freely, and most importantly — **don't be afraid to stutter.** 🫶
                         
-                        Welcome to the community! 🤗
+                        📚 **Want to practice?**
+                        Check out <#1552920324591321190> for our structured practice guide.
+                        
                         """.formatted(member.getAsMention())
         );
 
-        embed.setFooter("Stuttering Community South Asia • SCSA");
+        embed.setFooter("Welcome to the community! 🤗");
 
         channel.sendMessageEmbeds(embed.build()).queue(
                 success -> System.out.println(

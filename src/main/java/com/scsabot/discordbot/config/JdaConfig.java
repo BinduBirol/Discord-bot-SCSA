@@ -59,7 +59,7 @@ public class JdaConfig {
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
                 .enableCache(CacheFlag.SCHEDULED_EVENTS)
                 .setActivity(
-                        Activity.watching("Created by Birol. Built to serve StamUnity.")
+                        Activity.watching("Created by Birol to serve StamUnity.")
                 )
                 .addEventListeners(
                         guildMemberEventListener,
