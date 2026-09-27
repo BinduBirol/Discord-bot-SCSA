@@ -1,31 +1,29 @@
 package com.scsabot.discordbot.discord.command;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.Permission;
+
+import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Slf4j
+@RequiredArgsConstructor
 @Component
 @ConditionalOnBean(JDA.class)
 public class DiscordCommandRegistrar {
 
-    private static final Logger log =
-            LoggerFactory.getLogger(DiscordCommandRegistrar.class);
-
     private static final String GUILD_ID = "1543886876786565140";
 
     private final JDA jda;
-
-    public DiscordCommandRegistrar(JDA jda) {
-        this.jda = jda;
-    }
 
     public void registerCommands() {
 
@@ -65,7 +63,9 @@ public class DiscordCommandRegistrar {
                                         "image",
                                         "Get a random image for story speaking practice"
                                 )
-                        )
+                        ),
+                Commands.slash("resource-post", "Immediately post one resource entry to the configured channel")
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.MANAGE_SERVER))
 
         );
 

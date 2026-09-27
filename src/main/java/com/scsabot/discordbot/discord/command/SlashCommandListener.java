@@ -1,36 +1,27 @@
 package com.scsabot.discordbot.discord.command;
 
+import com.scsabot.discordbot.resources.ResourcePostCommand;
 import com.scsabot.discordbot.story.StoryImageCommand;
 import com.scsabot.discordbot.story.StoryWordsCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicCommand;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+@Slf4j
+@RequiredArgsConstructor
 @Component
 public class SlashCommandListener extends ListenerAdapter {
-
-    private static final Logger log =
-            LoggerFactory.getLogger(SlashCommandListener.class);
 
     private final EventCommandHandler eventCommandHandler;
     private final TableTopicCommand tableTopicCommand;
     private final StoryWordsCommand storyWordsCommand;
     private final StoryImageCommand storyImageCommand;
-
-    public SlashCommandListener(
-            EventCommandHandler eventCommandHandler,
-            TableTopicCommand tableTopicCommand, StoryWordsCommand storyWordsCommand, StoryImageCommand storyImageCommand
-    ) {
-        this.eventCommandHandler = eventCommandHandler;
-        this.tableTopicCommand = tableTopicCommand;
-        this.storyWordsCommand = storyWordsCommand;
-        this.storyImageCommand = storyImageCommand;
-    }
+    private final ResourcePostCommand resourcePostCommand;
 
     @Override
     public void onSlashCommandInteraction(
@@ -72,6 +63,8 @@ public class SlashCommandListener extends ListenerAdapter {
                     storyImageCommand.handleStoryCommand(event);
                 }
             }
+
+            case "resource-post" -> resourcePostCommand.handleResourcePostCommand(event);
 
             default -> event.reply("Unknown command.")
                     .setEphemeral(true)
