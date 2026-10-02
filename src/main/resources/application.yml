@@ -18,6 +18,10 @@ pexels:
   api:
     key: ${PEXELS_API_KEY:}
 
+unsplash:
+  access:
+    key: ${UNSPLASH_ACCESS_KEY:}
+
 bot:
   roles:
     practice: "1555500219217481768"

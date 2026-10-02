@@ -2,6 +2,7 @@ package com.scsabot.discordbot.story;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.scsabot.discordbot.dto.StoryImage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,21 +18,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Fetches a random photo from the Pexels API for /story image, instead of
- * hosting/curating images ourselves. Requires a free Pexels API key
- * (https://www.pexels.com/api/) configured as pexels.api.key.
- * <p>
- * Pexels guidelines require attribution: crediting the photographer and
- * linking back to Pexels wherever an image is shown (handled in
- * StoryImageCommand's embed).
- * <p>
- * Free tier limits (as of the time this was written): 200 requests/hour,
- * 20,000 requests/month. Pexels can grant higher limits on request for
- * eligible apps.
- */
+
 @Component
-public class PexelsImageService {
+public class PexelsImageService implements ImageProvider {
 
     private static final Logger log =
             LoggerFactory.getLogger(PexelsImageService.class);
@@ -57,24 +46,20 @@ public class PexelsImageService {
         this.apiKey = apiKey;
     }
 
-    /**
-     * A fetched photo, with the attribution details Pexels requires.
-     */
-    public record PexelsImage(
-            String imageUrl,
-            String photographer,
-            String pexelsPageUrl
-    ) {
+    @Override
+    public boolean isConfigured() {
+        return apiKey != null && !apiKey.isBlank();
     }
 
     /**
      * Fetches one random photo for a randomly chosen keyword.
      * Returns null if the API key isn't configured, the request fails,
-     * or no results are returned — callers should handle that gracefully.
+     * or no results are returned.
      */
-    public PexelsImage fetchRandomImage() {
+    @Override
+    public StoryImage fetchRandomImage() {
 
-        if (apiKey == null || apiKey.isBlank()) {
+        if (!isConfigured()) {
             log.warn("Pexels API key is not configured (pexels.api.key)");
             return null;
         }
@@ -84,9 +69,8 @@ public class PexelsImageService {
         );
 
         try {
-            String encodedQuery = URLEncoder.encode(keyword, StandardCharsets.UTF_8);
             String url = SEARCH_URL
-                    + "?query=" + encodedQuery
+                    + "?query=" + URLEncoder.encode(keyword, StandardCharsets.UTF_8)
                     + "&per_page=" + RESULTS_PER_PAGE;
 
             HttpRequest request = HttpRequest.newBuilder()
@@ -99,35 +83,33 @@ public class PexelsImageService {
                     httpClient.send(request, HttpResponse.BodyHandlers.ofString());
 
             if (response.statusCode() != 200) {
-                log.error(
-                        "Pexels API returned status {} for keyword '{}': {}",
-                        response.statusCode(),
-                        keyword,
-                        response.body()
-                );
+                log.error("Pexels API returned status {} for keyword '{}': {}",
+                        response.statusCode(), keyword, response.body());
                 return null;
             }
 
-            JsonNode root = objectMapper.readTree(response.body());
-            JsonNode photos = root.get("photos");
+            JsonNode photos = objectMapper.readTree(response.body()).get("photos");
 
             if (photos == null || !photos.isArray() || photos.isEmpty()) {
                 log.warn("Pexels API returned no photos for keyword '{}'", keyword);
                 return null;
             }
 
-            int index = ThreadLocalRandom.current().nextInt(photos.size());
-            JsonNode photo = photos.get(index);
+            JsonNode photo = photos.get(
+                    ThreadLocalRandom.current().nextInt(photos.size())
+            );
 
             String imageUrl = photo.path("src").path("large").asText(null);
-            String photographer = photo.path("photographer").asText("Unknown");
-            String pageUrl = photo.path("url").asText(null);
-
             if (imageUrl == null) {
                 return null;
             }
 
-            return new PexelsImage(imageUrl, photographer, pageUrl);
+            return new StoryImage(
+                    imageUrl,
+                    photo.path("photographer").asText("Unknown"),
+                    photo.path("url").asText(null),
+                    "Pexels"
+            );
 
         } catch (IOException e) {
             log.error("Failed to fetch image from Pexels", e);

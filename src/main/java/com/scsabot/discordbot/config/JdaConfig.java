@@ -6,6 +6,7 @@ import com.scsabot.discordbot.discord.listener.VoiceStateListener;
 import com.scsabot.discordbot.story.StoryButtonListener;
 import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicButtonListener;
+import com.scsabot.discordbot.timer.TimerButtonListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.Activity;
@@ -34,7 +35,8 @@ public class JdaConfig {
             VoiceStateListener voiceStateListener,
             SlashCommandListener slashCommandListener,
             TableTopicButtonListener tableTopicButtonListener,
-            StoryButtonListener storyButtonListener
+            StoryButtonListener storyButtonListener,
+            TimerButtonListener timerButtonListener
 
     ) throws InterruptedException {
 
@@ -68,7 +70,8 @@ public class JdaConfig {
                         voiceStateListener,
                         slashCommandListener,
                         tableTopicButtonListener,
-                        storyButtonListener
+                        storyButtonListener,
+                        timerButtonListener
 
                 )
                 .build()

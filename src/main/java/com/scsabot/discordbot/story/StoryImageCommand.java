@@ -1,7 +1,8 @@
 package com.scsabot.discordbot.story;
 
-
+import com.scsabot.discordbot.dto.StoryImage;
 import com.scsabot.discordbot.service.RoleService;
+import com.scsabot.discordbot.timer.TimerCommand;
 import lombok.RequiredArgsConstructor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -13,27 +14,31 @@ import java.util.Collections;
 
 /**
  * /story image - Image speaking practice.
- * Pulls a random photo from the Pexels API (see PexelsImageService) and
- * challenges the user to describe it or tell a short story about it.
+ * Pulls a random photo from Pexels or Unsplash (see RandomImageService)
+ * and challenges the user to describe it or tell a short story about it.
  * <p>
  * Same regenerate / new-speaker pattern as /story words:
  * - "🔄 Regenerate" edits the current message with a new image.
  * - "🗣️ New Speaker" posts a brand new message with its own image.
+ * - "⏱️ Start 3 min" starts a countdown timer as a separate message.
  */
 @Component
 @RequiredArgsConstructor
 public class StoryImageCommand {
 
-    private static final String REGENERATE_BUTTON_ID = "story:image:regenerate";
-    private static final String NEW_SPEAKER_BUTTON_ID = "story:image:newspeaker";
+    public static final String REGENERATE_BUTTON_ID = "story:image:regenerate";
+    public static final String NEW_SPEAKER_BUTTON_ID = "story:image:newspeaker";
+    public static final String TIMER_BUTTON_ID = "story:image:timer";
+
+    private static final int TIMER_MINUTES = 3;
     private static final String FETCH_FAILED_MESSAGE =
             "❌ Couldn't fetch an image right now — try again in a moment.";
 
     private static final String[] ROLE_KEYS = {"storyteller", "image-prompt"};
 
-    private final PexelsImageService pexelsImageService;
+    private final RandomImageService randomImageService;
     private final RoleService roleService;
-
+    private final TimerCommand timerCommand;
 
     /**
      * Handles /story image. Called from SlashCommandListener
@@ -41,7 +46,7 @@ public class StoryImageCommand {
      */
     public void handleStoryCommand(SlashCommandInteractionEvent event) {
 
-        PexelsImageService.PexelsImage image = pexelsImageService.fetchRandomImage();
+        StoryImage image = randomImageService.fetchRandomImage();
 
         if (image == null) {
             event.reply(FETCH_FAILED_MESSAGE).setEphemeral(true).queue();
@@ -62,7 +67,7 @@ public class StoryImageCommand {
      */
     public void handleRegenerate(ButtonInteractionEvent event) {
 
-        PexelsImageService.PexelsImage image = pexelsImageService.fetchRandomImage();
+        StoryImage image = randomImageService.fetchRandomImage();
 
         if (image == null) {
             event.reply(FETCH_FAILED_MESSAGE).setEphemeral(true).queue();
@@ -84,14 +89,14 @@ public class StoryImageCommand {
      */
     public void handleNewSpeaker(ButtonInteractionEvent event) {
 
-        PexelsImageService.PexelsImage image = pexelsImageService.fetchRandomImage();
+        StoryImage image = randomImageService.fetchRandomImage();
 
         if (image == null) {
             event.reply(FETCH_FAILED_MESSAGE).setEphemeral(true).queue();
             return;
         }
 
-        event.reply("🗣️ New speaker: " + event.getUser().getAsMention())
+        event.reply("New speaker: " + event.getUser().getAsMention())
                 .setAllowedMentions(Collections.emptyList())
                 .addEmbeds(buildEmbed(image).build())
                 .addActionRow(actionRow())
@@ -100,30 +105,43 @@ public class StoryImageCommand {
         roleService.grantRoles(event.getMember(), ROLE_KEYS);
     }
 
+    /**
+     * "⏱️ Start 3 min" - starts a timer as a separate message,
+     * leaving the image prompt untouched.
+     */
+    public void handleTimer(ButtonInteractionEvent event) {
+
+        timerCommand.startFromButton(event, TIMER_MINUTES, "Story time's up!");
+
+        // Optional: remove if starting a timer shouldn't count toward the roles.
+        roleService.grantRoles(event.getMember(), ROLE_KEYS);
+    }
+
     private Button[] actionRow() {
         return new Button[]{
                 Button.primary(REGENERATE_BUTTON_ID, "🔄 Regenerate"),
-                Button.secondary(NEW_SPEAKER_BUTTON_ID, "🗣️ New Speaker")
+                Button.secondary(NEW_SPEAKER_BUTTON_ID, "🗣️ New Speaker"),
+                Button.success(TIMER_BUTTON_ID, "⏱️ Start " + TIMER_MINUTES + " min")
         };
     }
 
     /**
      * Builds the Discord card shown to the user. Includes photographer
-     * credit and a link back to Pexels, as Pexels' API guidelines require.
+     * credit and a link back to the photo's source (Pexels or Unsplash),
+     * as both APIs' guidelines require.
      */
-    public EmbedBuilder buildEmbed(PexelsImageService.PexelsImage image) {
+    public EmbedBuilder buildEmbed(StoryImage image) {
         EmbedBuilder embed = new EmbedBuilder();
 
         embed.setTitle("🖼️ Image Speaking Practice");
 
-        String description = "Describe what you see, or tell a short story inspired by this image.";
+        String credit = "Photo by " + image.photographer() + " on " + image.sourceName();
 
-        if (image.pexelsPageUrl() != null) {
-            description += "\n\n📷 [Photo by " + image.photographer()
-                    + " on Pexels](" + image.pexelsPageUrl() + ")";
-        } else {
-            description += "\n\n📷 Photo by " + image.photographer() + " on Pexels";
-        }
+        String description = "Describe what you see, or tell a short story inspired by this image."
+                + "\n\n📷 "
+                + (image.pageUrl() != null
+                ? "[" + credit + "](" + image.pageUrl() + ")"
+                : credit);
 
         embed.setDescription(description);
         embed.setImage(image.imageUrl());

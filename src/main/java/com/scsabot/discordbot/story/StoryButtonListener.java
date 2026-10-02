@@ -58,6 +58,7 @@ public class StoryButtonListener extends ListenerAdapter {
         switch (action) {
             case "regenerate" -> storyWordsCommand.handleRegenerate(event);
             case "newspeaker" -> storyWordsCommand.handleNewSpeaker(event);
+            case "timer" -> storyWordsCommand.handleTimer(event);
             default -> {
                 // Ignore unknown words actions.
             }
@@ -68,6 +69,7 @@ public class StoryButtonListener extends ListenerAdapter {
         switch (action) {
             case "regenerate" -> storyImageCommand.handleRegenerate(event);
             case "newspeaker" -> storyImageCommand.handleNewSpeaker(event);
+            case "timer" -> storyImageCommand.handleTimer(event);
             default -> {
                 // Ignore unknown image actions.
             }
@@ -78,6 +80,7 @@ public class StoryButtonListener extends ListenerAdapter {
         switch (action) {
             case "regenerate" -> storyCompleteCommand.handleRegenerate(event);
             case "nextspeaker" -> storyCompleteCommand.handleNextSpeaker(event);
+            case "timer" -> storyCompleteCommand.handleTimer(event);
             default -> {
                 // Ignore unknown complete actions.
             }

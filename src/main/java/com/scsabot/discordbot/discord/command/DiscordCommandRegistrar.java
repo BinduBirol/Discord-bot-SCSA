@@ -67,7 +67,11 @@ public class DiscordCommandRegistrar {
                         ),
                 Commands.slash("resource-post", "Immediately post one resource entry to the configured channel")
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.MANAGE_SERVER)),
-                Commands.slash("practice", "Get a random practice exercise")
+                Commands.slash("practice", "Get a random practice exercise"),
+
+                Commands.slash("timer", "Start a countdown timer")
+                        .addOption(OptionType.INTEGER, "minutes", "How long (1-60)", true)
+                        .addOption(OptionType.STRING, "label", "Message when time is up", false)
 
         );
 

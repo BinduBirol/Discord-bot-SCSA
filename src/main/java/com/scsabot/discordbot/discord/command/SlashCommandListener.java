@@ -6,6 +6,7 @@ import com.scsabot.discordbot.story.StoryImageCommand;
 import com.scsabot.discordbot.story.StoryWordsCommand;
 import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicCommand;
+import com.scsabot.discordbot.timer.TimerCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.events.interaction.ModalInteractionEvent;
@@ -26,6 +27,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final ResourcePostCommand resourcePostCommand;
     private final PracticeCommand practiceCommand;
     private final StoryCompleteCommand storyCompleteCommand;
+    private final TimerCommand timerCommand;
 
     @Override
     public void onSlashCommandInteraction(
@@ -73,6 +75,8 @@ public class SlashCommandListener extends ListenerAdapter {
             case "resource-post" -> resourcePostCommand.handleResourcePostCommand(event);
 
             case "practice" -> practiceCommand.handlePracticeCommand(event);
+
+            case "timer" -> timerCommand.handleTimer(event);
 
             default -> event.reply("Unknown command.")
                     .setEphemeral(true)

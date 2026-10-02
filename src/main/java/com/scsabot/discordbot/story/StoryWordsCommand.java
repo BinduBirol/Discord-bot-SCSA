@@ -3,6 +3,7 @@ package com.scsabot.discordbot.story;
 
 import com.scsabot.discordbot.service.RoleService;
 import com.scsabot.discordbot.tabletopics.TableTopicDataLoader;
+import com.scsabot.discordbot.timer.TimerCommand;
 import lombok.RequiredArgsConstructor;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
@@ -21,23 +22,28 @@ import java.util.concurrent.ThreadLocalRandom;
  * (data/words/*.json) and challenges the user to speak a short, connected
  * story that uses all three.
  * <p>
- * Two buttons:
+ * Three buttons:
  * - "🔄 Regenerate" edits the current message with a new set of words,
  * for the same speaker who wants different words.
  * - "🗣️ New Speaker" posts a brand new message with its own words,
  * leaving the previous speaker's message untouched.
+ * - "⏱️ Start 3 min" starts a countdown timer as a separate message.
  */
 @Component
 @RequiredArgsConstructor
 public class StoryWordsCommand {
 
-    private static final String REGENERATE_BUTTON_ID = "story:words:regenerate";
-    private static final String NEW_SPEAKER_BUTTON_ID = "story:words:newspeaker";
+    public static final String REGENERATE_BUTTON_ID = "story:words:regenerate";
+    public static final String NEW_SPEAKER_BUTTON_ID = "story:words:newspeaker";
+    public static final String TIMER_BUTTON_ID = "story:words:timer";
+
     private static final String ROLE_KEY = "storyteller";
     private static final int WORD_COUNT = 3;
+    private static final int TIMER_MINUTES = 3;
 
     private final TableTopicDataLoader dataLoader;
     private final RoleService roleService;
+    private final TimerCommand timerCommand;
 
 
     /**
@@ -111,10 +117,23 @@ public class StoryWordsCommand {
         roleService.grantRoles(event.getMember(), ROLE_KEY);
     }
 
+    /**
+     * "⏱️ Start 3 min" - starts a timer as a separate message,
+     * leaving the words prompt untouched.
+     */
+    public void handleTimer(ButtonInteractionEvent event) {
+
+        timerCommand.startFromButton(event, TIMER_MINUTES, "Story time's up!");
+
+        // Optional: remove if starting a timer shouldn't count toward the role.
+        roleService.grantRoles(event.getMember(), ROLE_KEY);
+    }
+
     private Button[] actionRow() {
         return new Button[]{
                 Button.primary(REGENERATE_BUTTON_ID, "🔄 Regenerate"),
-                Button.secondary(NEW_SPEAKER_BUTTON_ID, "🗣️ New Speaker")
+                Button.secondary(NEW_SPEAKER_BUTTON_ID, "🗣️ New Speaker"),
+                Button.success(TIMER_BUTTON_ID, "⏱️ Start " + TIMER_MINUTES + " min")
         };
     }
 
