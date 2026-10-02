@@ -1,8 +1,10 @@
 package com.scsabot.discordbot.discord.command;
 
+import com.scsabot.discordbot.practice.PracticeCommand;
 import com.scsabot.discordbot.resources.ResourcePostCommand;
 import com.scsabot.discordbot.story.StoryImageCommand;
 import com.scsabot.discordbot.story.StoryWordsCommand;
+import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +24,8 @@ public class SlashCommandListener extends ListenerAdapter {
     private final StoryWordsCommand storyWordsCommand;
     private final StoryImageCommand storyImageCommand;
     private final ResourcePostCommand resourcePostCommand;
+    private final PracticeCommand practiceCommand;
+    private final StoryCompleteCommand storyCompleteCommand;
 
     @Override
     public void onSlashCommandInteraction(
@@ -61,10 +65,14 @@ public class SlashCommandListener extends ListenerAdapter {
                     storyWordsCommand.handleStoryCommand(event);
                 } else if ("image".equals(event.getSubcommandName())) {
                     storyImageCommand.handleStoryCommand(event);
+                } else if ("complete".equals(event.getSubcommandName())) {
+                    storyCompleteCommand.handleCompleteCommand(event);
                 }
             }
 
             case "resource-post" -> resourcePostCommand.handleResourcePostCommand(event);
+
+            case "practice" -> practiceCommand.handlePracticeCommand(event);
 
             default -> event.reply("Unknown command.")
                     .setEphemeral(true)

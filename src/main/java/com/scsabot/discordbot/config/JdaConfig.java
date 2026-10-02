@@ -4,6 +4,7 @@ import com.scsabot.discordbot.discord.command.SlashCommandListener;
 import com.scsabot.discordbot.discord.listener.GuildMemberEventListener;
 import com.scsabot.discordbot.discord.listener.VoiceStateListener;
 import com.scsabot.discordbot.story.StoryButtonListener;
+import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicButtonListener;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -34,6 +35,7 @@ public class JdaConfig {
             SlashCommandListener slashCommandListener,
             TableTopicButtonListener tableTopicButtonListener,
             StoryButtonListener storyButtonListener
+
     ) throws InterruptedException {
 
         String token = properties.getBotToken();
@@ -67,6 +69,7 @@ public class JdaConfig {
                         slashCommandListener,
                         tableTopicButtonListener,
                         storyButtonListener
+
                 )
                 .build()
                 .awaitReady();

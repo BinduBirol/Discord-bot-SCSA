@@ -62,10 +62,12 @@ public class DiscordCommandRegistrar {
                                 new SubcommandData(
                                         "image",
                                         "Get a random image for story speaking practice"
-                                )
+                                ),
+                                new SubcommandData("complete", "Finish a story that the bot starts")
                         ),
                 Commands.slash("resource-post", "Immediately post one resource entry to the configured channel")
-                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.MANAGE_SERVER))
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.MANAGE_SERVER)),
+                Commands.slash("practice", "Get a random practice exercise")
 
         );
 

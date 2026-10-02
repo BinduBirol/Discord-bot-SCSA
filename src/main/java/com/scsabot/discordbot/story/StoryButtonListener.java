@@ -1,5 +1,6 @@
 package com.scsabot.discordbot.story;
 
+import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.springframework.stereotype.Component;
@@ -9,13 +10,16 @@ public class StoryButtonListener extends ListenerAdapter {
 
     private final StoryWordsCommand storyWordsCommand;
     private final StoryImageCommand storyImageCommand;
+    private final StoryCompleteCommand storyCompleteCommand;
 
     public StoryButtonListener(
             StoryWordsCommand storyWordsCommand,
-            StoryImageCommand storyImageCommand
+            StoryImageCommand storyImageCommand,
+            StoryCompleteCommand storyCompleteCommand
     ) {
         this.storyWordsCommand = storyWordsCommand;
         this.storyImageCommand = storyImageCommand;
+        this.storyCompleteCommand = storyCompleteCommand;
     }
 
     @Override
@@ -42,6 +46,8 @@ public class StoryButtonListener extends ListenerAdapter {
 
             case "image" -> handleImage(event, action);
 
+            case "complete" -> handleComplete(event, action);
+
             default -> {
                 // Ignore unknown story types.
             }
@@ -64,6 +70,16 @@ public class StoryButtonListener extends ListenerAdapter {
             case "newspeaker" -> storyImageCommand.handleNewSpeaker(event);
             default -> {
                 // Ignore unknown image actions.
+            }
+        }
+    }
+
+    private void handleComplete(ButtonInteractionEvent event, String action) {
+        switch (action) {
+            case "regenerate" -> storyCompleteCommand.handleRegenerate(event);
+            case "nextspeaker" -> storyCompleteCommand.handleNextSpeaker(event);
+            default -> {
+                // Ignore unknown complete actions.
             }
         }
     }

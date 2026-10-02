@@ -1,0 +1,454 @@
+{
+  "stories": [
+    {
+      "id": "story-001",
+      "title": "The Talking Cat",
+      "opening": "One morning, Leo woke up and heard a voice. It was his cat, and she was talking! She said she was very, very hungry, and she wanted pancakes. Leo sat up slowly and"
+    },
+    {
+      "id": "story-002",
+      "title": "The Key in the Rain",
+      "opening": "Maya stood at her front door in the rain. She could not find her key. Then she saw that the door was already open, and a light was on inside. Slowly, she pushed the door and"
+    },
+    {
+      "id": "story-003",
+      "title": "The Last Train",
+      "opening": "Sam ran onto the empty platform just as the last train arrived. The doors opened, but everyone inside was wearing the same yellow hat. Sam took a deep breath, stepped inside and"
+    },
+    {
+      "id": "story-004",
+      "title": "The Giant Pizza",
+      "opening": "Nina ordered one small pizza. But the man at the door brought a pizza as big as a car. He smiled and said it was a special gift. Nina looked at the pizza and"
+    },
+    {
+      "id": "story-005",
+      "title": "The Robot Who Loved Dancing",
+      "opening": "Ben built a small robot to help with his homework. But the robot did not want to do homework. It wanted to dance. One night, it turned on some music and"
+    },
+    {
+      "id": "story-006",
+      "title": "The Missing Sock",
+      "opening": "Every day, Grandpa lost one sock in the washing machine. Today, he decided to find out why. He opened the machine, looked inside and"
+    },
+    {
+      "id": "story-007",
+      "title": "The Birthday Surprise",
+      "opening": "Priya walked into her house on her birthday. It was completely dark and very quiet. She thought everyone had forgotten. Then she heard a strange sound, so she"
+    },
+    {
+      "id": "story-008",
+      "title": "The Dog Who Drove a Bus",
+      "opening": "One sunny morning, a dog jumped into the driver's seat of a city bus. The people on the bus were very surprised. The dog looked at them, wagged his tail and"
+    },
+    {
+      "id": "story-009",
+      "title": "The Door in the Garden",
+      "opening": "Omar was working in the garden when he found a tiny blue door in the ground. It was only as big as his hand. He knocked on it once, and then"
+    },
+    {
+      "id": "story-010",
+      "title": "The Worst Cook in Town",
+      "opening": "Rosa wanted to cook a special dinner for her friends. But she was a terrible cook, and everyone knew it. She opened the cookbook, read the first page and"
+    },
+    {
+      "id": "story-011",
+      "title": "The Sleepy Moon",
+      "opening": "One night, the moon was so tired that it fell asleep and did not move. The sky stayed dark for a very long time. A little girl looked up and saw it, so she"
+    },
+    {
+      "id": "story-012",
+      "title": "The Umbrella That Flew",
+      "opening": "Tom opened his umbrella on a windy day. Suddenly, his feet left the ground, and he began to float up into the sky. He held on tight and"
+    },
+    {
+      "id": "story-013",
+      "title": "The Lazy Superhero",
+      "opening": "Max was a superhero, but he was very lazy. Someone called him to save the city, but he was still in bed. He yawned, looked at the clock and"
+    },
+    {
+      "id": "story-014",
+      "title": "The Wrong Classroom",
+      "opening": "On the first day at a new school, Lina walked into a classroom and sat down. After ten minutes, she noticed something odd. The students were all penguins! Lina stayed calm and"
+    },
+    {
+      "id": "story-015",
+      "title": "The Cake That Ran Away",
+      "opening": "Ali baked a beautiful chocolate cake and put it on the table. When he turned around, the cake was gone. He saw small footprints leading out the door, so he"
+    },
+    {
+      "id": "story-016",
+      "title": "The Mysterious Package",
+      "opening": "A big box arrived at Emma's house, but she had not ordered anything. There was no name on it, and it was making a soft ticking sound. Emma picked it up and"
+    },
+    {
+      "id": "story-017",
+      "title": "The Fish Who Wanted to Fly",
+      "opening": "In a small round bowl lived a fish named Bubbles. Every day, Bubbles watched the birds outside the window and dreamed of flying. Today, he made a plan, and he"
+    },
+    {
+      "id": "story-018",
+      "title": "The Grandma Who Played Video Games",
+      "opening": "Everyone thought Grandma was just a quiet old lady. But one day, she joined a big video game contest. The crowd laughed, but Grandma only smiled and"
+    },
+    {
+      "id": "story-019",
+      "title": "The Elevator to Nowhere",
+      "opening": "Jack got into the office elevator and pressed the button for floor five. But the elevator kept going up, past floor ten, past floor twenty. When it finally stopped, the doors opened and"
+    },
+    {
+      "id": "story-020",
+      "title": "The Friendly Ghost",
+      "opening": "Chloe moved into a new house, and on the first night she heard a noise. A small ghost was standing in her kitchen, holding a spoon. He looked shy, so Chloe"
+    },
+    {
+      "id": "story-021",
+      "title": "The Soup That Sang",
+      "opening": "Dan was making soup when he heard a tiny song coming from the pot. The soup was singing! It sounded happy, and it knew all his favorite songs. Dan listened for a while and then"
+    },
+    {
+      "id": "story-022",
+      "title": "The Lost Balloon",
+      "opening": "A red balloon floated away from a little boy at the park. It went up over the trees, over the houses and over the river. The boy ran after it, and soon he"
+    },
+    {
+      "id": "story-023",
+      "title": "The Treasure Under the Bed",
+      "opening": "While looking for his shoe, Noah found an old map under his bed. It showed a big red X in his own backyard. He grabbed a shovel and"
+    },
+    {
+      "id": "story-024",
+      "title": "The Bus That Never Came",
+      "opening": "Sara waited at the bus stop for an hour. No bus came. Then a strange old taxi stopped, and the driver said the ride was free today. Sara thought for a moment and"
+    },
+    {
+      "id": "story-025",
+      "title": "The Shy Dragon",
+      "opening": "A dragon lived in a cave near a small village. He was very big, but also very shy. One day, the village had a party, and he really wanted to join. He took a deep breath and"
+    },
+    {
+      "id": "story-026",
+      "title": "The Day Everyone Spoke Backwards",
+      "opening": "When Mia woke up, everyone in her family was speaking backwards. Her mom said goodbye when she meant hello. Her dad said no when he meant yes. Mia laughed and"
+    },
+    {
+      "id": "story-027",
+      "title": "The Penguin at the Beach",
+      "opening": "Carlos was relaxing on a hot, sunny beach when a penguin walked up to him. The penguin was wearing sunglasses and carrying a small suitcase. It looked at Carlos and"
+    },
+    {
+      "id": "story-028",
+      "title": "The Magic Pencil",
+      "opening": "Zoe found a pencil on the street. When she drew a banana with it, a real banana appeared on her desk! She was so excited that she drew something bigger, and"
+    },
+    {
+      "id": "story-029",
+      "title": "The Noisy Neighbor",
+      "opening": "Every night at midnight, Mr. Lee heard a loud noise from the apartment next door. Tonight, he finally decided to find out what it was. He walked to the door and"
+    },
+    {
+      "id": "story-030",
+      "title": "The Hat Shop",
+      "opening": "Ella went into a tiny hat shop and tried on a green hat. Suddenly, she could understand what the birds outside were saying. They were talking about her! She listened and"
+    },
+    {
+      "id": "story-031",
+      "title": "The Sandwich Mistake",
+      "opening": "Peter made a sandwich for lunch and took a big bite. It tasted like strawberries, and he had used only cheese and tomatoes. He looked at the sandwich, then at the kitchen and"
+    },
+    {
+      "id": "story-032",
+      "title": "The Snowman Who Knocked",
+      "opening": "On a cold winter morning, there was a knock at Hana's door. She opened it and saw a snowman standing there, holding a scarf. He said he was lost, so Hana"
+    },
+    {
+      "id": "story-033",
+      "title": "The Phone Call from Mars",
+      "opening": "Leo's phone rang late at night. A small voice said it was calling from Mars and needed help with a very important problem. Leo sat up in bed and"
+    },
+    {
+      "id": "story-034",
+      "title": "The Tiny Town",
+      "opening": "Under the old oak tree, Rita found a tiny town with tiny houses and tiny people. They were waving at her and shouting something. She bent down very close and"
+    },
+    {
+      "id": "story-035",
+      "title": "The Contest of Silly Walks",
+      "opening": "Victor joined the big silly walk contest in his town. He had practiced for weeks, and today he was ready. When they called his name, he stepped onto the stage and"
+    },
+    {
+      "id": "story-036",
+      "title": "The Camel in the City",
+      "opening": "Aisha looked out of her apartment window and saw a camel waiting at the traffic light. It was calm and patient, like it did this every day. She ran outside and"
+    },
+    {
+      "id": "story-037",
+      "title": "The Library at Night",
+      "opening": "Ivan fell asleep in the library and woke up after it was closed. It was dark, but the books were moving by themselves. One book jumped off the shelf, and Ivan"
+    },
+    {
+      "id": "story-038",
+      "title": "The Sleepwalking Chef",
+      "opening": "Mina woke up one morning and found the kitchen full of food. There were cakes, soups and noodles everywhere. Then she realized she had cooked all of it while sleeping. She smiled and"
+    },
+    {
+      "id": "story-039",
+      "title": "The Boat Made of Paper",
+      "opening": "Kai made a small paper boat and put it in a puddle. The boat started to grow bigger and bigger until it was big enough to sit in. Kai looked around and then he"
+    },
+    {
+      "id": "story-040",
+      "title": "The Very Slow Race",
+      "opening": "A snail, a turtle and a sloth entered a race. Everyone said it would take all week. At the start line, the judge raised his flag, and the three friends"
+    },
+    {
+      "id": "story-041",
+      "title": "The Coffee Shop Secret",
+      "opening": "Every morning, Dina got her coffee from the same small shop. Today, the barista gave her a cup with a note on the side. It said to look under the table. Dina bent down and"
+    },
+    {
+      "id": "story-042",
+      "title": "The Cow on the Roof",
+      "opening": "Farmer Joe woke up and looked out the window. His cow was standing on top of the barn roof, and nobody knew how she got there. Joe put on his boots and"
+    },
+    {
+      "id": "story-043",
+      "title": "The Boy Who Could Not Stop Laughing",
+      "opening": "Sam started laughing at breakfast and could not stop. He laughed on the bus, he laughed at school, and he laughed in the middle of a test. His teacher looked at him and"
+    },
+    {
+      "id": "story-044",
+      "title": "The Backpack Full of Surprises",
+      "opening": "Julia opened her backpack at school and found something strange inside. It was not her books or her lunch. It was a small, sleepy hedgehog wearing a tiny crown. Julia whispered hello and"
+    },
+    {
+      "id": "story-045",
+      "title": "The Airport Mix-Up",
+      "opening": "Tariq picked up a suitcase from the airport belt and took it home. When he opened it, he found a costume of a giant chicken. There was also a ticket for a show tonight, so he"
+    },
+    {
+      "id": "story-046",
+      "title": "The Rainbow Slide",
+      "opening": "After a big storm, a rainbow touched the ground right in front of Anna's house. It looked just like a giant slide. She looked left, looked right, and then she"
+    },
+    {
+      "id": "story-047",
+      "title": "The Time the Lights Went Out",
+      "opening": "The whole town lost power at dinner time. Everyone came outside with candles and flashlights. Then someone pointed at the sky, and all of them saw something amazing, so they"
+    },
+    {
+      "id": "story-048",
+      "title": "The Old Radio",
+      "opening": "Grandpa gave Eli an old radio that did not work. But that night, it turned on by itself and played the voice of a man from long ago. The man said Eli's name, and Eli"
+    },
+    {
+      "id": "story-049",
+      "title": "The Tiger at the Supermarket",
+      "opening": "Lucy was pushing her cart in the supermarket when she saw a tiger in the fruit aisle. He was reading a shopping list and looking confused. Lucy walked over and"
+    },
+    {
+      "id": "story-050",
+      "title": "The Marathon Mistake",
+      "opening": "Oscar walked past a big race and someone handed him a number by mistake. Before he could say anything, the whistle blew and everyone started running. Oscar looked at his shoes and"
+    },
+    {
+      "id": "story-051",
+      "title": "The Garden Gnome Mystery",
+      "opening": "Every morning, the garden gnome in Mrs. Brown's yard was in a different place. Yesterday it was by the gate. Today it was on the roof. She decided to stay awake all night, and at midnight she"
+    },
+    {
+      "id": "story-052",
+      "title": "The Piano Next Door",
+      "opening": "A beautiful piano song floated through Hugo's window every evening. He never saw who was playing it. Tonight, he went next door and knocked, and when the door opened he"
+    },
+    {
+      "id": "story-053",
+      "title": "The Lost Little Alien",
+      "opening": "A small green alien landed in Maria's backyard. His spaceship was broken, and he was very hungry. Maria did not know what aliens liked to eat, so she"
+    },
+    {
+      "id": "story-054",
+      "title": "The Bakery Race",
+      "opening": "The bakery had only one chocolate donut left. Two people reached for it at the same time. One was a tiny old lady, and the other was a huge, tall man. They looked at each other and"
+    },
+    {
+      "id": "story-055",
+      "title": "The Shortcut",
+      "opening": "Nora was late for school, so she took a shortcut through the park. She jumped over a bench, ran past a fountain and suddenly landed in a place she had never seen. She looked around and"
+    },
+    {
+      "id": "story-056",
+      "title": "The Sneezing Wizard",
+      "opening": "A young wizard wanted to cast a very important spell. But every time he started, he sneezed, and something funny happened. First, his hat turned into a frog. Then, he"
+    },
+    {
+      "id": "story-057",
+      "title": "The Treehouse Club",
+      "opening": "Three friends built a secret treehouse and made one rule: only members can come in. On Saturday, someone new climbed the ladder and knocked. The friends looked at each other and"
+    },
+    {
+      "id": "story-058",
+      "title": "The Talking Mirror",
+      "opening": "One morning, Fatima looked in the bathroom mirror, and it said good morning. It also said her hair looked funny and her shirt was on backwards. Fatima looked down and"
+    },
+    {
+      "id": "story-059",
+      "title": "The Duck Who Was Late",
+      "opening": "A little duck was late for school for the third time this week. His teacher was waiting at the door with her arms crossed. The duck took a deep breath and"
+    },
+    {
+      "id": "story-060",
+      "title": "The Walking Tree",
+      "opening": "Late one afternoon, Ravi noticed that the big tree outside his window had moved. It was now closer to his house. The next day, it was even closer. That night, Ravi"
+    },
+    {
+      "id": "story-061",
+      "title": "The Wish at the Fountain",
+      "opening": "Clara threw a coin into the town fountain and made a small wish. She wished for a better day. Right away, the water began to bubble, and a tiny voice said her wish was ready. Clara leaned closer and"
+    },
+    {
+      "id": "story-062",
+      "title": "The Bike That Knew the Way",
+      "opening": "Jin's old bike started rolling by itself one morning. It went down the street, around the corner and out of town. Jin held the handlebars tight and"
+    },
+    {
+      "id": "story-063",
+      "title": "The Soccer Ball Adventure",
+      "opening": "Diego kicked his soccer ball over the fence, and it did not come back. He climbed over to look for it and found a field full of other lost balls. Then he heard a voice, so he"
+    },
+    {
+      "id": "story-064",
+      "title": "The Sock Monster",
+      "opening": "Every night, a small monster came out of the laundry basket and stole one sock. Tonight, Beth was waiting with a flashlight. The monster stepped out, saw the light and"
+    },
+    {
+      "id": "story-065",
+      "title": "The Camping Trip",
+      "opening": "On the first night of the camping trip, the group heard a strange noise outside the tent. It sounded like someone playing a trumpet in the forest. Everyone looked at each other, and then they"
+    },
+    {
+      "id": "story-066",
+      "title": "The Pocket Dragon",
+      "opening": "Ahmed found a tiny dragon in his coat pocket. It was only as big as a mouse, and it was shaking with cold. Ahmed gave it a warm hand, and the dragon"
+    },
+    {
+      "id": "story-067",
+      "title": "The Winning Ticket",
+      "opening": "Olivia found a lottery ticket in an old book. She checked the numbers and could not believe it. They matched! But the prize was not money. It was something very, very strange, and she"
+    },
+    {
+      "id": "story-068",
+      "title": "The Cooking Show Disaster",
+      "opening": "Frank was on a live cooking show for the first time. He was nervous. He picked up the salt, but it was really sugar. He picked up the oil, but it was really water. The camera turned to him and he"
+    },
+    {
+      "id": "story-069",
+      "title": "The Cloud That Followed Me",
+      "opening": "A small grey cloud started following Tessa around. When she walked, it floated behind her. When she sat, it sat on her head. On a sunny day, it began to rain only on her, so Tessa"
+    },
+    {
+      "id": "story-070",
+      "title": "The Birthday of the Oldest Turtle",
+      "opening": "All the animals in the forest came to the oldest turtle's birthday party. He was two hundred years old. Everyone brought a gift, but the turtle only wanted one special thing. He leaned in and whispered to the rabbit, who"
+    },
+    {
+      "id": "story-071",
+      "title": "The First Day at the Zoo Job",
+      "opening": "Sophie got a new job at the zoo. Her first task was simple: feed the lions. But when she opened the gate, the lions were sitting at a table, waiting with napkins on their laps. Sophie smiled and"
+    },
+    {
+      "id": "story-072",
+      "title": "The Bridge Troll",
+      "opening": "There was a troll who lived under a bridge, and he was very bored. Nobody ever crossed that bridge. Today, a tiny girl arrived with a big backpack. The troll jumped out and"
+    },
+    {
+      "id": "story-073",
+      "title": "The Elevator Music Band",
+      "opening": "Every day, the same song played in the building's elevator. One morning, Ken noticed that the music was louder, and there were real musicians standing in the corner. He pushed the button for his floor and"
+    },
+    {
+      "id": "story-074",
+      "title": "The Shoes That Danced",
+      "opening": "Lara bought a pair of red shoes at a market. As soon as she put them on, her feet began to dance and would not stop. She danced out of the shop, down the street and"
+    },
+    {
+      "id": "story-075",
+      "title": "The Monster Under the Bed Has a Problem",
+      "opening": "A monster lived under Tim's bed, but tonight he was crying softly. Tim peeked down and asked what was wrong. The monster said he was afraid of the dark! Tim thought for a second and"
+    },
+    {
+      "id": "story-076",
+      "title": "The Mailman's Strange Letter",
+      "opening": "The mailman gave Rina a letter with no address and no stamp. Inside was a single line: meet me at the old clock tower at noon. It was already eleven forty-five, so Rina"
+    },
+    {
+      "id": "story-077",
+      "title": "The Penguin Who Wanted a Job",
+      "opening": "A penguin walked into an office building and asked for a job. The manager was confused, but the penguin had a very good resume. He could type fast, and he made great coffee. The manager looked at him and"
+    },
+    {
+      "id": "story-078",
+      "title": "The Day the Town Turned Purple",
+      "opening": "One morning, everything in town was purple. The houses, the trees, the cars, even the dogs. People stood in the street and stared. Then a small boy raised his hand and said he knew why, so he"
+    },
+    {
+      "id": "story-079",
+      "title": "The Cooking Pot Adventure",
+      "opening": "Grandma's old cooking pot had been in the family for a hundred years. Today, when Sam lifted the lid, he did not see soup. He saw a tiny sea with a tiny ship, so he"
+    },
+    {
+      "id": "story-080",
+      "title": "The Stage Fright Wizard",
+      "opening": "Milo was the best magician at school, but he was afraid of big crowds. Today was the school show, and the whole hall was full. He walked on stage, took a deep breath and"
+    },
+    {
+      "id": "story-081",
+      "title": "The Kite and the Storm",
+      "opening": "Yara was flying her kite on a calm afternoon. Suddenly, the wind grew strong, and the kite began to pull her along the ground. She could not let go, so she"
+    },
+    {
+      "id": "story-082",
+      "title": "The Treasure in the Fridge",
+      "opening": "Late at night, Ben opened the fridge to get some milk. Behind the milk, he found a small golden door. It had a sign that said knock three times. Ben was curious, so he"
+    },
+    {
+      "id": "story-083",
+      "title": "The Seagull Who Stole My Lunch",
+      "opening": "Hana sat on a bench at the harbor with a big sandwich. A seagull landed beside her and looked at it for a long time. Then it grabbed the sandwich and flew away! Hana jumped up and"
+    },
+    {
+      "id": "story-084",
+      "title": "The Very Long Queue",
+      "opening": "Joe saw a very long line outside a shop, so he joined it without asking why. After two hours, he still did not know what he was waiting for. When he finally reached the front, the shopkeeper said"
+    },
+    {
+      "id": "story-085",
+      "title": "The Little Boat and the Big Wave",
+      "opening": "Pablo and his grandfather were fishing on a small boat when a very big wave appeared. It was higher than the trees on the shore. His grandfather smiled calmly, so Pablo"
+    },
+    {
+      "id": "story-086",
+      "title": "The Mouse Who Ran for Mayor",
+      "opening": "A small mouse decided to run for mayor of the town. Many people laughed, but the mouse made a great speech about free cheese for everyone. On election day, the votes were counted, and"
+    },
+    {
+      "id": "story-087",
+      "title": "The Lost Voice",
+      "opening": "One morning, a girl named Eva woke up and could not find her voice. She looked under the bed, in the closet and behind the curtains. Then she heard it, far away, laughing, so she"
+    },
+    {
+      "id": "story-088",
+      "title": "The Hotel with No Rules",
+      "opening": "Kofi arrived at a hotel where there were no rules at all. People slept on the ceiling, ate dessert for breakfast and rode the elevator for fun. The receptionist gave him a key and"
+    },
+    {
+      "id": "story-089",
+      "title": "The Cat Who Became the Boss",
+      "opening": "One day, a cat walked into a big company, sat in the boss's chair and refused to leave. All the workers were shocked. But by the end of the week, the company was making more money than ever, and the cat"
+    },
+    {
+      "id": "story-090",
+      "title": "The Morning Everything Went Right",
+      "opening": "Nick woke up early, and the sun was shining. His toast was perfect. The bus came right on time. He found a coin on the street. Then he realized something was a little too perfect, so he"
+    }
+  ]
+}
