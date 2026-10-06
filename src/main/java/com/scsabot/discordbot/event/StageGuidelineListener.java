@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceRequestToSpeakEvent;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.components.buttons.Button;
 import net.dv8tion.jda.api.utils.FileUpload;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -78,9 +79,13 @@ public class StageGuidelineListener extends ListenerAdapter {
         }
 
         byte[] guideBytes = images.get(GUIDE_IMAGE);
+        String stageUrl = "https://discord.com/channels/" + event.getGuild().getId() + "/" + stageChannelId;
+
 
         var message = chat.sendMessage(member.getAsMention() + " joined!")
-                .addEmbeds(buildGuidelines(member, guideBytes != null));
+                .addEmbeds(buildGuidelines(member, guideBytes != null))
+                .addActionRow(Button.link(stageUrl, "🎪 Go to the Stage"));
+        ;
 
 
         if (guideBytes != null) message = message.addFiles(FileUpload.fromData(guideBytes, GUIDE_IMAGE));
@@ -105,10 +110,13 @@ public class StageGuidelineListener extends ListenerAdapter {
         byte[] speakBytes = images.get(SPEAK_IMAGE);
 
         var message = chat.sendMessage("✋ " + event.getMember().getAsMention() + " wants to speak.");
+        String stageUrl = "https://discord.com/channels/" + event.getGuild().getId() + "/" + stageChannelId;
 
         if (speakBytes != null) {
             message = message.addEmbeds(buildSpeakEmbed())
-                    .addFiles(FileUpload.fromData(speakBytes, SPEAK_IMAGE));
+                    .addFiles(FileUpload.fromData(speakBytes, SPEAK_IMAGE))
+                    .addActionRow(Button.link(stageUrl, "🎪 Go to the Stage"));
+            ;
         }
 
         message.queue(
