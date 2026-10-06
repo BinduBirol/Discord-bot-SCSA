@@ -3,6 +3,7 @@ package com.scsabot.discordbot.config;
 import com.scsabot.discordbot.discord.command.SlashCommandListener;
 import com.scsabot.discordbot.discord.listener.GuildMemberEventListener;
 import com.scsabot.discordbot.discord.listener.VoiceStateListener;
+import com.scsabot.discordbot.event.StageGuidelineListener;
 import com.scsabot.discordbot.story.StoryButtonListener;
 import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicButtonListener;
@@ -36,7 +37,8 @@ public class JdaConfig {
             SlashCommandListener slashCommandListener,
             TableTopicButtonListener tableTopicButtonListener,
             StoryButtonListener storyButtonListener,
-            TimerButtonListener timerButtonListener
+            TimerButtonListener timerButtonListener,
+            StageGuidelineListener stageGuidelineListener
 
     ) throws InterruptedException {
 
@@ -71,7 +73,8 @@ public class JdaConfig {
                         slashCommandListener,
                         tableTopicButtonListener,
                         storyButtonListener,
-                        timerButtonListener
+                        timerButtonListener,
+                        stageGuidelineListener
 
                 )
                 .build()

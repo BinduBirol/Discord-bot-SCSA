@@ -37,6 +37,7 @@ public class WelcomeService {
 
         embed.setTitle("👋 Welcome to StamUnity! ❤️");
 
+
         embed.setDescription(
                 """
                         Welcome, %s!
@@ -45,11 +46,19 @@ public class WelcomeService {
                         
                         Take your time, speak freely, and most importantly — **don't be afraid to stutter.** 🫶
                         
+                        📜 **Before you get started**
+                        Please take a moment to check out our [server rules](https://discord.com/channels/1543886876786565140/1556929839993331732).
+                        
                         📚 **Want to practice?**
+                        We focus on both structured practice and casual chatting here. Whenever you feel like your speech is breaking up more, you can always go back to structured practice.
                         Check out <#1552920324591321190> for our structured practice guide.
+                        
+                        🗣️ **Speech coaches & supporters are welcome!**
+                        We’re happy to have speech coaches, professionals, and supporters in the community. Please participate as a community member, not as an expert or authority.
                         
                         """.formatted(member.getAsMention())
         );
+
 
         embed.setFooter("Welcome to the community! 🤗");
 

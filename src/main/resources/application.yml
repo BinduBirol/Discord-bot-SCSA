@@ -10,6 +10,8 @@ logging:
 discord:
   bot-token: ${DISCORD_BOT_TOKEN:}
   guild-id: ${DISCORD_GUILD_ID:}
+  stage-channel-id: "1546486694973546597"
+  event-chat-channel-id: "1556933948402307092"
 
 server:
   shutdown: graceful

@@ -30,7 +30,7 @@ public class VoiceActivityLogger {
                 .getTextChannelById(VOICE_ACTIVITY_CHANNEL_ID);
     }
 
-    public void logJoin(String username, String channelName) {
+    public void logJoin(String username, String channelId) {
 
         TextChannel channel = getActivityChannel();
 
@@ -42,7 +42,7 @@ public class VoiceActivityLogger {
                 .setColor(GREEN)
                 .setTitle("Voice Activity")
                 .setDescription(
-                        "**" + username + "** joined **" + channelName + "**"
+                        "**" + username + "** joined <#" + channelId + ">"
                 )
                 .setTimestamp(Instant.now());
 
@@ -51,7 +51,7 @@ public class VoiceActivityLogger {
 
     public void logLeave(
             String username,
-            String channelName,
+            String channelId,
             long durationSeconds) {
 
         TextChannel channel = getActivityChannel();
@@ -65,7 +65,7 @@ public class VoiceActivityLogger {
                 .setColor(RED)
                 .setTitle("Voice Activity")
                 .setDescription(
-                        "**" + username + "** left **" + channelName + "**\n" +
+                        "**" + username + "** left <#" + channelId + ">\n" +
                                 "**Duration:** " + minutes + " minutes"
                 )
                 .setTimestamp(Instant.now());

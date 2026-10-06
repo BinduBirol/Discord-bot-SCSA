@@ -3,7 +3,6 @@ package com.scsabot.discordbot.discord.listener;
 import com.scsabot.discordbot.voice.ActiveVoiceSession;
 import com.scsabot.discordbot.voice.VoiceActivityLogger;
 import com.scsabot.discordbot.voice.VoiceTrackingService;
-import net.dv8tion.jda.api.entities.channel.middleman.AudioChannel;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.slf4j.Logger;
@@ -52,10 +51,9 @@ public class VoiceStateListener extends ListenerAdapter {
         String guildId = event.getGuild().getId();
         String userId = event.getMember().getId();
         String channelId = event.getChannelJoined().getId();
-        String channelName = event.getChannelJoined().getName();
 
         voiceTrackingService.trackJoin(guildId, userId, channelId);
-        voiceActivityLogger.logJoin(event.getMember().getEffectiveName(), channelName);
+        voiceActivityLogger.logJoin(event.getMember().getEffectiveName(), channelId);
         log.info("Member {} joined voice channel {}", userId, channelId);
     }
 
@@ -72,24 +70,15 @@ public class VoiceStateListener extends ListenerAdapter {
         logLeave(event, voiceTrackingService.trackLeave(guildId, userId), userId);
 
         String newChannelId = event.getChannelJoined().getId();
-        String newChannelName = event.getChannelJoined().getName();
         voiceTrackingService.trackJoin(guildId, userId, newChannelId);
-        voiceActivityLogger.logJoin(event.getMember().getEffectiveName(), newChannelName);
+        voiceActivityLogger.logJoin(event.getMember().getEffectiveName(), newChannelId);
         log.info("Member {} joined new voice channel {}", userId, newChannelId);
     }
 
     private void logLeave(GuildVoiceUpdateEvent event, Optional<ActiveVoiceSession> session, String userId) {
         session.ifPresent(active -> {
-            String channelName = "Unknown";
-            var channel = event.getGuild().getChannelById(AudioChannel.class, active.channelId());
-            if (channel != null) {
-                channelName = channel.getName();
-            } else if (event.getChannelLeft() != null) {
-                channelName = event.getChannelLeft().getName();
-            }
-
             long durationSeconds = active.durationSeconds(Instant.now());
-            voiceActivityLogger.logLeave(event.getMember().getEffectiveName(), channelName, durationSeconds);
+            voiceActivityLogger.logLeave(event.getMember().getEffectiveName(), active.channelId(), durationSeconds);
             log.info("Member {} left voice channel {} after {} seconds", userId, active.channelId(), durationSeconds);
         });
     }
