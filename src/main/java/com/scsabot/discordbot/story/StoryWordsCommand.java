@@ -39,7 +39,7 @@ public class StoryWordsCommand {
 
     private static final String ROLE_KEY = "storyteller";
     private static final int WORD_COUNT = 3;
-    private static final int TIMER_MINUTES = 3;
+    private static final int TIMER_MINUTES = 2;
 
     private final TableTopicDataLoader dataLoader;
     private final RoleService roleService;

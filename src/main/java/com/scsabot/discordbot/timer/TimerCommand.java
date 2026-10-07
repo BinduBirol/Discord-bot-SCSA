@@ -38,7 +38,7 @@ public class TimerCommand {
     public static final String CANCEL_PREFIX = "timer:cancel:";
     public static final String ADD_PREFIX = "timer:add:";
 
-    private static final int MAX_MINUTES = 60;
+    private static final int MAX_MINUTES = 5;
     private static final int ADD_SECONDS = 60;
     private static final int UPDATE_SECONDS = 10;
     private static final int BAR_SEGMENTS = 16;
@@ -54,6 +54,8 @@ public class TimerCommand {
     private static final class TimerState {
         final String id;
         final String mention;
+        final String displayName;
+        final String avatarUrl;
         final String label;
         final MessageChannel channel;
         final AtomicReference<Message> message = new AtomicReference<>();
@@ -62,10 +64,13 @@ public class TimerCommand {
         volatile ScheduledFuture<?> end;
         volatile ScheduledFuture<?> ticker;
 
-        TimerState(String id, String mention, String label, MessageChannel channel,
+        TimerState(String id, String mention, String displayName, String avatarUrl,
+                   String label, MessageChannel channel,
                    long totalSeconds, long endEpoch) {
             this.id = id;
             this.mention = mention;
+            this.displayName = displayName;
+            this.avatarUrl = avatarUrl;
             this.label = label;
             this.channel = channel;
             this.totalSeconds = totalSeconds;
@@ -121,6 +126,8 @@ public class TimerCommand {
         TimerState state = new TimerState(
                 id,
                 event.getUser().getAsMention(),
+                event.getUser().getEffectiveName(),
+                event.getUser().getEffectiveAvatarUrl(),
                 label,
                 event.getMessageChannel(),
                 seconds,
@@ -229,7 +236,7 @@ public class TimerCommand {
     private List<Button> buttons(String id) {
         return List.of(
                 Button.secondary(ADD_PREFIX + id, "➕ 1 min"),
-                Button.danger(CANCEL_PREFIX + id, "🛑 Cancel")
+                Button.danger(CANCEL_PREFIX + id, "✖ Cancel")
         );
     }
 
@@ -244,15 +251,30 @@ public class TimerCommand {
         double remaining = Math.min(1.0, (double) left / total);
         double elapsed = 1.0 - remaining;
 
-        Color color = remaining > 0.5 ? GREEN : remaining > 0.2 ? YELLOW : RED;
+        Color color;
+        String icon;
+        if (remaining > 0.5) {
+            color = GREEN;
+            icon = "🟢";
+        } else if (remaining > 0.2) {
+            color = YELLOW;
+            icon = "🟡";
+        } else {
+            color = RED;
+            icon = "🔴";
+        }
 
         String description =
-                "## ⏳ " + formatLeft(left) + "\n"
-                        + progressBar(elapsed) + " **" + Math.round(elapsed * 100) + "%**\n\n"
-                        + "👤 " + state.mention + " • Ends at <t:" + state.endEpoch + ":T>";
+                "# " + icon + " " + formatLeft(left) + "\n"
+                        + "```\n"
+                        + progressBar(elapsed) + "  " + Math.round(elapsed * 100) + "%\n"
+                        + "```\n"
+                        + "Ends at <t:" + state.endEpoch + ":T>"
+                        + " (<t:" + state.endEpoch + ":R>)";
 
         return new EmbedBuilder()
                 .setColor(color)
+                .setAuthor(state.displayName, null, state.avatarUrl)
                 .setTitle("⏱️ " + (total / 60) + " min timer")
                 .setDescription(description)
                 .setFooter("Updates every " + UPDATE_SECONDS + "s")
@@ -261,11 +283,11 @@ public class TimerCommand {
 
     private String progressBar(double fraction) {
         int filled = (int) Math.round(Math.max(0, Math.min(1, fraction)) * BAR_SEGMENTS);
-        return "▰".repeat(filled) + "▱".repeat(BAR_SEGMENTS - filled);
+        return "█".repeat(filled) + "░".repeat(BAR_SEGMENTS - filled);
     }
 
     private String formatLeft(long totalSeconds) {
-        return String.format("%d:%02d", totalSeconds / 60, totalSeconds % 60);
+        return String.format("%02d:%02d", totalSeconds / 60, totalSeconds % 60);
     }
 
     @PreDestroy

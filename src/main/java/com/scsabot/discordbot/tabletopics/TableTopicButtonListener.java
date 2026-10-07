@@ -18,7 +18,7 @@ import java.util.List;
 public class TableTopicButtonListener extends ListenerAdapter {
 
     private static final String ROLE_KEY = "table-topic";
-    private static final int TIMER_MINUTES = 3;
+    private static final int TIMER_MINUTES = 2;
 
     private final TableTopicService topicService;
     private final TableTopicSessionManager sessionManager;

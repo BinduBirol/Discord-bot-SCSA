@@ -30,7 +30,7 @@ public class StoryImageCommand {
     public static final String NEW_SPEAKER_BUTTON_ID = "story:image:newspeaker";
     public static final String TIMER_BUTTON_ID = "story:image:timer";
 
-    private static final int TIMER_MINUTES = 3;
+    private static final int TIMER_MINUTES = 2;
     private static final String FETCH_FAILED_MESSAGE =
             "❌ Couldn't fetch an image right now — try again in a moment.";
 

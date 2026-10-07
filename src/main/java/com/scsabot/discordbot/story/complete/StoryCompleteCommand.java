@@ -29,7 +29,7 @@ public class StoryCompleteCommand {
     public static final String NEXT_SPEAKER_BUTTON_ID = "story:complete:nextspeaker";
     public static final String TIMER_BUTTON_ID = "story:complete:timer";
 
-    private static final int TIMER_MINUTES = 3;
+    private static final int TIMER_MINUTES = 2;
     private static final String NO_STORIES_MESSAGE =
             "❌ No stories are loaded yet — check data/story.";
     private static final String ROLE_KEY = "storyteller";
