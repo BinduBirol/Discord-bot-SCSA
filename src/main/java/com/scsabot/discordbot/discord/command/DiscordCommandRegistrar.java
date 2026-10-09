@@ -48,30 +48,37 @@ public class DiscordCommandRegistrar {
                                 ),
                                 new SubcommandData("import", "Import Discord Scheduled Events")
                         ),
-                Commands.slash("topic", "Get a random speaking practice topic")
-                        .addOption(OptionType.STRING, "category",
-                                "Optional topic category", false)
-                        .addOption(OptionType.STRING, "difficulty",
-                                "Optional difficulty: easy, medium, hard", false),
-                Commands.slash("story", "Story speaking practice")
-                        .addSubcommands(
-                                new SubcommandData(
-                                        "words",
-                                        "Get 3 random words for story speaking practice"
-                                ),
-                                new SubcommandData(
-                                        "image",
-                                        "Get a random image for story speaking practice"
-                                ),
-                                new SubcommandData("complete", "Finish a story that the bot starts")
-                        ),
+
                 Commands.slash("resource-post", "Immediately post one resource entry to the configured channel")
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.MANAGE_SERVER)),
-                Commands.slash("practice", "Get a random practice exercise"),
+
+
+                Commands.slash("practice", "Speaking practice exercises")
+                        .addSubcommands(
+                                new SubcommandData("random", "Get a random practice exercise"),
+                                new SubcommandData("topic", "Get a random speaking practice topic")
+                                        .addOption(OptionType.STRING, "category", "Optional topic category", false)
+                                        .addOption(OptionType.STRING, "difficulty", "Optional difficulty: easy, medium, hard", false),
+                                new SubcommandData("words", "Get 3 random words for story speaking practice"),
+                                new SubcommandData("image", "Get a random image for story speaking practice"),
+                                new SubcommandData("story", "Finish a story that the bot starts")
+                        ),
 
                 Commands.slash("timer", "Start a countdown timer")
                         .addOption(OptionType.INTEGER, "minutes", "How long (1-60)", true)
-                        .addOption(OptionType.STRING, "label", "Message when time is up", false)
+                        .addOption(OptionType.STRING, "label", "Message when time is up", false),
+
+                Commands.slash("warn", "Warn a user and DM them")
+                        .addOption(OptionType.USER, "user", "User to warn", true)
+                        .addOption(OptionType.STRING, "reason", "Reason for the warning", false)
+                        .setGuildOnly(true)
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.KICK_MEMBERS)),
+
+                Commands.slash("ban", "Ban a user and DM them")
+                        .addOption(OptionType.USER, "user", "User to ban", true)
+                        .addOption(OptionType.STRING, "reason", "Reason for the ban", false)
+                        .setGuildOnly(true)
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.BAN_MEMBERS))
 
         );
 

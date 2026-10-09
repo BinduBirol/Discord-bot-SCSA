@@ -62,5 +62,11 @@ public class RoleService {
                 success -> log.info("Gave roles {} to {}", toAdd, member.getId()),
                 error -> log.warn("Could not give roles to {}: {}", member.getId(), error.getMessage())
         );
+
+
+    }
+
+    public String getRoleId(String key) {
+        return roles.get(key);
     }
 }
