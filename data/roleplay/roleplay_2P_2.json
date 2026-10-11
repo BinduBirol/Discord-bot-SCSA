@@ -1,0 +1,2003 @@
+[
+  {
+    "id": "RP2_026",
+    "title": "Planning a Weekend Bicycle Ride",
+    "category": "Hobbies and Entertainment",
+    "playerCount": 2,
+    "situation": "Two friends decide to plan a scenic weekend bicycle ride through a nearby park trail.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A recreational cyclist proposing a route.",
+        "goal": "Suggest a scenic park route and set a meeting time."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend checking equipment and timing.",
+        "goal": "Confirm bike readiness, check weather conditions, and agree on a meeting point."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey! Do you want to go for a bike ride this Sunday?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That sounds awesome! Where were you thinking of riding?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest a bike path through the riverfront park and describe why it is nice."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the route and ask if the path is paved all the way."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Yes, it is smooth pavement all the way through."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Perfect. What time should we start before it gets too hot?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Propose starting at 9:00 AM and suggest meeting at the park entrance."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm the time and mention bringing a water bottle and tire pump."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Good idea! We can stop by the cafe near the bridge afterward for smoothie drinks."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Now that's a great motivation! See you on Sunday!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_027",
+    "title": "Asking for Extra Towels at a Hotel",
+    "category": "Customer Service and Requests",
+    "playerCount": 2,
+    "situation": "A guest staying at a hotel calls the front desk to request additional towels and extra pillows.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A hotel guest needing extra supplies.",
+        "goal": "Request two bath towels and an extra pillow for room 304."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A front desk receptionist answering room service calls.",
+        "goal": "Take the request, note the room number, and inform when housekeeping will deliver them."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Front desk, how may I help you today?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hello! I'm calling from Room 304. Could we get a few extra items brought up?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Specify that you need two extra bath towels and one additional pillow."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm the requested items and note down room number 304."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you! How long do you think delivery will take?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Housekeeping will bring them up within ten to fifteen minutes."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Thank the front desk clerk and express appreciation for prompt service."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "You are very welcome! Enjoy the rest of your stay with us."
+      }
+    ]
+  },
+  {
+    "id": "RP2_028",
+    "title": "Splitting a Restaurant Bill",
+    "category": "Food and Cafes",
+    "playerCount": 2,
+    "situation": "Two friends finish their lunch at a diner and figure out how to divide the bill.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A diner guest offering to pay by card.",
+        "goal": "Calculate each person's share and coordinate payment."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A diner guest paying their share in cash or digital transfer.",
+        "goal": "Confirm ordered items, add a tip, and pay your half."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That was a delicious lunch! Shall we ask for the bill?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes, let's! The server just left it on the table right here."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Read the total amount on the receipt and suggest splitting it equally."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree to split equally and suggest adding a twenty percent tip."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Sounds great. I can put the full amount on my credit card."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to transfer your share through a mobile app or hand over cash."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Confirm receiving the money and finalize the payment with the server."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome! Thanks for organizing that. Let's head out!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_029",
+    "title": "Finding a Bus Stop in an Unfamiliar Town",
+    "category": "Travel and Directions",
+    "playerCount": 2,
+    "situation": "A tourist looking for the city center bus stop asks a local resident on the sidewalk.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A tourist needing to find Bus 12.",
+        "goal": "Ask where the nearest bus stop is and check the bus schedule."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A helpful local resident.",
+        "goal": "Give walking directions to the bus stop and explain bus frequency."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Excuse me, do you know where the nearest bus stop is around here?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hi! Yes, there is one right around the corner."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "State that you need Bus Number 12 to go to the city center."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm that Bus 12 stops there and give landmark directions."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Past the bakery and across the street? Got it."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Exactly! The bus stop sign is right in front of the post office."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask how frequently Bus 12 arrives during daytime hours."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain that it comes every fifteen minutes."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That is so convenient! Thank you very much for your help!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "You're very welcome! Enjoy your time in town!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_030",
+    "title": "Recommending a Book to a Friend",
+    "category": "Sharing Experiences",
+    "playerCount": 2,
+    "situation": "Two friends sitting in a park discuss good books they have read recently.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend looking for a new book to read.",
+        "goal": "Ask for a reading recommendation based on preferred story genres."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "An avid reader recommending a favorite novel.",
+        "goal": "Describe a book plot without giving away spoilers and offer to lend it."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I just finished reading my book last night. Do you have any good recommendations?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I sure do! What genre do you usually enjoy reading most?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Mention that you like mystery stories or light adventure fiction."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Recommend a book title and briefly outline the premise."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That sounds intriguing! Is it a long read?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Not at all, it's about two hundred pages and reads very quickly."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask if you can borrow their copy or find it at the local library."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to bring your copy tomorrow for them to borrow."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "You are awesome! I appreciate that so much."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "No problem! Let me know what you think after you read the first chapter!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_031",
+    "title": "Reporting a Minor Water Leak",
+    "category": "Solving Everyday Problems",
+    "playerCount": 2,
+    "situation": "A tenant calls their apartment building maintenance staff about a slow dripping sink in the kitchen.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A tenant reporting a leaky faucet.",
+        "goal": "Describe the kitchen sink leak and schedule a repair time."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A building maintenance technician.",
+        "goal": "Gather details about the leak and set up an appointment."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Maintenance office, this is Alex speaking. How can I assist you?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi Alex! I'm calling from Apartment 4B to report a small leak."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Describe where the water is dripping from under the kitchen faucet."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Ask if water is pooling on the floor or staying inside the sink basin."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "It's just dripping slowly into the sink, so no water is on the floor."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That's good to hear! It sounds like a simple worn-out washer ring."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask when someone can come over to fix it."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Propose stopping by tomorrow morning around 10:00 AM."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Tomorrow at 10:00 AM works perfectly for me."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Great! I'll put you on the schedule. See you tomorrow!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_032",
+    "title": "Deciding on Weekend Movie Night Snacks",
+    "category": "Everyday Life",
+    "playerCount": 2,
+    "situation": "Two roommates are getting ready to watch a movie at home and decide what snacks to prepare.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A roommate wanting salty snacks.",
+        "goal": "Propose making popcorn and nachos."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A roommate wanting sweet treats.",
+        "goal": "Propose adding cookies or ice cream to the mix."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "The movie is ready to start! What snacks should we make?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I'm definitely in the mood for something sweet!"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest making buttered popcorn and melting cheese for tortilla chips."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with popcorn and suggest bringing out chocolate chip cookies too."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Salty and sweet combined is the best combination!"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "What do you want to drink with our snacks?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest sparkling water or lemonade."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to pour drinks while your roommate pops the popcorn."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Deal! Five minutes and snack prep is finished!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Let's press play as soon as we sit down!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_033",
+    "title": "Asking for Help with Computer Files",
+    "category": "Workplace",
+    "playerCount": 2,
+    "situation": "An office employee asks a colleague for assistance in organizing shared drive files.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "An employee having trouble locating files.",
+        "goal": "Ask where monthly report spreadsheets are stored on the server."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A helpful colleague familiar with the server layout.",
+        "goal": "Explain the folder structure and share a shortcut link."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey! Do you have a quick minute to help me find a folder?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Sure thing! What are you trying to look for?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that you cannot find the monthly sales report spreadsheets on the shared drive."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain which main folder and subfolder those reports are moved into."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Oh, they were moved into the 2026 Archive subfolder! That explains it."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes, we reorganized the drive last Friday to clean up the main page."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask if they can send you a direct link in chat to save time."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree and send the direct folder link immediately."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Got the link! Thank you so much, you saved me a lot of searching!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Happy to help anytime!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_034",
+    "title": "Choosing Plants for a Balcony Garden",
+    "category": "Hobbies and Entertainment",
+    "playerCount": 2,
+    "situation": "A beginner gardener visits a plant nursery to pick easy plants for a small apartment balcony.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A customer wanting low-maintenance balcony plants.",
+        "goal": "Ask for plant recommendations that handle sunlight well."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A nursery associate providing gardening advice.",
+        "goal": "Suggest easy herbs or flowering plants and explain watering tips."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hello! Can I help you find any specific plants today?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi! I'm looking to add some green plants to my apartment balcony."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that your balcony gets plenty of direct afternoon sunlight."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Recommend basil, mint, or lavender which thrive in full sun."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Fresh basil and mint would be great for cooking!"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Herbs are very rewarding and very easy for beginners to grow."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask how often herbs like basil need to be watered."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain that watering every two days when topsoil feels dry is best."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That sounds very manageable. I'll take one basil plant and one mint plant."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Excellent choice! Let me carry them to the checkout counter for you."
+      }
+    ]
+  },
+  {
+    "id": "RP2_035",
+    "title": "Booking a Fitness Class",
+    "category": "Customer Service and Requests",
+    "playerCount": 2,
+    "situation": "A gym member visits the reception counter to register for an evening yoga class.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A gym member signing up for yoga.",
+        "goal": "Check class times, reserve a spot, and ask about equipment needed."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A gym receptionist registering members.",
+        "goal": "Check class capacity, book the reservation, and explain yoga mat rules."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi! I'd like to book a spot in the evening yoga class for tomorrow."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hello! Let me check the schedule... Yes, we have two spots left!"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask what exact time the class starts and finishes."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "State that the class runs from 6:30 PM to 7:30 PM."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That time works great after my work hours."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Perfect. Should I bring your own yoga mat, or do you need to borrow one?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "State whether you will bring your own mat or borrow one from the gym."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm the reservation on the computer system."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Great! Thanks for your help!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "You're all set! See you tomorrow evening!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_036",
+    "title": "A Friendly Chat at the Dog Park",
+    "category": "Meeting Someone New",
+    "playerCount": 2,
+    "situation": "Two dog owners meet while their dogs are playing together at a neighborhood dog park.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A dog owner watching their playful dog.",
+        "goal": "Introduce yourself, share your dog's breed/name, and compliment the other dog."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A dog owner visiting the park.",
+        "goal": "Share your dog's age and favorite activities, and exchange friendly conversation."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi! It looks like our dogs are having a wonderful time playing together!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "They sure are! They seem to have endless energy today."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Introduce yourself and state your dog's name and age."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Introduce yourself, state your dog's name, and mention how long you've had them."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Your dog is so well trained! Does he know many tricks?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "He knows sit, stay, and roll over. We practiced a lot!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask if they come to this dog park often during the week."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain your typical park routine and invite them to meet up again."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We would love that! We're usually here every Tuesday evening."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome! See you next Tuesday then!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_037",
+    "title": "Ordering Ice Cream Flavors",
+    "category": "Food and Cafes",
+    "playerCount": 2,
+    "situation": "A customer orders a two-scoop ice cream cone at an outdoor ice cream stand.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A customer buying ice cream on a warm day.",
+        "goal": "Ask to sample a flavor, pick two scoops, and choose cone type."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "An ice cream vendor serving customers.",
+        "goal": "Offer flavor samples, take the order, and package the cone."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Welcome to Scoop Dreams! What flavors are you craving today?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi! Everything looks so good on a hot day like this."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask if you can try a small sample taste of the mango sorbet."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Provide a sample spoon and ask how it tastes."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Mmm, that is super refreshing! I'll definitely take a scoop of that."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Great choice! What would you like for your second scoop?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Select your second flavor (e.g., chocolate or vanilla bean)."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Ask if they want a waffle cone, sugar cone, or paper cup."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I'll take a waffle cone, please!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Here you go! That will be five dollars, please."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Hand over payment and express thanks."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Enjoy your ice cream! Have a lovely day!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_038",
+    "title": "Inquiring About Board Games at a Game Shop",
+    "category": "Hobbies and Entertainment",
+    "playerCount": 2,
+    "situation": "A customer enters a board game store looking for an easy, fun game to play with family.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A customer looking for family game recommendations.",
+        "goal": "Describe your family's preferences (e.g., quick games, easy rules) and buy a game."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A knowledgeable game store clerk.",
+        "goal": "Recommend two beginner-friendly games and explain basic gameplay."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hi there! Looking for anything specific, or just browsing today?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi! I'm looking for a fun board game to play with my family."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that you want a game that takes under 30 minutes and has easy rules."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Recommend a popular card or tile game that meets those conditions."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That sounds very interesting! How many players can play together?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "It supports two to six players, so it's great for family night."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask how much the game costs."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "State the price and mention that it includes a quick-start guide inside."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That price sounds fair. I'll take a copy!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome choice! Let me ring that up for you at the register."
+      }
+    ]
+  },
+  {
+    "id": "RP2_039",
+    "title": "Organizing a Neighborhood Street Cleanup",
+    "category": "Neighbors and Community",
+    "playerCount": 2,
+    "situation": "Two active community members organize a Saturday morning park and street litter cleanup.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A resident coordinating the community cleanup event.",
+        "goal": "Discuss logistics, trash bag supplies, and volunteer sign-ups."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A neighbor helping gather equipment and flyers.",
+        "goal": "Offer to make promotional flyers and arrange gloves and trash bags."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thanks for meeting up! Our neighborhood cleanup is in two weeks."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I'm really glad we're doing this! The main park needs some care."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Propose starting Saturday at 9 AM and meeting at the park pavilion."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree and mention that you can supply twenty pairs of work gloves."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That is super helpful! I will buy rolls of heavy-duty trash bags."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "How should we notify everyone on the street?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest posting on the neighborhood group chat and putting up paper notices."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to draft a brief flyer and print thirty copies."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Fantastic! We're making great progress."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "It's going to make a huge positive difference in our community!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_040",
+    "title": "Checking into an Airport Flight Desk",
+    "category": "Travel and Holidays",
+    "playerCount": 2,
+    "situation": "A passenger checks in their luggage at an airport airline desk before passing through security.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A traveler flying to a destination.",
+        "goal": "Provide passport/ticket, check one suitcase, and request an aisle seat."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "An airline customer service agent.",
+        "goal": "Verify ID, weigh checked luggage, issue boarding pass, and confirm seat."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Good morning! Welcome to SkyWays Airlines. May I see your ID and booking info?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Good morning! Yes, here is my passport and confirmation barcode."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that you have one suitcase to check in."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Instruct the passenger to place the suitcase on the scale."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "There we go. Is the weight under the limit?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes, exactly eighteen kilograms. Perfect!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask if an aisle seat is available on the aircraft."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm seat 14C on the aisle and print the boarding pass."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you so much! What time does boarding start?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Boarding begins at Gate 12 at 10:15 AM. Have a great flight!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_041",
+    "title": "Deciding on a Birthday Party Venue",
+    "category": "Planning Activities",
+    "playerCount": 2,
+    "situation": "Two friends plan where to host a birthday gathering for a friend who loves bowling.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A party planner proposing bowling.",
+        "goal": "Suggest renting lanes at a local bowling alley and ordering pizzas."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A party planner checking availability and headcount.",
+        "goal": "Estimate number of guests, check group package pricing, and confirm."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We need to pick a spot for Sam's birthday celebration!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I agree! Sam loves interactive, fun group activities."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest booking two lanes at Downtown Bowling Alley on Saturday night."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Approve the idea and ask how many friends we should invite."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I think around eight to ten people total."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Two lanes will be perfect for ten people!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Offer to call the bowling alley to reserve the lanes and order pizza."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to create a group message to collect guest RSVPs."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Great plan! Sam is going to love this party."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Definitely! Let's get everything booked today!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_042",
+    "title": "Asking for Advice on Buying a New Laptop",
+    "category": "Shopping and Returns",
+    "playerCount": 2,
+    "situation": "A person asks their tech-savvy friend for recommendations on buying a simple laptop for everyday tasks.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A buyer needing a straightforward laptop.",
+        "goal": "Explain what you use a laptop for (email, browsing, streaming) and set a budget."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A tech-knowledgeable friend.",
+        "goal": "Recommend two suitable, budget-friendly laptop specs or brands."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey! My old laptop is getting really slow. Do you have a minute to give me advice?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Of course! What will you mainly be using the new laptop for?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that you only need it for web browsing, watching videos, and typing documents."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest a reliable Chromebook or lightweight mid-range laptop."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That sounds like exactly what I need. How much do those usually cost?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "You can find great options between three hundred and five hundred dollars."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "State that the price fits your budget and ask where to buy it."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Recommend an electronics store with good warranty policies."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Awesome! Thanks for making this decision so much easier."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Anytime! Let me know if you want me to tag along when you go shopping!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_043",
+    "title": "Finding a Lost Jacket at an Event",
+    "category": "Solving Everyday Problems",
+    "playerCount": 2,
+    "situation": "A visitor at a community center returns to the lost-and-found counter after forgetting their jacket.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A visitor missing a blue zip-up jacket.",
+        "goal": "Describe the lost jacket and check if it was handed in."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A community center lost-and-found staff member.",
+        "goal": "Check the storage bin, match the description, and return the item."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hello! I think I left my jacket here during the morning workshop."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hi! We had a few items turned in today. Can you describe your jacket?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Describe the jacket color, material, and contents in the pockets (like a key ring)."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Look through the rack and bring out a blue jacket matching the description."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Yes! That is definitely my jacket! What a huge relief!"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "A friendly workshop attendee brought it to the desk an hour ago."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Express gratitude to the staff member for holding it safely."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "You're very welcome! Glad we could return it to you. Have a great day!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_044",
+    "title": "Organizing a Carpool for Work",
+    "category": "Everyday Life",
+    "playerCount": 2,
+    "situation": "Two colleagues who live in the same neighborhood discuss sharing driving duties to work.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A coworker proposing a carpool schedule.",
+        "goal": "Suggest driving on alternate days to save fuel and parking fees."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A coworker agreeing to the proposal.",
+        "goal": "Coordinate pickup times and share gas expenses."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey! I realized yesterday that we live only three blocks apart."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Really? That is so close! The morning traffic has been intense lately."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Propose starting a carpool where you alternate driving each week."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the idea and highlight how much money on gas it will save."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "What time do you usually leave your house in the morning?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I usually leave around 7:45 AM to arrive at 8:15 AM."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Confirm that 7:45 AM works great and offer to drive first starting next Monday."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Accept the start date and offer to buy morning coffee on Monday."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will never turn down free morning coffee! Deal!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome! See you Monday morning at 7:45 AM!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_045",
+    "title": "Taking a Taxi from the Train Station",
+    "category": "Travel and Directions",
+    "playerCount": 2,
+    "situation": "A passenger gets into a taxi outside a train station and provides destination instructions.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A taxi passenger traveling to a hotel.",
+        "goal": "State destination address, confirm estimated fare, and pay."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A taxi driver.",
+        "goal": "Ask for destination, choose best route, and provide fare estimate."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hello! Where can I take you today?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi! Please take me to the City Center Hotel on Main Street."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask roughly how long the ride will take with current traffic."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain that traffic is light so it should take about fifteen minutes."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That's wonderful! Can I pay with a debit card when we arrive?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes, card or cash are both fine."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Mention that you have two small bags in the trunk."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Arrive at destination and state the final meter fare."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Here is my card for payment, plus a tip."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Thank you very much! Let me grab your bags from the trunk for you."
+      }
+    ]
+  },
+  {
+    "id": "RP2_046",
+    "title": "Discussing Favorite Weekend Activities",
+    "category": "Sharing Experiences",
+    "playerCount": 2,
+    "situation": "Two classmates chatting after a lecture talk about how they like to spend their free time on weekends.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A student who enjoys outdoor activities.",
+        "goal": "Describe weekend hobbies like hiking or gardening, and ask about the other's hobbies."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A student who enjoys indoor creative hobbies.",
+        "goal": "Describe creative hobbies like painting or gaming, and compare experiences."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I'm so glad class is finished for the week! What do you like to do on weekends?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I usually like relaxing at home with creative projects. What about you?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Describe how you spend time outside in nature, hiking or running."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Describe your indoor hobbies like painting, drawing, or playing video games."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That sounds very peaceful! How long have you been painting?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I started about two years ago, mostly watercolor landscape paintings."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Express admiration and ask if they ever show their artwork to friends."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain that you share photos online and offer to show a picture now."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I'd love to see it! Show me on your phone!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Here is a picture of the mountain landscape I painted last Sunday!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_047",
+    "title": "Borrowing a Lawn Mower",
+    "category": "Neighbors and Community",
+    "playerCount": 2,
+    "situation": "A homeowner's lawn mower broke down, so they ask their neighbor if they can borrow theirs for an hour.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A homeowner with a broken lawn mower.",
+        "goal": "Explain the situation, ask to borrow the mower, and promise to refill gas."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A neighbor with a working lawn mower.",
+        "goal": "Lend the mower and show how the safety start handle operates."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi neighbor! Do you have a minute?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Sure! How's it going today?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that your lawn mower motor wouldn't start today and ask to borrow theirs."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree gladly and roll the lawn mower out of your garage."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you so much! I'll make sure to refill the gas tank before bringing it back."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That's very kind! Let me quickly show you how to start this model."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Explain pulling the lever and starter cord handle."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Confirm you understand the instructions and thank them again."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I'll have it back to you within an hour!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "No rush at all! Glad I could help!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_048",
+    "title": "Choosing a New Pair of Running Shoes",
+    "category": "Shopping and Returns",
+    "playerCount": 2,
+    "situation": "A runner visits a sporting goods shop to test and buy comfortable running shoes.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A customer looking for comfortable running shoes.",
+        "goal": "State shoe size, explain running habits (road vs trail), and try on a pair."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A shoe store salesperson.",
+        "goal": "Measure foot size, recommend two cushioned models, and assist with fit."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hello! Welcome to Stride Sports. Are you looking for running shoes today?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Yes, I am! I need a pair with good cushion for pavement running."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "State your standard shoe size and mention how many miles you run per week."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Bring out two popular cushioned running shoes in that size to try."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Let me try this blue pair on first."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Lace up the shoe, walk around, and share how comfortable the fit feels."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Check toe space and ask if there are any tight spots."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "The toe box feels spacious and support is great. I'll take these!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Fantastic! Let's head over to the register to complete your purchase."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you for all your help today!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_049",
+    "title": "Deciding on a Weekend Baking Project",
+    "category": "Everyday Life",
+    "playerCount": 2,
+    "situation": "Two friends decide to spend a rainy afternoon baking a treat at home.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A home baker proposing a recipe.",
+        "goal": "Suggest baking banana bread or chocolate chip cookies."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend checking pantry ingredients.",
+        "goal": "Check pantry items like flour, sugar, and ripe bananas, and agree on recipe."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "It's raining so hard outside! Perfect day for home baking."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I agree! The kitchen will smell wonderful. What should we make?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest baking banana bread because there are ripe bananas on the counter."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Check the pantry and confirm that flour, sugar, and butter are available."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Great! Do we have any walnuts or chocolate chips to add?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "We have half a bag of dark chocolate chips right here."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Propose preheating the oven to 350 degrees and mashing bananas."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to mix the dry ingredients in a separate bowl."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Perfect division of labor! Let's get started."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Fresh banana bread will be ready in under an hour!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_050",
+    "title": "Asking for a Recommendation at a Bakery",
+    "category": "Food and Cafes",
+    "playerCount": 2,
+    "situation": "A customer steps into a fresh artisan bakery looking for breakfast pastries.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A customer looking for breakfast pastries.",
+        "goal": "Ask for fresh recommendations and order two items to go."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A bakery worker behind the counter.",
+        "goal": "Describe daily specials (croissants, fruit tarts) and bag the order."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Good morning! Welcome to Sunshine Bakery!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Good morning! Everything in your case smells incredible."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask what items came out freshest from the oven this morning."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Recommend the butter croissants and almond pastry rolls."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will take one butter croissant and one almond pastry roll!"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Wonderful choice! Would you like those in a paper bag to go?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Confirm taking them to go and ask for the total price."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "State the total amount and accept payment."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Here is seven dollars. Thank you so much!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Here is your bakery bag and change. Enjoy your breakfast!"
+      }
+    ]
+  }
+]

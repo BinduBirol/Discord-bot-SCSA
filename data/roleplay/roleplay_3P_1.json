@@ -1,0 +1,982 @@
+[
+  {
+    "id": "RP3_001",
+    "title": "Choosing a Movie to Watch Together",
+    "category": "Friends and Everyday Life",
+    "playerCount": 3,
+    "situation": "Three friends are planning a cozy movie night at home, but they need to agree on what kind of film to watch.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who loves funny comedies.",
+        "goal": "Suggest a comedy movie and explain why it is entertaining."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who prefers exciting action movies.",
+        "goal": "Suggest an action film and compare it with the comedy option."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who enjoys relaxing mystery stories.",
+        "goal": "Propose a light mystery movie as a fun compromise for everyone."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I am so excited for our movie night tonight!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Me too! Do we already know what we are going to watch?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what genres the others are in the mood for tonight."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest watching a comedy movie and explain why it would be fun."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Express a preference for an action movie and suggest a thrilling title."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Both choices sound really fun, but I am hoping for something a bit different."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Propose a light mystery movie as a compromise that everyone might enjoy."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Oh, a mystery sounds really cool actually."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree to try the mystery movie and ask who is in charge of snacks."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Offer to bring popcorn and drinks for everyone."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Perfect! I will start setting up the TV right now."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome, see you both in ten minutes!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_002",
+    "title": "Planning a Community Garden Cleanup",
+    "category": "Neighbors and Community",
+    "playerCount": 3,
+    "situation": "Three neighbors meet in the hallway to plan a weekend cleanup for their shared apartment courtyard.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A neighbor who wants to plant flowers.",
+        "goal": "Suggest buying colorful flowers and cleaning the flowerbeds."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A neighbor who wants to fix the seating area.",
+        "goal": "Suggest repairing the wooden benches in the courtyard."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A neighbor who offers to organize tools and snacks.",
+        "goal": "Offer to bring gardening tools and refreshments for everyone."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hello! Do you both have a few minutes to talk about the courtyard?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Hi! Yes, the weather is getting nice so it is a great time to clean it up."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Agree with the idea and ask what specific tasks need to be done."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest cleaning the old flowerbeds and planting some fresh spring flowers."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest repairing and painting the wooden benches in the seating area."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Both of those ideas sound wonderful and very helpful."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to bring necessary tools like gloves and shovels, plus some snacks."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That is so kind of you! I can buy the flower seeds tomorrow."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm that you have extra paint and brushes ready for the benches."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Fantastic. Let us meet Saturday morning at nine o'clock."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Sounds like a plan. See you Saturday!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "See you then, neighbors!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_003",
+    "title": "Choosing a Birthday Gift for a Coworker",
+    "category": "Office and Colleagues",
+    "playerCount": 3,
+    "situation": "Three colleagues are chatting in the breakroom to choose a nice birthday present for their team leader.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A colleague who suggests a coffee mug.",
+        "goal": "Propose a nice travel mug and a bag of gourmet coffee beans."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A colleague who suggests a desk plant.",
+        "goal": "Propose a low-maintenance indoor plant to brighten the office."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A colleague who suggests a bakery gift card.",
+        "goal": "Propose a gift card to the local bakery so everyone can share treats."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We need to pick a birthday gift for our team leader by this afternoon."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "True! Do any of you have a good idea yet?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Mention that it should be something useful and professional."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest a high-quality travel coffee mug and some specialty coffee beans."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest an indoor desk plant instead to make the workspace nicer."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Those are both nice ideas, but I was thinking of something else."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest a gift card to the popular local bakery for delicious treats."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Oh, everyone loves sweets! That is a very safe and fun choice."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the bakery gift card and offer to chip in extra money."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great! I will buy the card during my lunch break."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will bring a nice birthday card for everyone to sign."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome teamwork, everyone!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_004",
+    "title": "Ordering Lunch at a Cafe",
+    "category": "Food and Dining",
+    "playerCount": 3,
+    "situation": "Three friends sit down at a busy cafe menu table to decide what food and drinks to order together.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants sandwiches.",
+        "goal": "Recommend the grilled chicken sandwich and iced tea."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants soup and salad.",
+        "goal": "Recommend the tomato soup and garden salad combo."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who wants to share dessert.",
+        "goal": "Suggest ordering a giant chocolate cake slice to share at the end."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "This cafe menu looks so good. Are you ready to order?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Almost! There are so many choices to look through."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask if anyone has found something appetizing on the menu yet."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Recommend the grilled chicken sandwich with a glass of iced tea."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Recommend the warm tomato soup and fresh garden salad instead."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Both options sound delicious, but I am looking at the dessert section."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest ordering a large chocolate cake slice for all three of us to share."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Sharing dessert is the best idea I have heard all day!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the cake and ask when the server is coming back."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "The waiter is walking over right now with our menus."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great, let us tell him our food and dessert orders together."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Perfect, I am ready!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_005",
+    "title": "Planning a Weekend Hiking Trip",
+    "category": "Travel and Outdoors",
+    "playerCount": 3,
+    "situation": "Three friends are discussing plans for a short weekend hike in the nearby nature park.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants an easy trail.",
+        "goal": "Suggest a flat trail near the lake with great views."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants a hill climb.",
+        "goal": "Suggest a slightly steeper trail leading up to a nice viewpoint."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who focuses on transportation.",
+        "goal": "Offer to drive everyone in your car and check the weather forecast."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "It is going to be sunny this weekend. Should we go hiking?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That sounds like an amazing idea! Where should we go?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Mention that you checked the weather and it looks clear and warm."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest the easy trail by the lake because it has beautiful scenery."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest the hill trail instead because it leads to a cool mountain viewpoint."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "We can easily do the hill trail since everyone has good hiking shoes."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to drive everyone to the park in your car on Saturday morning."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you for driving! I will pack sandwiches and water bottles."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to bring a portable speaker for music during rest breaks."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Awesome. Let us meet at eight o'clock near my apartment."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "See you both bright and early on Saturday!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Can't wait, it will be so much fun."
+      }
+    ]
+  },
+  {
+    "id": "RP3_006",
+    "title": "Organizing a Board Game Night",
+    "category": "Friends and Everyday Life",
+    "playerCount": 3,
+    "situation": "Three friends are meeting up to plan a fun game night and choose which board games to play.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who loves strategy games.",
+        "goal": "Suggest a fun strategy game that involves trading and building."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who loves word games.",
+        "goal": "Suggest a fast-paced word guessing game for quick laughs."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who wants to provide snacks.",
+        "goal": "Ask about dietary preferences and offer to order pizza."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Are you guys ready for our board game night this Friday?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes! I brought a few new games to try out."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what kind of food everyone wants while playing games."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest playing a fun trading strategy game first."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest a fast word-guessing game because it is hilarious and quick."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Let us play both! We can start with the word game and finish with strategy."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to order hot pizza and garlic bread for dinner."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Pizza sounds amazing! Please get extra cheese on one."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to bring some cold sodas and cups."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Wonderful. Come over around six o'clock on Friday night."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will be there right on time with the games."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "See you guys then!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_007",
+    "title": "Choosing a Birthday Party Theme",
+    "category": "Events and Celebrations",
+    "playerCount": 3,
+    "situation": "Three friends are brainstorming fun themes for an upcoming surprise birthday party.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who suggests a tropical theme.",
+        "goal": "Propose a summer beach theme with bright decorations and tropical drinks."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who suggests a retro music theme.",
+        "goal": "Propose a 1980s music theme with classic songs and fun outfits."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who wants a simple cozy dinner theme.",
+        "goal": "Suggest a relaxed home-cooked dinner party with fairy lights."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We need to choose a theme for the surprise party soon!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I know! It has to be something our friend will really love."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what themes the others have thought of so far."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest a tropical beach theme with colorful decorations and fruit punches."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest an eighties music theme with retro outfits and dance hits."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Both sound fun, but maybe a bit loud for a casual gathering."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest a cozy dinner party theme with fairy lights and homemade food."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Actually, a cozy dinner with fairy lights sounds very relaxing and sweet."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the cozy dinner idea and offer to handle the dessert."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Awesome! I will handle the main dishes and lighting."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "And I will bring the party decorations and music playlist."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "This is going to be the best party ever!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_008",
+    "title": "Planning a Weekend Study Session",
+    "category": "School and Education",
+    "playerCount": 3,
+    "situation": "Three classmates are talking after school to organize a productive weekend study group for their history test.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A student who suggests the local library.",
+        "goal": "Suggest meeting at the quiet public library downtown."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A student who suggests a coffee shop.",
+        "goal": "Suggest meeting at a cozy cafe with great pastries and coffee."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A student who suggests studying at home.",
+        "goal": "Offer to host the study group at your apartment with homemade snacks."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We definitely need to study together for the history test next week."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I agree completely. History is pretty difficult this term."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask where everyone wants to meet up for the study session."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest meeting at the public library because it is quiet and spacious."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest a local cafe instead so we can have snacks while studying."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Cafes can sometimes be too noisy for serious studying."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to host the study session at your apartment with snacks."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That is so generous! Your apartment is very quiet and comfortable."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with hosting at home and offer to bring flashcards and notes."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Fantastic! Let us meet this Saturday afternoon at two o'clock."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "See you both on Saturday with my history textbook."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "See you then!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_009",
+    "title": "Planning a Saturday Bicycle Ride",
+    "category": "Travel and Outdoors",
+    "playerCount": 3,
+    "situation": "Three friends are chatting about going on a refreshing bike ride together this coming Saturday.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants to ride by the river.",
+        "goal": "Suggest a smooth river path with lovely views of the water."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants to visit a park cafe.",
+        "goal": "Suggest a route that ends at a nice bakery cafe for breakfast."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who checks safety and timing.",
+        "goal": "Suggest an early morning start time to avoid crowds and traffic."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey everyone, do you want to go for a bicycle ride this Saturday?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That sounds wonderful! I have not ridden my bike in weeks."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what time would be best to start before it gets too hot."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest riding along the smooth river path because it is very scenic."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest making a stop at the park bakery cafe for fresh pastries."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Stopping at a bakery sounds like the best reward after exercising!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest meeting at nine o'clock near the main bridge entrance."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Nine o'clock works great for me. I will check my bike tires tonight."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Remind everyone to bring water bottles and helmets."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Good reminder! I have my helmet ready."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Awesome. See you both Saturday morning!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Can't wait, see you then!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_010",
+    "title": "Choosing a Weekend Art Workshop",
+    "category": "Hobbies and Interests",
+    "playerCount": 3,
+    "situation": "Three friends are looking at community center flyers to choose a fun creative workshop to attend together.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants to try pottery.",
+        "goal": "Suggest a clay pottery class to make small bowls and cups."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants to try painting.",
+        "goal": "Suggest a watercolor painting class to learn landscape art."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who wants a beginner-friendly photography class.",
+        "goal": "Suggest a smartphone photography walk around the neighborhood park."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Look at these community center flyers for weekend workshops!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Oh, that looks fun! We should definitely sign up for one together."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what kind of art classes caught their attention."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest the pottery workshop where we can shape clay into cups."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest the watercolor painting class to learn how to paint landscapes."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Those both sound cool, but I saw another option on the back page."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest the smartphone photography walk around the park as a fun outdoor option."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "A photography walk outdoors sounds really unique and easy to try."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the photography walk and ask when it takes place."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "It is this Sunday afternoon at two o'clock."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Perfect! I will register online right now."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Awesome, this is going to be a fantastic Sunday!"
+      }
+    ]
+  }
+]

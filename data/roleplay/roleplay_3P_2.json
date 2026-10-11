@@ -1,0 +1,982 @@
+[
+  {
+    "id": "RP3_011",
+    "title": "Cooking Dinner Together",
+    "category": "Friends and Everyday Life",
+    "playerCount": 3,
+    "situation": "Three friends meet at one person's apartment to decide what dish to cook together for dinner.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants to make homemade pasta.",
+        "goal": "Suggest making a simple fresh pasta dish with garlic and olive oil."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants to make vegetable stir-fry.",
+        "goal": "Suggest a colorful vegetable stir-fry with rice as a healthy option."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who offers to prepare salad and dessert.",
+        "goal": "Propose making a fresh garden salad and a simple fruit bowl."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Welcome to my kitchen! What should we cook for dinner tonight?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Thanks for having us! I am starving and ready to start."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what ingredients are currently available in the kitchen."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest making a simple pasta dish with garlic, olive oil, and herbs."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest cooking a colorful vegetable stir-fry with rice instead."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "We actually have enough pots to make both the stir-fry and rice easily!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to wash and chop the vegetables for a side salad while the main dish cooks."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That sounds awesome! Stir-fry with a fresh salad is a complete meal."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to cook the rice and chop the tofu or chicken."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will handle the pan sauce and stir-fry the vegetables."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Let us wash our hands and get started!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Dinner is going to taste delicious."
+      }
+    ]
+  },
+  {
+    "id": "RP3_012",
+    "title": "Choosing a Gift for a Friend Moving Away",
+    "category": "Friends and Everyday Life",
+    "playerCount": 3,
+    "situation": "Three friends gather at a coffee shop to pick out a special farewell gift for a mutual friend moving to another city.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants to give a photo album.",
+        "goal": "Suggest making a custom photo album full of shared memories."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants to give cozy home items.",
+        "goal": "Suggest giving a warm fleece blanket or a nice scented candle."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who suggests a travel backpack.",
+        "goal": "Propose a sturdy backpack or luggage tag for their journey."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I am going to miss our friend so much when they move next week."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Me too! We definitely need to give them a memorable farewell gift."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask if anyone has thought of meaningful gift ideas yet."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest creating a custom photo album with pictures from all your trips together."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest buying a soft blanket to make their new apartment feel warm and homey."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Those are both thoughtful, but what about something practical for traveling?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest a nice travel bag or high-quality backpack for their upcoming move."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "A photo album could actually easily fit inside that travel bag!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree to combine the backpack and photo album as a joint gift from all three of you."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "That is a great idea! I can order the bag online today."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "And I will start printing out all our favorite photos right away."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Perfect! Our friend is going to love it."
+      }
+    ]
+  },
+  {
+    "id": "RP3_013",
+    "title": "Planning a Small Office Celebration",
+    "category": "Office and Colleagues",
+    "playerCount": 3,
+    "situation": "Three colleagues meet in a conference room to organize a small celebration for completing a big work project.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A colleague who wants an afternoon tea party.",
+        "goal": "Suggest hosting a relaxing tea and snack session in the breakroom."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A colleague who wants an outdoor lunch.",
+        "goal": "Suggest taking the team out for a quick lunch at a nearby patio restaurant."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A colleague who offers to organize team games.",
+        "goal": "Suggest playing a quick trivia game to celebrate together."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We finally finished the big project! We should definitely celebrate."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Absolutely! Everyone on the team worked so hard this month."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what kind of celebration would work best for everyone's schedule."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest having an afternoon tea and cake party in the breakroom."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest going out to the local patio restaurant for a celebratory lunch."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "An afternoon breakroom party fits everyone's schedule much better!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest adding a fun ten-minute trivia game with small prize prizes."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Trivia in the breakroom sounds super fun and relaxing!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to pick up cupcakes and juice from the bakery down the street."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great! I will prepare the trivia questions this evening."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will send out an invitation email to the team for Friday at three."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Sounds like a great plan. Thanks everyone!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_014",
+    "title": "Returning a Defective Item",
+    "category": "Shopping and Customer Service",
+    "playerCount": 3,
+    "situation": "Two friends go to an electronics store service counter with a friendly store employee to exchange a malfunctioning blender.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A customer who bought the blender.",
+        "goal": "Explain that the blender power button stopped working after one day."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend supporting the customer.",
+        "goal": "Show the store receipt and confirm when the item was purchased."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A helpful store employee.",
+        "goal": "Examine the item, check the warranty, and offer a replacement or refund."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hello! I would like to return this blender I bought yesterday."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Hello! Sure, I can help you with that. What seems to be the problem?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Explain that the blender button stopped turning on when plugged in."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Hand the paper store receipt to the employee and confirm the purchase date."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Inspect the receipt and offer to swap it for a brand new blender in stock."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "An exchange for a brand new one would be wonderful, thank you!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Ask if the new blender comes with a standard manufacturer warranty."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Yes, it has a full one-year warranty included in the box."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Hand over the new sealed box and print out a fresh store receipt."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you so much for your prompt help today!"
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "We really appreciate how quick and smooth that was."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "You are very welcome! Have a great afternoon!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_015",
+    "title": "Deciding on a Group Gym Membership",
+    "category": "Health and Fitness",
+    "playerCount": 3,
+    "situation": "Three friends visit a community fitness center to ask about group memberships and fitness classes.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend interested in weight training.",
+        "goal": "Ask about the weight room facilities and equipment."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend interested in swimming.",
+        "goal": "Ask about pool hours and lap swimming lanes."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friendly gym staff member.",
+        "goal": "Explain the three-person group discount and show them around."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hi there! We are interested in joining the gym together as a group."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Welcome! We actually have a great group discount for three members."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask if the free weights section gets crowded in the evenings."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Ask about the swimming pool schedule and weekend access."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Explain that the weight room is spacious and the indoor pool is open daily."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That sounds perfect! An indoor pool is exactly what I was hoping for."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask how much the monthly group membership fee costs per person."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "With the group rate, it is thirty dollars per person each month."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That is a really reasonable price for everything included."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Agree to sign up together right now."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Awesome! Let us fill out the quick registration form at the desk."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Great, let us do it!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_016",
+    "title": "Asking for Directions in a Shopping Mall",
+    "category": "Travel and Outdoors",
+    "playerCount": 3,
+    "situation": "Two shoppers looking for a bookstore stop a friendly mall security guard to ask for directions.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A shopper looking for a bookstore.",
+        "goal": "Explain which store you are searching for and ask where it is located."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A shopper looking for the food court.",
+        "goal": "Ask if the bookstore is near the main food court area."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A helpful security guard.",
+        "goal": "Provide clear step-by-step directions using mall landmarks."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Excuse me, officer! Could you help us find a store?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Of course! I know this mall very well. What are you looking for?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Ask where the main bookstore is located on this floor."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Ask if there is an elevator or escalator nearby to get to that section."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Give clear directions: go straight past the fountain, then take the escalator up to the second floor."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Oh, past the water fountain and up the escalator! Got it."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Ask if the food court is on the same floor as the bookstore."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Yes, the food court is right next to the bookstore on the second floor!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That is super convenient. We can get lunch right after browsing books."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Thank the security guard for the helpful directions."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "My pleasure! Enjoy your shopping trip today."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you! Have a great day!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_017",
+    "title": "Planning a Local Book Club",
+    "category": "Hobbies and Interests",
+    "playerCount": 3,
+    "situation": "Three readers sit together in a quiet neighborhood cafe to start a monthly book club.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A reader who loves fiction.",
+        "goal": "Suggest reading a bestseller novel for the first month."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A reader who loves biographies.",
+        "goal": "Suggest reading an inspiring biography or true life story."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A reader who proposes meeting locations.",
+        "goal": "Suggest rotating meetings between members' houses and local cafes."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I am so excited that we are finally starting our book club!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Me too! Reading together will be so much motivation."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask how often the group should meet to discuss books."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest picking a popular fiction novel for the first book."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest an inspiring biography of a famous athlete or artist instead."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "How about we alternate genres each month so everyone gets a turn?"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest meeting once a month on a Sunday afternoon."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Alternating genres is a wonderful idea! Let us start with fiction first."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with starting with fiction and suggest buying the books online."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great! I will email both of you the book title today."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Happy reading, everyone!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "See you all at our first meeting next month!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_018",
+    "title": "Deciding on a Holiday Gift for Parents",
+    "category": "Family and Home",
+    "playerCount": 3,
+    "situation": "Three siblings are chatting online to choose a joint holiday present for their parents.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A sibling who suggests kitchen appliances.",
+        "goal": "Suggest buying an automated espresso machine."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A sibling who suggests a weekend getaway.",
+        "goal": "Suggest booking a weekend stay at a cozy countryside bed and breakfast."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A sibling who manages the budget.",
+        "goal": "Check everyone's budget contribution and calculate total costs."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey everyone! We need to agree on Mom and Dad's holiday present."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes! The holidays are coming up fast."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what total budget everyone is comfortable spending."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest buying them a high-end espresso machine for the kitchen."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest sending them on a relaxing weekend getaway at a countryside inn."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "A weekend trip sounds like something they would remember forever!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Calculate that splitting the weekend trip three ways fits within everyone's budget."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "That is perfect! They definitely deserve a nice relaxing vacation."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to research nice hotel options and send the links to the group chat."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Sounds great! I will collect the money and make the online booking."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will make a nice gift card envelope to give them."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "They are going to be so surprised! Great job team!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_019",
+    "title": "Planning a Neighborhood Block Party",
+    "category": "Neighbors and Community",
+    "playerCount": 3,
+    "situation": "Three neighbors gather on the front porch to organize a fun summer block party for the street.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A neighbor who plans food and grilling.",
+        "goal": "Suggest organizing a barbecue potluck with burgers and grilled veggies."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A neighbor who plans music and games.",
+        "goal": "Suggest outdoor lawn games like cornhole and a upbeat music playlist."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A neighbor who manages permits and flyers.",
+        "goal": "Offer to handle street permits and distribute printed flyers to neighbors."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thanks for coming over! Let us talk about the summer block party."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "I am so excited! It has been a long time since the street had an event."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what date during the weekend would work best for the event."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest hosting a barbecue potluck where everyone brings a dish."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest organizing lawn games and setting up a family-friendly music speaker."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Those activities sound super fun for both adults and kids!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to submit the city permit request to close the street for safety."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Closing the street for safety is a fantastic idea."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to print invitations and put them in everyone's mailboxes."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great! Let us aim for Saturday the fifteenth."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will get the grills ready!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "This is going to be an incredible neighborhood party!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_020",
+    "title": "Choosing a New Pet for the Family",
+    "category": "Family and Home",
+    "playerCount": 3,
+    "situation": "Three family members sit in the living room to discuss adopting a rescue animal from the shelter.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A family member who wants a friendly dog.",
+        "goal": "Suggest adopting a medium-sized dog for outdoor walks and playing fetch."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A family member who wants a calm cat.",
+        "goal": "Suggest adopting an independent adult cat that is easy to care for."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A family member who considers daily responsibilities.",
+        "goal": "Remind everyone about feeding, cleaning, and walking duties."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Are we finally ready to adopt a pet from the rescue shelter?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes! The house has felt so quiet lately."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Remind everyone that having a pet requires daily care and attention."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest adopting a friendly rescue dog and promise to do the daily walks."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest adopting a gentle cat instead because they are quiet and low-maintenance."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "A cat or dog could work, as long as we share all the daily chores."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest visiting the shelter this Saturday to meet the animals in person."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Visiting the shelter together is the best way to choose!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree to see which animal forms a natural connection with all three of you."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Perfect! I will call the shelter to book a visiting appointment."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I cannot wait for Saturday!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Me neither, it will be so exciting!"
+      }
+    ]
+  }
+]
