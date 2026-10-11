@@ -1,0 +1,982 @@
+[
+  {
+    "id": "RP3_021",
+    "title": "Deciding on a Weekend Volunteer Activity",
+    "category": "Neighbors and Community",
+    "playerCount": 3,
+    "situation": "Three friends want to spend Sunday morning volunteering together in their local community.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants to help at an animal shelter.",
+        "goal": "Suggest volunteering at the local animal shelter to walk dogs."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants to help at a food bank.",
+        "goal": "Suggest packing meal boxes at the community food bank."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who checks scheduling and sign-ups.",
+        "goal": "Check sign-up requirements and suggest an activity that fits everyone's time."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I was thinking it would be great to volunteer together this Sunday morning."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That is a wonderful idea! I really want to give back to our community."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask how many hours everyone wants to volunteer for on Sunday."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest helping out at the animal shelter by walking dogs and playing with cats."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest volunteering at the food bank to pack meal boxes for families instead."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Let me quickly check online to see which place still has open volunteer spots."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Explain that the food bank needs three volunteers for a two-hour morning shift."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Packing meal boxes sounds very meaningful, and two hours is perfect!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree with the food bank idea and offer to register all three of you online."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Awesome! I will send you my contact details to complete the sign-up."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you for organizing this. See you Sunday morning!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "See you both then!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_022",
+    "title": "Choosing a New Fitness Class",
+    "category": "Health and Fitness",
+    "playerCount": 3,
+    "situation": "Three friends are looking at a community center schedule to pick a fun group workout class to try together.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who wants to try yoga.",
+        "goal": "Suggest a beginner yoga class for relaxation and stretching."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who wants to try spin cycling.",
+        "goal": "Suggest an energetic indoor cycling class with fun music."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who wants a low-impact option like swimming.",
+        "goal": "Suggest a water aerobics class that is gentle on joints and fun."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Hey everyone, let us sign up for a new fitness class together!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Great idea! I am definitely ready to try something new."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what kinds of workouts everyone enjoys most."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest beginner yoga because it helps reduce stress and improve flexibility."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest an indoor cycling class with high-energy music instead."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Cycling might be a bit too intense for our very first class back!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Propose water aerobics as a gentle, fun compromise in the pool."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Oh, water aerobics sounds super refreshing and easy on the knees!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree to try water aerobics and check what time the class meets."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "It meets every Tuesday evening at six o'clock."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Tuesday at six works great for my schedule!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Perfect, let us book our passes right now!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_023",
+    "title": "Planning a Surprising Thank-You Present",
+    "category": "Family and Home",
+    "playerCount": 3,
+    "situation": "Three housemates want to buy a thank-you gift for a neighbor who watched their pets while they were away.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A housemate who wants to buy flowers and chocolates.",
+        "goal": "Suggest a fresh bouquet of flowers and a luxury chocolate box."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A housemate who wants to buy a restaurant gift card.",
+        "goal": "Suggest a gift card to the neighbor's favorite local Italian diner."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A housemate who offers to bake homemade treats.",
+        "goal": "Propose baking fresh cookies and making a handwritten thank-you card."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Our neighbor was so helpful watching our pets while we were away!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes, everything was in perfect shape when we got back."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what would be a nice way to show your gratitude."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest buying a colorful bouquet of flowers and a nice box of chocolates."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest giving a dinner gift card to the Italian restaurant down the street."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Both ideas are lovely, but adding something personal would make it extra special."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to bake a batch of homemade chocolate chip cookies tonight."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Homemade cookies plus a restaurant gift card would be the ultimate gift!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to go buy the gift card while the cookies are baking."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "And I will write a nice thank-you card from all three of us."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Wonderful! We can walk over together to give it to her tomorrow."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "She is going to love it!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_024",
+    "title": "Deciding on a Carpool Schedule",
+    "category": "Office and Colleagues",
+    "playerCount": 3,
+    "situation": "Three colleagues living in the same neighborhood decide to organize a carpool to save money on gasoline.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A colleague who offers to drive on Mondays and Tuesdays.",
+        "goal": "Suggest driving early in the week and agree on a pickup point."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A colleague who offers to drive on Wednesdays and Thursdays.",
+        "goal": "Suggest driving mid-week and discuss coffee stops."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A colleague who offers to drive on Fridays.",
+        "goal": "Offer to drive on Fridays and help keep track of fuel costs."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Since we all live near each other, we should start carpooling to work!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "That is a great idea. Gas prices are so high right now."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask how everyone wants to split the driving days during the week."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Offer to drive Mondays and Tuesdays and suggest meeting at the corner bakery."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to drive Wednesdays and Thursdays and propose leaving at 7:45 AM."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "That leaves Friday for me! Friday traffic is usually pretty light."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest creating a group chat to send quick updates if anyone runs late."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "A group chat is perfect for quick messages in the morning."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Confirm that 7:45 AM works for everyone to arrive at work on time."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Yes, 7:45 AM gives us plenty of time."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Awesome! I will pick you both up first thing Monday morning."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Sounds like a plan! See you Monday!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_025",
+    "title": "Choosing a New Board Game for the Club",
+    "category": "Hobbies and Interests",
+    "playerCount": 3,
+    "situation": "Three game club members have a small budget to purchase one new board game for their weekly meetups.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A member who prefers quick card games.",
+        "goal": "Suggest a fast-paced card game that easy for newcomers to learn."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A member who prefers cooperative games.",
+        "goal": "Suggest a cooperative adventure game where players work together."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A member who manages the club funds.",
+        "goal": "Confirm the total budget and pick the game that fits best."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We have thirty dollars in our club budget to buy a new game today!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Nice! What kind of game should we look for?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Remind everyone that the game should be easy to teach to new members."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest a fast card game because matches take only fifteen minutes."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest a cooperative island survival game where everyone plays as a team."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Cooperative games are great because no one gets left out or loses early!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Check the price online and confirm the cooperative game is on sale for twenty-five dollars."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "On sale for twenty-five dollars? That leaves us five dollars for extra dice!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Agree to purchase the cooperative game and offer to read the rules first."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great! I will buy it online using the club card right now."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I cannot wait to play it with everyone next week!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Me neither, thanks for managing the budget!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_026",
+    "title": "Planning a Group Beach Day",
+    "category": "Travel and Outdoors",
+    "playerCount": 3,
+    "situation": "Three friends are getting ready for a fun day trip to the beach this coming Saturday.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who brings beach equipment.",
+        "goal": "Offer to bring a large beach umbrella and folding chairs."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who plans food and snacks.",
+        "goal": "Offer to pack sandwiches, fresh fruit, and a cooler with ice."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who plans beach games.",
+        "goal": "Suggest bringing a volleyball and a frisbee for fun activities."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "The weather forecast says Saturday is going to be hot and sunny!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Perfect beach weather! Let us make sure we pack everything we need."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask who is bringing equipment for shade and sitting."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Offer to pack a large sun umbrella and three comfortable folding chairs."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to bring a cooler filled with ice, bottled water, sandwiches, and grapes."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "That covers sitting and eating! Now we need some fun outdoor games."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest bringing a volleyball and frisbee to play on the sand."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Volleyball on the beach sounds so exciting!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Remind everyone to pack sunscreen and towels in their bags."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Good reminder! I will set my alarm for seven in the morning."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will drive over to pick you both up at eight."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "See you Saturday morning, beach team!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_027",
+    "title": "Choosing a Class Presentation Topic",
+    "category": "School and Education",
+    "playerCount": 3,
+    "situation": "Three students sit together in the library to select a topic for their ten-minute group science presentation.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A student interested in renewable energy.",
+        "goal": "Suggest presenting on solar power and wind energy."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A student interested in ocean life.",
+        "goal": "Suggest presenting on coral reefs and deep sea creatures."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A student focused on slides and visual presentation.",
+        "goal": "Suggest picking a topic with lots of great photos and short videos."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "We need to pick our science presentation topic by tomorrow."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Yes! It has to be ten minutes long, so we need plenty of facts."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Mention that using good pictures and short video clips will help keep the class engaged."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest presenting on solar panels and wind turbines as clean energy solutions."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest presenting on ocean life and coral reef protection instead."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Ocean life has amazing high-definition photos that will look incredible on slides!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Propose dividing the talk into three parts: fish, coral, and ocean protection."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Dividing it into three equal sections makes writing the slides so easy."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to write the section about coral reefs."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "I will handle ocean protection, and Player 1 can introduce deep sea fish!"
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Sounds perfect. I will start gathering facts right now."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Great teamwork, everyone!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_028",
+    "title": "Planning a Small Garden in the Backyard",
+    "category": "Family and Home",
+    "playerCount": 3,
+    "situation": "Three family members meet in the backyard to decide what fresh vegetables and herbs to plant in their new garden box.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A family member who wants fresh tomatoes and basil.",
+        "goal": "Suggest planting cherry tomatoes and sweet basil for homemade pasta sauce."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A family member who wants salad greens.",
+        "goal": "Suggest planting lettuce, spinach, and cucumbers for fresh salads."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A family member who helps with soil and watering.",
+        "goal": "Offer to buy potting soil and handle the daily morning watering."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Look at our new wooden garden box! It is ready for planting."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "It looks fantastic! What should we plant in it first?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask how much sunlight this corner of the yard receives each day."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest planting cherry tomatoes and fresh basil because they love sunny spots."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest planting crisp lettuce and cucumbers so you can pick fresh salad every day."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "The garden box is big enough to fit tomatoes on one side and lettuce on the other!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to go to the plant nursery to buy bags of organic soil and young plant starts."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Thank you! Buying young plant starts will save us so much time."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to help dig the soil and plant the seedlings when you get back."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Great! I will drive to the nursery right now."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I will get the garden hose ready."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "This garden is going to look amazing!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_029",
+    "title": "Planning a Visit to an Amusement Park",
+    "category": "Travel and Outdoors",
+    "playerCount": 3,
+    "situation": "Three friends are getting tickets for a day trip to an amusement park and choosing which rides to visit first.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A friend who loves thrilling roller coasters.",
+        "goal": "Suggest heading straight to the biggest wooden roller coaster first."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A friend who loves water rides.",
+        "goal": "Suggest doing the splash water rides in the afternoon when it gets warm."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A friend who manages tickets and fast passes.",
+        "goal": "Suggest buying tickets online ahead of time to skip the long entry lines."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "I am so excited for our trip to the amusement park this weekend!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Me too! I haven't been on a roller coaster in years."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask what rides everyone wants to prioritize when you enter the park."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Suggest going directly to the giant roller coaster before the lines get too long."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Suggest trying the water log ride in the early afternoon when the temperature rises."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Doing roller coasters in the morning and water rides in the afternoon is a brilliant plan!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Offer to purchase all three entry tickets on your phone right now to get an online discount."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Yes, please! Skipping the ticket line at the entrance will save us so much time."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to transfer your share of the ticket money immediately via phone app."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Received! The tickets are saved on my phone."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Let us meet at nine in the morning on Saturday!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Sounds awesome, see you Saturday!"
+      }
+    ]
+  },
+  {
+    "id": "RP3_030",
+    "title": "Organizing a Shared Apartment Cleanup",
+    "category": "Family and Home",
+    "playerCount": 3,
+    "situation": "Three roommates meet in the living room on Saturday morning to divide chores for a quick apartment spring cleaning.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "A roommate who cleans the kitchen.",
+        "goal": "Offer to clean the counters, wash dishes, and wipe the refrigerator."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "A roommate who cleans the living room.",
+        "goal": "Offer to vacuum the rugs, dust the shelves, and tidy the couch."
+      },
+      {
+        "id": "PLAYER_3",
+        "role": "A roommate who cleans the bathroom and takes out trash.",
+        "goal": "Offer to clean the bathroom, replace towels, and take out all trash."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Good morning! If we work together, we can finish cleaning the whole apartment in one hour."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Good morning! Yes, dividing the chores will make it go super fast."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Ask how everyone wants to divide the main cleaning areas."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_1",
+        "type": "PROMPT",
+        "text": "Offer to take responsibility for the kitchen area, including dishes and counters."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Offer to take responsibility for the living room area, including dusting and vacuuming."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "That leaves the bathroom and garbage for me, which I am happy to do!"
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_3",
+        "type": "PROMPT",
+        "text": "Suggest putting on an energetic music playlist while everyone cleans."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "Music makes cleaning so much more fun! Turn it up!"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_2",
+        "type": "PROMPT",
+        "text": "Propose ordering takeout lunch together as a reward after finishing."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_3",
+        "type": "EXACT",
+        "text": "Ordering lunch after cleaning is the best motivation ever!"
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "All right team, let us start our timers and begin!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "Let us do this!"
+      }
+    ]
+  }
+]
