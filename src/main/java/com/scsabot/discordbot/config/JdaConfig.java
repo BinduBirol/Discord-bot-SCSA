@@ -1,6 +1,7 @@
 package com.scsabot.discordbot.config;
 
 import com.scsabot.discordbot.discord.command.SlashCommandListener;
+import com.scsabot.discordbot.discord.listener.CountryRoleListener;
 import com.scsabot.discordbot.discord.listener.GuildMemberEventListener;
 import com.scsabot.discordbot.discord.listener.VoiceStateListener;
 import com.scsabot.discordbot.event.StageGuidelineListener;
@@ -38,7 +39,8 @@ public class JdaConfig {
             TableTopicButtonListener tableTopicButtonListener,
             StoryButtonListener storyButtonListener,
             TimerButtonListener timerButtonListener,
-            StageGuidelineListener stageGuidelineListener
+            StageGuidelineListener stageGuidelineListener,
+            CountryRoleListener countryRoleListener
 
     ) throws InterruptedException {
 
@@ -58,7 +60,8 @@ public class JdaConfig {
                 GatewayIntent.GUILD_VOICE_STATES,
                 GatewayIntent.MESSAGE_CONTENT,
                 GatewayIntent.GUILD_MODERATION,
-                GatewayIntent.SCHEDULED_EVENTS
+                GatewayIntent.SCHEDULED_EVENTS,
+                GatewayIntent.GUILD_MESSAGE_REACTIONS
         );
 
         JDA jda = JDABuilder.createDefault(token, intents)
@@ -74,7 +77,8 @@ public class JdaConfig {
                         tableTopicButtonListener,
                         storyButtonListener,
                         timerButtonListener,
-                        stageGuidelineListener
+                        stageGuidelineListener,
+                        countryRoleListener
 
                 )
                 .build()

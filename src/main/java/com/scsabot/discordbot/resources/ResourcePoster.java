@@ -33,7 +33,6 @@ public class ResourcePoster {
     // TODO: replace these with your actual channel IDs
     private static final List<String> CHANNEL_IDS = List.of(
             "1553499664702115921",
-            "1548374471730266222",
             "1543886877512175715"
     );
 

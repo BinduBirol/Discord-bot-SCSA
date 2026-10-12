@@ -12,6 +12,7 @@ discord:
   guild-id: ${DISCORD_GUILD_ID:}
   stage-channel-id: "1546486694973546597"
   event-chat-channel-id: "1556933948402307092"
+  get-your-role-channel-id: "1559155325385576541"
 
 server:
   shutdown: graceful
@@ -32,3 +33,4 @@ bot:
     image-prompt: "1555500344791015504"
     warned: "1558002451519635496"
     restricted: "1559108599286857729"
+    message-id: "12345"
