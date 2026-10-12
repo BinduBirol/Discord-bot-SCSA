@@ -55,6 +55,7 @@ public class ModerationCommand {
                     + "Reason: " + reason + "\n\n"
                     + "You were warned before. This time, please take it seriously. "
                     + "Admins can ban you without any further notice.";
+            roleService.grantRoles(targetMember, "restricted");
         } else {
             dm = "⚠️ You have been **warned** in **" + guild.getName() + "**\n"
                     + "Reason: " + reason;
