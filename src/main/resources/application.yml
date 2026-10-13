@@ -14,6 +14,7 @@ discord:
   event-chat-channel-id: "1556933948402307092"
   get-your-role-channel-id: "1559155325385576541"
   interest-channel-id: "1559526392889221120"
+  coaching-access-channel-id: "1559603453930639490"
 
 server:
   shutdown: graceful
@@ -34,4 +35,4 @@ bot:
     image-prompt: "1555500344791015504"
     warned: "1558002451519635496"
     restricted: "1559108599286857729"
-    message-id: "12345"
+    coaching-access: "1559596818516418723"
