@@ -1,12 +1,12 @@
 package com.scsabot.discordbot.config;
 
 import com.scsabot.discordbot.discord.command.SlashCommandListener;
-import com.scsabot.discordbot.discord.listener.CountryRoleListener;
+import com.scsabot.discordbot.roles.CountryRoleListener;
 import com.scsabot.discordbot.discord.listener.GuildMemberEventListener;
 import com.scsabot.discordbot.discord.listener.VoiceStateListener;
 import com.scsabot.discordbot.event.StageGuidelineListener;
+import com.scsabot.discordbot.roles.interest.InterestRoleListener;
 import com.scsabot.discordbot.story.StoryButtonListener;
-import com.scsabot.discordbot.story.complete.StoryCompleteCommand;
 import com.scsabot.discordbot.tabletopics.TableTopicButtonListener;
 import com.scsabot.discordbot.timer.TimerButtonListener;
 import net.dv8tion.jda.api.JDA;
@@ -40,7 +40,8 @@ public class JdaConfig {
             StoryButtonListener storyButtonListener,
             TimerButtonListener timerButtonListener,
             StageGuidelineListener stageGuidelineListener,
-            CountryRoleListener countryRoleListener
+            CountryRoleListener countryRoleListener,
+            InterestRoleListener interestRoleListener
 
     ) throws InterruptedException {
 
@@ -78,7 +79,8 @@ public class JdaConfig {
                         storyButtonListener,
                         timerButtonListener,
                         stageGuidelineListener,
-                        countryRoleListener
+                        countryRoleListener,
+                        interestRoleListener
 
                 )
                 .build()

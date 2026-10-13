@@ -1,4 +1,4 @@
-package com.scsabot.discordbot.discord.listener;
+package com.scsabot.discordbot.roles.interest;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -8,14 +8,11 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ConcurrentHashMap;
 
-import com.scsabot.discordbot.roles.CountryFlags;
-import com.scsabot.discordbot.roles.CountryRoleService;
-import com.scsabot.discordbot.roles.ReactionRoleStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import com.scsabot.discordbot.roles.CountryFlags.Country;
+import com.scsabot.discordbot.roles.interest.Interests.Interest;
 
 
 import net.dv8tion.jda.api.EmbedBuilder;
@@ -32,33 +29,27 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.requests.ErrorResponse;
 
 /**
- * Publishes the country role-selection posts in the channel set by discord.get-your-role-channel-id (once per guild,
- * tracked persistently) and handles reaction add/remove.
+ * Publishes the interest-picker post(s) in the channel set by discord.interest-channel-id (once per guild,
+ * tracked persistently) and handles reaction add/remove. Members may pick any number of interests.
  */
 @Component
-public class CountryRoleListener extends ListenerAdapter {
+public class InterestRoleListener extends ListenerAdapter {
 
-    private static final Logger log = LoggerFactory.getLogger(CountryRoleListener.class);
+    private static final Logger log = LoggerFactory.getLogger(InterestRoleListener.class);
 
     /**
      * Discord allows at most 20 distinct reactions per message.
      */
     private static final int PER_MESSAGE = 20;
 
-    /**
-     * One role-selection card: a region and up to 20 of its countries.
-     */
-    private record Page(String region, List<Country> chunk, int number, int total) {
-    }
-
-    private final ReactionRoleStore store;
-    private final CountryRoleService roleService;
+    private final InterestRoleStore store;
+    private final InterestRoleService roleService;
     private final String channelId;
     private final Set<Long> publishing = ConcurrentHashMap.newKeySet();
 
-    public CountryRoleListener(ReactionRoleStore store,
-                               CountryRoleService roleService,
-                               @Value("${discord.get-your-role-channel-id}") String channelId) {
+    public InterestRoleListener(InterestRoleStore store,
+                                InterestRoleService roleService,
+                                @Value("${discord.interest-channel-id:}") String channelId) {
         this.store = store;
         this.roleService = roleService;
         this.channelId = channelId;
@@ -68,6 +59,10 @@ public class CountryRoleListener extends ListenerAdapter {
 
     @Override
     public void onGuildReady(GuildReadyEvent event) {
+        if (channelId == null || channelId.isBlank()) {
+            log.warn("discord.interest-channel-id is not set; interest picker disabled");
+            return;
+        }
         publishIfNeeded(event.getGuild());
     }
 
@@ -79,7 +74,7 @@ public class CountryRoleListener extends ListenerAdapter {
 
         TextChannel channel = guild.getTextChannelById(channelId);
         if (channel == null) {
-            log.warn("Channel {} (discord.get-your-role-channel-id) not found in guild {}", channelId, guildId);
+            log.warn("Channel {} (discord.interest-channel-id) not found in guild {}", channelId, guildId);
             publishing.remove(guildId);
             return;
         }
@@ -96,12 +91,12 @@ public class CountryRoleListener extends ListenerAdapter {
                 err -> {
                     if (err instanceof ErrorResponseException e
                             && e.getErrorResponse() == ErrorResponse.UNKNOWN_MESSAGE) {
-                        log.info("Role posts were deleted in guild {}, republishing", guildId);
+                        log.info("Interest posts were deleted in guild {}, republishing", guildId);
                         deleteMessages(channel, existing);
                         store.clear(guildId);
                         publish(guild, channel);
                     } else {
-                        log.error("Could not verify role posts in guild {}", guildId, err);
+                        log.error("Could not verify interest posts in guild {}", guildId, err);
                         publishing.remove(guildId);
                     }
                 });
@@ -109,35 +104,38 @@ public class CountryRoleListener extends ListenerAdapter {
 
     private void publish(Guild guild, TextChannel channel) {
         long guildId = guild.getIdLong();
-        List<Page> pages = new ArrayList<>();
-        CountryFlags.byRegion().forEach((region, countries) -> {
-            int total = (countries.size() + PER_MESSAGE - 1) / PER_MESSAGE;
-            for (int i = 0; i < total; i++) {
-                List<Country> chunk = countries.subList(i * PER_MESSAGE,
-                        Math.min(countries.size(), (i + 1) * PER_MESSAGE));
-                pages.add(new Page(region, chunk, i + 1, total));
-            }
-        });
+
+        List<Interest> all = Interests.ALL;
+        int total = (all.size() + PER_MESSAGE - 1) / PER_MESSAGE;
+        List<List<Interest>> pages = new ArrayList<>();
+        for (int i = 0; i < total; i++) {
+            pages.add(all.subList(i * PER_MESSAGE, Math.min(all.size(), (i + 1) * PER_MESSAGE)));
+        }
 
         CompletableFuture<Void> chain = CompletableFuture.completedFuture(null);
-        for (Page p : pages) {
-            List<Country> chunk = p.chunk();
-            MessageEmbed embed = buildEmbed(p);
+        for (int i = 0; i < pages.size(); i++) {
+            List<Interest> chunk = pages.get(i);
+            MessageEmbed embed = buildEmbed(chunk, i + 1, total);
             chain = chain
                     .thenCompose(v -> channel.sendMessageEmbeds(embed).submit())
-                    .thenAccept(message -> {
+                    .thenCompose(message -> {
                         store.addMessageId(guildId, message.getIdLong());
-                        for (Country country : chunk) {
-                            message.addReaction(Emoji.fromUnicode(country.flag()))
-                                    .queue(null, err -> log.warn("Could not add reaction {}", country.code(), err));
+                        // Add reactions one after another inside the chain so they appear in order
+                        // and any failure aborts (and later retries) the whole publish.
+                        CompletableFuture<Void> reactions = CompletableFuture.completedFuture(null);
+                        for (Interest interest : chunk) {
+                            reactions = reactions.thenCompose(
+                                    x -> message.addReaction(Emoji.fromUnicode(interest.emoji())).submit());
                         }
+                        return reactions;
                     });
         }
 
         chain.whenComplete((v, err) -> {
             publishing.remove(guildId);
             if (err != null) {
-                log.error("Publishing role posts failed in guild {}; cleaning up so the next start retries", guildId, err);
+                log.error("Publishing interest posts failed in guild {}; cleaning up so the next start retries",
+                        guildId, err);
                 deleteMessages(channel, store.getMessageIds(guildId));
                 store.clear(guildId);
             }
@@ -145,17 +143,15 @@ public class CountryRoleListener extends ListenerAdapter {
     }
 
     /**
-     * One embed "card" per page, with the countries laid out in three side-by-side columns.
+     * One embed "card" per page, with the interests laid out in three side-by-side columns.
      */
-    private static MessageEmbed buildEmbed(Page p) {
-        List<Country> chunk = p.chunk();
-        String title = "🌍 Pick your country · " + p.region()
-                + (p.total() > 1 ? " (" + p.number() + "/" + p.total() + ")" : "");
+    private static MessageEmbed buildEmbed(List<Interest> chunk, int number, int total) {
+        String title = "🎯 Pick your interests" + (total > 1 ? " (" + number + "/" + total + ")" : "");
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(new Color(0x5865F2))
                 .setTitle(title)
-                .setDescription("React with your flag to get your country role.")
-                .setFooter("One country role per member • remove your reaction to drop the role");
+                .setDescription("React with an emoji to get the matching interest role.")
+                .setFooter("Pick as many as you like • remove your reaction to drop the role");
 
         int columns = 3;
         int perColumn = (chunk.size() + columns - 1) / columns;
@@ -165,8 +161,8 @@ public class CountryRoleListener extends ListenerAdapter {
                 break;
             }
             StringBuilder sb = new StringBuilder();
-            for (Country c : chunk.subList(from, Math.min(chunk.size(), from + perColumn))) {
-                sb.append(c.flag()).append(' ').append(c.name()).append('\n');
+            for (Interest it : chunk.subList(from, Math.min(chunk.size(), from + perColumn))) {
+                sb.append(it.emoji()).append(' ').append(it.name()).append('\n');
             }
             eb.addField("​", sb.toString(), true);
         }
@@ -190,14 +186,14 @@ public class CountryRoleListener extends ListenerAdapter {
         if (!store.isTracked(event.getGuild().getIdLong(), event.getMessageIdLong())) {
             return;
         }
-        Optional<Country> country = countryOf(event.getEmoji());
-        if (country.isEmpty()) {
+        Optional<Interest> interest = interestOf(event.getEmoji());
+        if (interest.isEmpty()) {
             return;
         }
         Guild guild = event.getGuild();
         event.retrieveMember().queue(member -> {
             if (!member.getUser().isBot()) {
-                roleService.assignCountryRole(guild, member, country.get());
+                roleService.assignInterestRole(guild, member, interest.get());
             }
         }, err -> log.error("Could not retrieve member {}", event.getUserId(), err));
     }
@@ -210,22 +206,22 @@ public class CountryRoleListener extends ListenerAdapter {
         if (!store.isTracked(event.getGuild().getIdLong(), event.getMessageIdLong())) {
             return;
         }
-        Optional<Country> country = countryOf(event.getEmoji());
-        if (country.isEmpty()) {
+        Optional<Interest> interest = interestOf(event.getEmoji());
+        if (interest.isEmpty()) {
             return;
         }
         Guild guild = event.getGuild();
         event.retrieveMember().queue(member -> {
             if (!member.getUser().isBot()) {
-                roleService.removeCountryRole(guild, member, country.get());
+                roleService.removeInterestRole(guild, member, interest.get());
             }
         }, err -> log.error("Could not retrieve member {}", event.getUserId(), err));
     }
 
-    private static Optional<Country> countryOf(EmojiUnion emoji) {
+    private static Optional<Interest> interestOf(EmojiUnion emoji) {
         if (emoji.getType() != Emoji.Type.UNICODE) {
             return Optional.empty();
         }
-        return CountryFlags.fromFlag(emoji.getName());
+        return Interests.fromEmoji(emoji.getName());
     }
 }

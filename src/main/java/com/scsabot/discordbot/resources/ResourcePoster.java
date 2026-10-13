@@ -2,30 +2,15 @@ package com.scsabot.discordbot.resources;
 
 import com.scsabot.discordbot.dto.ResourceEntry;
 import lombok.extern.slf4j.Slf4j;
-import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
-import java.awt.Color;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Builds and sends the embed for one resource entry. Both ResourcePostScheduler
- * (the twice-a-day cron job) and ResourcePostCommand (the /resource-post
- * slash command) call postOnce() so the actual posting logic lives in one place.
- * <p>
- * A random channel is picked each time from CHANNEL_IDS below.
- * <p>
- * JDA is injected with @Lazy on purpose: JdaConfig builds the JDA bean using
- * SlashCommandListener as an event listener, and SlashCommandListener depends
- * on ResourcePostCommand -> ResourcePoster -> JDA. Without @Lazy that's a
- * circular dependency Spring can't resolve. @Lazy hands this class a proxy
- * instead of the real JDA bean, so JDA can finish building first; the proxy
- * resolves to the real instance the first time postOnce() actually uses it.
- */
+
 @Slf4j
 @Component
 public class ResourcePoster {
