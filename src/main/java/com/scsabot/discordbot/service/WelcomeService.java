@@ -37,26 +37,33 @@ public class WelcomeService {
 
         embed.setTitle("👋 Welcome to StamUnity! ❤️");
 
-
         embed.setDescription(
                 """
                         Welcome, %s!
                         
-                        We’re really happy to have you here! This is a friendly, judgment-free community for people who stutter or stammer.
+                            We’re really happy to have you here! This is a friendly, judgment-free community for people who stutter or stammer, those who want to improve their communication and speaking skills, and anyone who wants to support and encourage them. 💙
                         
-                        Take your time, speak freely, and most importantly — **don't be afraid to stutter.** 🫶
+                            Take your time, speak freely, and most importantly — **don't be afraid to stutter.** 🫶
                         
-                        📜 **Before you get started**
-                        Please take a moment to read our [📜・server-rules](https://discord.com/channels/1543886876786565140/1556929839993331732).
+                            📜 **Before you get started**
+                            Please take a moment to read our https://discord.com/channels/1543886876786565140/1556929839993331732.
                         
-                        📚 **Want to practice?**
-                        We focus on both structured practice and casual chatting here. Whenever you feel like your speech is breaking up more, you can always go back to structured practice.
-                        Check out <#1552920324591321190> for our structured practice guide.
+                            🌍 **Make yourself at home**
+                            Visit our role selection channels to choose your country, interests, and other roles so you can connect with people who share your interests.
                         
-                        🗣️ **Speech coaches & supporters are welcome!**
-                        We’re happy to have speech coaches, professionals, and supporters in the community. Please participate as a community member, not as an expert or authority.
+                            📚 **Want to practice?**
+                            We offer both structured speech practice and casual conversations. Whenever you feel your speech is breaking up more, you can always return to structured practice.
+                            Check out <#1552920324591321190> for our structured practice guide.
                         
+                            🎓 **Interested in professional coaching?**
+                            You can choose whether to access our professional coaches, coaching resources, and updates in <#1559603453930639490>. Access is optional, and you can change your choice at any time.
+                        
+                            🗣️ **Speech coaches & supporters are welcome!**
+                            We’re happy to have speech coaches, professionals, and supporters in the community. Please participate as community members, not as experts or authorities.
+                        
+                            Remember: there's no pressure to speak. Take your time, support one another, and enjoy being part of StamUnity! 💙
                         """.formatted(member.getAsMention())
+
         );
 
 
