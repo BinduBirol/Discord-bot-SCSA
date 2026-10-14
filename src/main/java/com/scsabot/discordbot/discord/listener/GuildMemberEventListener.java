@@ -21,6 +21,8 @@ public class GuildMemberEventListener extends ListenerAdapter {
     private final WelcomeService welcomeService;
     private final TaskExecutor discordEventExecutor;
 
+    private static final long WELCOME_THREAD_ID = 1559817030511890472L;
+
     public GuildMemberEventListener(
             VoiceActivityLogger voiceActivityLogger,
             WelcomeService welcomeService,
@@ -33,11 +35,33 @@ public class GuildMemberEventListener extends ListenerAdapter {
     @Override
     public void onGuildMemberJoin(GuildMemberJoinEvent event) {
         Member member = event.getMember();
-        log.info("Guild member joined: {} ({})", member.getEffectiveName(), member.getIdLong());
+        log.info("Guild member joined: {} ({})",
+                member.getEffectiveName(), member.getIdLong());
 
         discordEventExecutor.execute(() -> {
             voiceActivityLogger.logMemberJoin(member.getEffectiveName());
             welcomeService.welcomeMember(member);
+
+            var thread = event.getGuild().getThreadChannelById(WELCOME_THREAD_ID);
+
+            if (thread == null) {
+                log.warn("Welcome thread not found: {}", WELCOME_THREAD_ID);
+                return;
+            }
+            /*
+            thread.sendMessage(
+                    "👋 Hi, " + member.getAsMention() + " welcome!\n"
+                            + " Check the https://discord.com/channels/1543886876786565140/1559847169354235954 and then\n" +
+                            "https://discord.com/channels/1543886876786565140/1559155325385576541"
+                            + "https://discord.com/channels/1543886876786565140/1559526392889221120"
+
+            ).queue(
+                    success -> log.info("Welcome message sent in thread for {}",
+                            member.getEffectiveName()),
+                    error -> log.error("Failed to send welcome message in thread", error)
+            );
+            */
+
         });
     }
 

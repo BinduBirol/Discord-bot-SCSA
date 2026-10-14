@@ -62,7 +62,7 @@ public class CoachingAccessListener extends ListenerAdapter {
         this.channelId = channelId;
         // ------------------------------------------------------------ COACHES
         this.coaches = List.of(
-                new Coach("coach1", "Coach 1", coach1UserId, coach1RoleId)
+                new Coach("coach1", "Coach Jannis", coach1UserId, coach1RoleId)
                 // , new Coach("coach2", "Coach 2", coach2UserId, coach2RoleId)
         );
     }
@@ -119,9 +119,9 @@ public class CoachingAccessListener extends ListenerAdapter {
         long guildId = guild.getIdLong();
         loadCard(guild, coach, embed -> channel.sendMessageEmbeds(embed)
                 .setActionRow(
-                        Button.secondary(id(coach, STATUS), "Check status"),
-                        Button.success(id(coach, GET), "Get " + coach.label() + " access"),
-                        Button.danger(id(coach, REMOVE), "Remove access"))
+                        Button.secondary(id(coach, STATUS), "ℹ️ Check status"),
+                        Button.success(id(coach, GET), "🔓 Get " + coach.label() + " access"),
+                        Button.danger(id(coach, REMOVE), "🔒 Remove access"))
                 .queue(
                         message -> {
                             store.setMessageId(guildId, coach.key(), message.getIdLong());
@@ -151,28 +151,30 @@ public class CoachingAccessListener extends ListenerAdapter {
                         }));
     }
 
+
     private static MessageEmbed card(Coach coach, String name, String avatarUrl, Long joinedEpoch) {
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(new Color(0x5865F2))
-                .setTitle("🎓 " + coach.label() + " · " + name)
-                .setDescription("Want to connect with **" + name + "**?\n"
-                        + "Get access to **" + name + "**'s resources and free tips, and learn about the work. "
-                        + "Paid programs are available too.\n\n"
-                        + "Use the buttons below to manage your **" + coach.label() + " access** role:\n"
-                        + "▫️ **Check status**: see if you currently have access\n"
-                        + "▫️ **Get " + coach.label() + " access**: receive the role\n"
-                        + "▫️ **Remove access**: give the role back")
+                .setAuthor(coach.label() + " Access", avatarUrl, avatarUrl)
+                .setTitle("🎓 Connect with " + name)
+                .setDescription(
+                        "Explore **" + name + "**'s resources, free tips, and coaching programs.\n\n"
+                                + "**Manage your access using the buttons below:**\n\n"
+                                + "ℹ️ **Check Status** — See if you have access.\n"
+                                + "🔓 **Get Access** — Receive the access role.\n"
+                                + "🔒 **Remove Access** — Remove the role from yourself."
+                )
                 .addField("Coach", "<@" + coach.userId() + ">", true)
-                .addField("Access role", "<@&" + coach.roleId() + ">", true)
+                .addField("Access Role", "<@&" + coach.roleId() + ">", true)
                 .setFooter("Only you can see the reply to your click");
+
         if (joinedEpoch != null) {
-            eb.addField("In the server since", "<t:" + joinedEpoch + ":D>", true);
+            eb.addField("Member Since", "<t:" + joinedEpoch + ":D>", true);
         }
-        if (avatarUrl != null) {
-            eb.setThumbnail(avatarUrl);
-        }
+
         return eb.build();
     }
+
 
     private static String id(Coach coach, String action) {
         return PREFIX + ":" + coach.key() + ":" + action;
