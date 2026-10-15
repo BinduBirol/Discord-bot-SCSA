@@ -61,11 +61,14 @@ public class DiscordCommandRegistrar {
                                         .addOption(OptionType.STRING, "difficulty", "Optional difficulty: easy, medium, hard", false),
                                 new SubcommandData("words", "Get 3 random words for story speaking practice"),
                                 new SubcommandData("image", "Get a random image for story speaking practice"),
+
                                 new SubcommandData("story", "Finish a story that the bot starts"),
                                 new SubcommandData("roleplay", "Practice a conversation with friends")
                                         .addOption(OptionType.USER, "user1", "First player", true)
                                         .addOption(OptionType.USER, "user2", "Second player", true)
-                                        .addOption(OptionType.USER, "user3", "Third player (optional)", false)
+                                        .addOption(OptionType.USER, "user3", "Third player (optional)", false),
+                                new SubcommandData("read", "Get a random paragraph and tongue-twisters")
+                                        .addOption(OptionType.STRING, "lang", "Language, e.g. english, bangla, hindi", false)
                         ),
 
                 Commands.slash("timer", "Start a countdown timer")

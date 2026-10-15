@@ -1,5 +1,6 @@
 package com.scsabot.discordbot.practice;
 
+import com.scsabot.discordbot.read.ReadaloudCommand;
 import com.scsabot.discordbot.roleplay.RolePlayCommand;
 import com.scsabot.discordbot.service.RoleService;
 import com.scsabot.discordbot.story.StoryImageCommand;
@@ -28,6 +29,7 @@ public class PracticeCommand {
     private final StoryCompleteCommand storyCompleteCommand;
     private final RoleService roleService;
     private final RolePlayCommand rolePlayCommand;
+    private final ReadaloudCommand readaloudCommand;
 
     public void handlePracticeCommand(SlashCommandInteractionEvent event) {
         String sub = event.getSubcommandName();
@@ -47,6 +49,7 @@ public class PracticeCommand {
             case "image" -> storyImageCommand.handleStoryCommand(event);
             case "story" -> storyCompleteCommand.handleCompleteCommand(event);
             case "roleplay" -> rolePlayCommand.handleRolePlayCommand(event);
+            case "read" -> readaloudCommand.handleReadCommand(event);
 
             default -> {
                 event.reply("Unknown practice type.")

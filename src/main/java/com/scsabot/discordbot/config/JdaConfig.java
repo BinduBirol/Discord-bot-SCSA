@@ -2,6 +2,7 @@ package com.scsabot.discordbot.config;
 
 import com.scsabot.discordbot.coach.CoachingAccessListener;
 import com.scsabot.discordbot.discord.command.SlashCommandListener;
+import com.scsabot.discordbot.read.ReadButtonListener;
 import com.scsabot.discordbot.roles.CountryRoleListener;
 import com.scsabot.discordbot.discord.listener.GuildMemberEventListener;
 import com.scsabot.discordbot.discord.listener.VoiceStateListener;
@@ -43,7 +44,8 @@ public class JdaConfig {
             StageGuidelineListener stageGuidelineListener,
             CountryRoleListener countryRoleListener,
             InterestRoleListener interestRoleListener,
-            CoachingAccessListener coachingAccessListener
+            CoachingAccessListener coachingAccessListener,
+            ReadButtonListener readButtonListener
 
     ) throws InterruptedException {
 
@@ -83,7 +85,8 @@ public class JdaConfig {
                         stageGuidelineListener,
                         countryRoleListener,
                         interestRoleListener,
-                        coachingAccessListener
+                        coachingAccessListener,
+                        readButtonListener
                 )
                 .build()
                 .awaitReady();
