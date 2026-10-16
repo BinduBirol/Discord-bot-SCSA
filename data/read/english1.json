@@ -1,122 +1,172 @@
 [
   {
-    "id": "en_hard_011",
-    "title": "Rehearsing the Toast",
+    "id": "en_easy_001",
+    "title": "My Morning Routine",
     "language": "en",
-    "paragraph": "My cousin's wedding is on Saturday, and I have promised a toast. In the hallway mirror, I rehearse with patience instead of pressure, pausing wherever the sentences want to breathe. Splendid speeches spring from spacious, steady breathing, my coach once said, and I repeat that line like a small charm. I imagine the reception tent: crisp crystal glasses clinked as the crowd crowed congratulations, the string quartet softly tuning. Then I picture my cousin's face, proud and pink with laughter. Trembling toasts tripped through the tinsel-trimmed tent at her sister's wedding, so I know that nerves are traditional, even charming. I will begin with a story about the shrimp sandwich disaster, continue with something sincere, and finish by raising my glass. If I pause, I pause; the room will wait. Everyone there is on my side.",
+    "difficulty": "easy",
+    "paragraph": "I wake up at seven every morning. First, I drink a glass of water and open the window. Then I brush my teeth and make a cup of tea. I like to eat toast with butter and a little jam. After breakfast, I pack my bag and walk to the bus stop. It is a calm and happy start to my day.",
     "tongue_twisters": [
-      "Splendid speeches spring from spacious, steady breathing.",
-      "Crisp crystal glasses clinked as the crowd crowed congratulations.",
-      "Trembling toasts tripped through the tinsel-trimmed tent."
+      "Tom takes tea at ten.",
+      "Big brown bears bake bread.",
+      "Wendy wakes with warm water."
     ],
-    "tags": ["public-speaking", "celebration", "sp-cluster", "cr-cluster", "breathing"]
+    "tags": [
+      "daily-life",
+      "routine",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_012",
-    "title": "The Borrowed Umbrella",
+    "id": "en_easy_002",
+    "title": "A Day at the Park",
     "language": "en",
-    "paragraph": "On the night she lent it to me, drizzle dripped down Dora's drooping, dark-striped umbrella and every gutter gurgled. I promised to return it Tuesday. Tuesday became Thursday, then a month, and still she never asked. Friendship, I have learned, is often a quiet loan with no deadline. Last week I finally knocked at her door, umbrella in hand, and found her sharing a pot of cocoa with a crowd of chilly children who chuckled while chasing chattering chickens in her garden. She waved me in. Above us, strict, stately storm clouds strode across Stratford's skyline, and the rain returned. We laughed, because the umbrella was already in my hand, and she simply said, keep it, you're better at needing it than I am.",
+    "difficulty": "easy",
+    "paragraph": "On Sunday, we went to the park near our house. The sun was bright and the sky was blue. My little brother played on the swings, and I sat under a big tree. We ate sandwiches and drank cold juice. A small dog ran past us, and everyone laughed. It was a lovely day.",
     "tongue_twisters": [
-      "Drizzle dripped down Dora's drooping, dark-striped umbrella.",
-      "Chilly children chuckled while chasing chattering chickens.",
-      "Strict, stately storm clouds strode across Stratford's skyline."
+      "Sam sat in the sunny park.",
+      "Little Lily likes the long, low swing.",
+      "Five fat frogs fly fast."
     ],
-    "tags": ["friendship", "dr-cluster", "ch-sounds", "str-cluster", "narrative"]
+    "tags": [
+      "family",
+      "outdoors",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_013",
-    "title": "Customs at Dawn",
+    "id": "en_easy_003",
+    "title": "My Best Friend",
     "language": "en",
-    "paragraph": "The airport at five a.m. has its own strange choreography. Sleepy passengers shuffle through the sprawling security scanners, carrying cardboard coffees and half-finished sentences. Customs clerks scribble stern schedules on scuffed clipboards, though their voices, I notice, are surprisingly gentle. I practice my answers: purpose of travel, length of stay, destination. Short sentences, clear sounds, no rush. Behind me, a family argues cheerfully about a suitcase full of snacks, and prickly pistachio pastries perish in the pressurized pantry of somebody's carry-on, scattering crumbs like confetti. When my turn comes, the officer asks one question at a time, and waits while I answer it. Traveling, I think, is mostly a conversation with strangers who need only patience from you, and you only from them. Stamped, smiling, slightly sticky with syrup, I walk toward the gate.",
+    "difficulty": "easy",
+    "paragraph": "My best friend is called Ben. We met at school when we were seven years old. He is kind, funny, and always ready to help. We both love football and cheese pizza. On weekends, we play games at his house or ride our bikes. I am lucky to have a friend like him.",
     "tongue_twisters": [
-      "Sleepy passengers shuffled through the sprawling security scanners.",
-      "Customs clerks scribble stern schedules on scuffed clipboards.",
-      "Prickly pistachio pastries perish in the pressurized pantry."
+      "Ben bakes big, brown biscuits.",
+      "Fun friends find fresh fruit.",
+      "Pat picks pink pizza for Paul."
     ],
-    "tags": ["travel", "airport", "sibilants", "sk-cluster", "patience"]
+    "tags": [
+      "friendship",
+      "people",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_014",
-    "title": "Bioluminescent Bay",
+    "id": "en_easy_004",
+    "title": "Rainy Day",
     "language": "en",
-    "paragraph": "At midnight, the research boat drifts into a bay that glows. Bioluminescent plankton produce pulsing, prismatic streaks whenever our paddles disturb the water, and the students gasp in unison. Dr. Strand explains the chemistry in careful, spacious sentences: a protein, an enzyme, a spark of oxygen. Scientists sketched shimmering spirals across the scratched slate in the cabin, trying to model what we now see for ourselves. I trail my fingers through the black water, and thin, thrashing tentacles trail through the tranquil tide below, a startled jellyfish glowing in answer. There is no hurry in a bay like this. Questions arrive slowly, and answers arrive slower, and nobody is graded on speed. Strange, isn't it, that the most scientific moment of the term is also the most simply astonishing?",
+    "difficulty": "easy",
+    "paragraph": "Today it is raining, so I am staying at home. I put on my warm socks and make hot chocolate. The rain taps softly on the window. I sit on the sofa with a good book and a soft blanket. Sometimes a rainy day is the best kind of day.",
     "tongue_twisters": [
-      "Bioluminescent plankton produce pulsing, prismatic streaks.",
-      "Scientists sketched shimmering spirals across the scratched slate.",
-      "Thin, thrashing tentacles trail through the tranquil tide."
+      "Rain rolls down the road.",
+      "Warm socks stay soft and snug.",
+      "Hot cocoa helps Holly happily hide."
     ],
-    "tags": ["science", "marine-biology", "multisyllabic", "tr-cluster", "sibilants"]
+    "tags": [
+      "weather",
+      "home",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_015",
-    "title": "Campfire Cliffhanger",
+    "id": "en_easy_005",
+    "title": "At the Market",
     "language": "en",
-    "paragraph": "By the time the marshmallows are blackened, Uncle Ray has the whole circle leaning forward. Crackling campfire cinders cast crooked, creeping shadows across his face, and he lowers his voice for the part about the missing bell. Brave Brenda brought the broken brass bell back to Brackwater, he says, though nobody believed her, and nobody ever found out where she had been. He pauses; the fire pops. Strangers strained to snatch the story's startling stinger, but he withholds it deliberately, grinning. Good storytellers understand rhythm: a long sentence rolling downhill, a short one landing like a stone. We beg, we stamp, we splutter. At last he reveals the ending, which is a single, strange, perfectly timed word, and the entire circle erupts into shrieks and laughter beneath a sky of scattered stars.",
+    "difficulty": "easy",
+    "paragraph": "Every Friday, I go to the market with my mother. We buy fresh fruit, green vegetables, and brown eggs. The seller always smiles and says hello. I carry the bag of apples, and my mother holds the list. We say thank you and walk home slowly. I love the colors and sounds of the market.",
     "tongue_twisters": [
-      "Crackling campfire cinders cast crooked, creeping shadows.",
-      "Strangers strained to snatch the story's startling stinger.",
-      "Brave Brenda brought the broken brass bell back to Brackwater."
+      "Mina makes many mango milkshakes.",
+      "Fresh figs from Fred's farm.",
+      "Green grapes grow in groups."
     ],
-    "tags": ["storytelling", "suspense", "br-cluster", "cr-cluster", "rhythm"]
+    "tags": [
+      "shopping",
+      "food",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_016",
-    "title": "Laundromat Philosophy",
+    "id": "en_easy_006",
+    "title": "My Pet Cat",
     "language": "en",
-    "paragraph": "Wednesday nights at the laundromat, time softens. Spinning socks sprinkle soapsuds across the sticky, speckled floor, and the rhythm of the machines turns every thought into a slow, steady drumbeat. Shrill dryers shudder, shaking shirts into shapeless shrouds, while a man in a striped sweater reads aloud from a thick, thumbed novel to nobody in particular. I find I enjoy the company. Detergent dispensers dribble drops down the drum's dim door, and I wipe them away with a crumpled tissue, thinking about how small chores quietly structure our lives. There is no performance here, no audience, just the gentle practice of waiting. I speak to the attendant about the strange temperature of machine six, and we share a laugh. Warm, folded, faintly lavender, I carry my basket home through the streetlit drizzle.",
+    "difficulty": "easy",
+    "paragraph": "I have a small grey cat named Luna. She sleeps on my bed and wakes me up in the morning. Luna loves to play with a red ball and drink milk from a blue bowl. When I come home from school, she runs to the door. She is soft, quiet, and very sweet. I love her very much.",
     "tongue_twisters": [
-      "Spinning socks sprinkle soapsuds across the sticky, speckled floor.",
-      "Shrill dryers shudder, shaking shirts into shapeless shrouds.",
-      "Detergent dispensers dribble drops down the drum's dim door."
+      "Luna likes lazy, long naps.",
+      "The cat caught a cute, cuddly kitten.",
+      "Soft, sleepy, silver Sally sits still."
     ],
-    "tags": ["daily-life", "sibilants", "sh-sounds", "dr-cluster", "reflection"]
+    "tags": [
+      "pets",
+      "animals",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_017",
-    "title": "Neighborhood Cleanup Crew",
+    "id": "en_easy_007",
+    "title": "Cooking with Dad",
     "language": "en",
-    "paragraph": "On the first Sunday of spring, the neighborhood gathers by the creek with gloves, grabbers and a surprising amount of optimism. Crumpled crates, crushed cans and cracked crockery crowd the creek's edge, and we work in pairs, praising every small victory. Strong-armed neighbors scrape stubborn stickers from the stained, splintered stoop outside the old chapel, while chilly Charlotte, our chief organizer, chooses cheerful chalk to chart the cleanup checklist on the pavement. People speak at their own pace here; some chat constantly, some prefer to point and nod, and all of it counts. By noon, the stretch of shoreline is shining. We share thermoses, trade stories, and strategize next month's tree planting. Nothing about it is glamorous, and everything about it is precious: a community practicing, patiently, the sturdy art of showing up.",
+    "difficulty": "easy",
+    "paragraph": "On Saturday, I cook lunch with my dad. First, we wash the rice and cut the onions. Then he fries the chicken, and I stir the soup. The kitchen smells wonderful. We set the table together and call everyone to eat. Food always tastes better when we make it ourselves.",
     "tongue_twisters": [
-      "Strong-armed neighbors scrape stubborn stickers from the stained, splintered stoop.",
-      "Crumpled crates, crushed cans and cracked crockery crowd the creek.",
-      "Chilly Charlotte chooses cheerful chalk to chart the cleanup checklist."
+      "Dad dices daily dinner dishes.",
+      "Cook the chicken, then check the rice.",
+      "Sizzling soup smells so sweet."
     ],
-    "tags": ["community", "volunteering", "cr-cluster", "ch-sounds", "st-cluster"]
+    "tags": [
+      "family",
+      "food",
+      "cooking"
+    ]
   },
   {
-    "id": "en_hard_018",
-    "title": "Open Mic Night",
+    "id": "en_easy_008",
+    "title": "The School Bus",
     "language": "en",
-    "paragraph": "Thursday is open mic night at the Starlight Cafe, and the spruce stage glows under a single, stubborn spotlight. Spotlights sparkle on the spruce stage's slippery, scuffed steps, so everyone climbs carefully, laughing about it. Practiced poets proclaim their proudest, prettiest phrases, while first-timers clutch their pages and breathe. I take the microphone; shaky microphones squeak, then settle into smooth, soothing speech, and mine does exactly that. I read slowly, because the poem is about patience and it would be silly to rush it. Some lines are long, spilling over commas and semicolons; others are short. Nobody coughs. When I finish, the applause arrives in a warm, scattered wave, and a stranger at the counter raises her cup. It strikes me that courage is simply a voice, however measured or unhurried, that keeps going.",
+    "difficulty": "easy",
+    "paragraph": "Every day, the yellow school bus comes at eight o'clock. I wait at the corner with my friends. We talk about homework, games, and funny videos. The driver, Mr. Khan, says good morning to everyone. Sometimes we sing a song on the way. The ride is short, but it is always fun.",
     "tongue_twisters": [
-      "Spotlights sparkle on the spruce stage's slippery, scuffed steps.",
-      "Practiced poets proclaim their proudest, prettiest phrases.",
-      "Shaky microphones squeak, then settle into smooth, soothing speech."
+      "Bus number nine is on time.",
+      "Mr. Khan makes many mornings merry.",
+      "Six school kids sing silly songs."
     ],
-    "tags": ["public-speaking", "poetry", "sp-cluster", "pr-cluster", "confidence"]
+    "tags": [
+      "school",
+      "travel",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_019",
-    "title": "Strangers on the Ferry",
+    "id": "en_easy_009",
+    "title": "A Trip to the Beach",
     "language": "en",
-    "paragraph": "The ferry leaves at seven, and the wind has opinions. Spray splashes over the ferry's slippery, steel-streaked stern, so most of us huddle in the sheltered cabin, clutching paper cups. Chatty, cheerful children chase shrieking seagulls across the sheltered deck, ignoring their parents' calls. Opposite me, an elderly man opens a tin and offers around sandwiches, and soon strangers share sandwiches, stories and sharply spiced pickled shallots like old neighbors. I ask where he is traveling; he describes his daughter's new house with a sprawling, strangely specific enthusiasm. We discuss scones, storms and the stubborn strength of small islands. Conversation on a ferry is a gift of borders: nobody expects it to last beyond the harbor. Yet as we dock, he shakes my hand, and I realize I will remember his laugh for a very long time.",
+    "difficulty": "easy",
+    "paragraph": "Last summer, we drove to the beach for a holiday. The sand was warm and the water was cool. I built a big sandcastle, and my sister collected shells. We ate ice cream and watched the waves roll in. When the sun went down, the sky turned pink and orange. I will never forget that day.",
     "tongue_twisters": [
-      "Spray splashes over the ferry's slippery, steel-streaked stern.",
-      "Chatty, cheerful children chase shrieking seagulls across the sheltered deck.",
-      "Strangers share sandwiches, stories and sharply spiced pickled shallots."
+      "Sunny sand and salty sea.",
+      "Wendy watches white waves wander.",
+      "Seven small shells sit by the sea."
     ],
-    "tags": ["social-situations", "travel", "sibilants", "sh-sounds", "conversation"]
+    "tags": [
+      "travel",
+      "holiday",
+      "simple"
+    ]
   },
   {
-    "id": "en_hard_020",
-    "title": "The Spice Route Map",
+    "id": "en_easy_010",
+    "title": "Before Bedtime",
     "language": "en",
-    "paragraph": "Spread across my desk is a replica of the old spice route map, its edges curled like dried petals. Ancient traders trekked across treacherous, trackless terrain, trading cloth for pepper and promises for silver. Cinnamon, cloves and crushed cardamom crossed the crowded customs checkpoint at Samarkand, if the legend is to be trusted. I trace the faded paths with a pencil, practicing the names aloud: Trebizond, Kashgar, Alexandretta, Zanzibar. Each one asks my tongue for a slightly different arrangement, and I give it time. Scribes scratched strange scripts on scuffed, sun-scorched parchment to record the shipments, and I imagine their patient, scratching pens. History, like pronunciation, rewards the traveler who walks it step by step. I fold the map carefully, breathe in its dusty, peppery scent, and plan a journey that is entirely made of syllables.",
+    "difficulty": "easy",
+    "paragraph": "At night, I turn off the lights and get into bed. My mother reads me a short story about a little rabbit. The room is quiet, and the moon shines through the window. I close my eyes and think about my day. Soon, I am fast asleep and dreaming of green fields.",
     "tongue_twisters": [
-      "Ancient traders trekked across treacherous, trackless terrain.",
-      "Cinnamon, cloves and crushed cardamom crossed the crowded customs checkpoint.",
-      "Scribes scratched strange scripts on scuffed, sun-scorched parchment."
+      "Little rabbits rest in their room.",
+      "Moonlight makes my bedroom bright.",
+      "Sleepy Sue sings a soft song."
     ],
-    "tags": ["travel", "history", "tr-cluster", "sk-cluster", "place-names"]
+    "tags": [
+      "daily-life",
+      "night",
+      "simple"
+    ]
   }
 ]

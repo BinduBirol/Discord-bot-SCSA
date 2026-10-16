@@ -9,7 +9,10 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
 
 @Component
 @RequiredArgsConstructor
@@ -30,10 +33,26 @@ public class TableTopicCommand {
         TableTopicQuestion question = session.getQuestion();
 
         EmbedBuilder embed = new EmbedBuilder();
-
         embed.setTitle("🗣️ Table Topic");
 
         StringBuilder description = new StringBuilder();
+
+        // Badge row: `📂 Category` `🟢 Easy`
+        List<String> badges = new ArrayList<>();
+
+        String category = question.category();      // adjust if your field name differs
+        if (category != null && !category.isBlank()) {
+            badges.add("`📂 " + capitalize(category) + "`");
+        }
+
+        String difficulty = question.difficulty();  // adjust if your field name differs
+        if (difficulty != null && !difficulty.isBlank()) {
+            badges.add("`" + difficultyBadge(difficulty) + "`");
+        }
+
+        if (!badges.isEmpty()) {
+            description.append(String.join(" ", badges)).append("\n\n");
+        }
 
         description.append("**")
                 .append(question.question())
@@ -42,16 +61,26 @@ public class TableTopicCommand {
         if (session.getPracticeWord() != null) {
             description.append("\n\n🎲 **Random Word:** `")
                     .append(session.getPracticeWord())
-                    .append("`");
-
-            embed.setFooter(
-                    "Tip: Try to link the word to your Table Topic answer."
-            );
+                    .append("`")
+                    .append("\n\n*Tip: Try to link the word to your Table Topic answer.*");
         }
 
         embed.setDescription(description.toString());
-
         return embed;
+    }
+
+    private static String difficultyBadge(String difficulty) {
+        return switch (difficulty.trim().toLowerCase(Locale.ROOT)) {
+            case "easy" -> "🟢 Easy";
+            case "medium" -> "🟡 Medium";
+            case "hard" -> "🔴 Hard";
+            default -> "🎯 " + capitalize(difficulty);
+        };
+    }
+
+    private static String capitalize(String s) {
+        String t = s.trim();
+        return t.isEmpty() ? t : t.substring(0, 1).toUpperCase(Locale.ROOT) + t.substring(1);
     }
 
     /**

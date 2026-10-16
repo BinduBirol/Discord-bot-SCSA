@@ -1,122 +1,172 @@
 [
   {
-    "id": "en_hard_041",
-    "title": "Podcast Intro Practice",
+    "id": "en_medium_001",
+    "title": "The Job Interview",
     "language": "en",
-    "paragraph": "Our little podcast starts tonight, and I am recording the introduction for the fifth time. Spirited podcasters practice pronouncing perplexing, polysyllabic phrases, and this one is no exception: statistics, sustainability, strategic stewardship. Crisp, crackling headphones cradle clear, carefully crafted commentary, and I hear my own voice settle into its natural, unhurried rhythm. I record in short stretches, then pause to sip water and think. Thoughtful hosts thread thirty thrilling topics through the transcript, my co-host jokes, but tonight we will manage just three. Each take is a draft, not a verdict; each breath is a bookmark in the script. When we finally play back the cleanest version, I smile at the small, warm pauses, which make it sound exactly like a person talking to a friend. We press publish, step outside, and watch the streetlights flicker on.",
+    "difficulty": "medium",
+    "paragraph": "Tomorrow morning, I have an interview for a job I really want. I have ironed my shirt, printed two copies of my resume, and practiced my answers in front of the mirror. The hardest question will probably be, tell us about yourself, so I have prepared a short, honest answer. I plan to speak slowly and keep eye contact, even if my hands feel a little shaky. If I forget a word, I will pause, take a breath, and continue. Whatever happens, I know that preparing carefully is already a small victory.",
     "tongue_twisters": [
-      "Spirited podcasters practice pronouncing perplexing, polysyllabic phrases.",
-      "Crisp, crackling headphones cradle clear, carefully crafted commentary.",
-      "Thoughtful hosts thread thirty thrilling topics through the transcript."
+      "Prepare, practice, and present with pride.",
+      "Careful candidates carry clean, crisp resumes.",
+      "Steady speakers speak with simple sincerity."
     ],
-    "tags": ["public-speaking", "podcasting", "multisyllabic", "pr-cluster", "th-sounds"]
+    "tags": [
+      "work",
+      "confidence",
+      "interview"
+    ]
   },
   {
-    "id": "en_hard_042",
-    "title": "Chess in the Park",
+    "id": "en_medium_002",
+    "title": "Cooking for the First Time",
     "language": "en",
-    "paragraph": "Every Saturday, a handful of old friends gather on the stone benches by the fountain for chess. Sharp-eyed chessmasters shuffle checkered pieces across the sunlit square, narrating their strategies in soft, spluttering commentary. Stubborn pawns stray past the strong, strategic stronghold, whispers Gus, and his rival shrugs, smiling. I am the beginner, so I mostly observe, and sometimes ask questions, and they answer without hurry. Chuckling pals pass chilled peaches across the park's chipped, checkered table as the afternoon warms, and somebody always produces a thermos of strong tea. The game is slow on purpose, and the conversation slower still, drifting from openings to grandchildren to the strange state of the local bus service. By the final check, nobody minds who has won; the pieces are packed, the benches empty, the friendship quietly, sturdily intact.",
+    "difficulty": "medium",
+    "paragraph": "When I moved into my own apartment, I could barely boil an egg. My first attempt at making curry filled the kitchen with smoke, and the neighbors knocked to ask if everything was alright. Slowly, though, I learned to measure spices, control the heat, and taste as I cooked. Now I enjoy chopping vegetables and listening to music while the onions turn golden. Cooking has taught me that patience matters more than talent, and that most mistakes are simply lessons with a pleasant smell.",
     "tongue_twisters": [
-      "Sharp-eyed chessmasters shuffle checkered pieces across the sunlit square.",
-      "Stubborn pawns stray past the strong, strategic stronghold.",
-      "Chuckling pals pass chilled peaches across the park's chipped, checkered table."
+      "Golden onions glisten in the great gray pan.",
+      "Fresh spices fill the kitchen with flavor.",
+      "Chop, stir, taste, and season slowly."
     ],
-    "tags": ["friendship", "games", "ch-sounds", "sh-sounds", "str-cluster"]
+    "tags": [
+      "cooking",
+      "independence",
+      "daily-life"
+    ]
   },
   {
-    "id": "en_hard_043",
-    "title": "Harbor Town Walking Tour",
+    "id": "en_medium_003",
+    "title": "The Train Journey",
     "language": "en",
-    "paragraph": "Our guide, a lively woman named Priscilla, begins the tour at the stone-stepped quay, where seagulls squabble over scraps. Seagulls squabble over scraps along the stone-stepped quay, she says, and as if on cue, three of them demonstrate. We stroll on, learning the history of every doorway. Cobbled streets crisscross the crooked, crowded harbor, so narrow that two umbrellas cannot pass. Spiral staircases twist through thick, thrice-restored stonework in the old customs house, and we climb them single file, trading breathless jokes. At the top, the view opens: slate roofs, silver water, striped sails. Priscilla pauses to let us drink it in, then describes the shipwrights, the smugglers, the strict harbormaster. Questions are welcome, and answered fully. The tour finishes at a cafe, where steaming cocoa and a plate of shortbread seem like the logical conclusion.",
+    "difficulty": "medium",
+    "paragraph": "The train to the northern hills departs early in the morning, and I always choose a seat by the window. Outside, rice fields roll past, wide and green, with farmers bending low under the rising sun. A vendor walks down the aisle selling hot tea in small paper cups, and the smell of cardamom drifts through the carriage. I watch the villages appear and disappear, each one with its own tiny station and a handful of waving children. Long journeys give you time to think, and I find that thoughts are clearer when the world is moving.",
     "tongue_twisters": [
-      "Seagulls squabble over scraps along the stone-stepped quay.",
-      "Cobbled streets crisscross the crooked, crowded harbor.",
-      "Spiral staircases twist through thick, thrice-restored stonework."
+      "Rolling rice fields run beside the railway.",
+      "Warm tea warms weary travelers.",
+      "Villages vanish behind the vibrating window."
     ],
-    "tags": ["travel", "walking-tour", "sibilants", "sk-cluster", "scenic-description"]
+    "tags": [
+      "travel",
+      "trains",
+      "scenery"
+    ]
   },
   {
-    "id": "en_hard_044",
-    "title": "Chemistry of Bread",
+    "id": "en_medium_004",
+    "title": "Starting a Morning Walk Habit",
     "language": "en",
-    "paragraph": "Baking bread is quiet chemistry, performed with flour on your forearms. Yeast spores stretch the springy, stubborn starch structure into a lattice of tiny bubbles, and I watch the dough swell under its damp cloth. Thorough kneading transforms thick, tacky batter into strong, supple strands, which is gluten doing precisely what gluten does. I explain this to my nephew in simple, slow sentences, letting him poke the dough himself. Proofing loaves breathe through crackling, crusty crowns once they hit the oven, filling the kitchen with a scent of toast and thunderstorms. We stand beside the oven, counting minutes, speaking in whispers, as if loud words might deflate the loaves. Finally, the timer sounds. We tap the crust, listen for the hollow note, and share the first steaming slice, standing, silent, smitten.",
+    "difficulty": "medium",
+    "paragraph": "Three weeks ago, I decided to walk for twenty minutes every morning before work. The first few days were difficult because I wanted to stay in bed, but I forced myself to put on my shoes and step outside. Gradually, the streets became familiar, and I started to recognize the same faces: a man with a newspaper, a woman feeding pigeons, a boy walking his grandfather's dog. Now the walk is my favorite part of the day. It clears my mind, wakes up my body, and reminds me that small, steady habits can quietly change a life.",
     "tongue_twisters": [
-      "Yeast spores stretch the springy, stubborn starch structure.",
-      "Proofing loaves breathe through crackling, crusty crowns.",
-      "Thorough kneading transforms thick, tacky batter into strong, supple strands."
+      "Morning walkers wander without worry.",
+      "Steady steps build strong, simple habits.",
+      "Pigeons peck and parade along the path."
     ],
-    "tags": ["science", "cooking", "str-cluster", "th-sounds", "explanation"]
+    "tags": [
+      "health",
+      "habits",
+      "routine"
+    ]
   },
   {
-    "id": "en_hard_045",
-    "title": "The Map-Maker's Apprentice",
+    "id": "en_medium_005",
+    "title": "A Rooftop Thunderstorm",
     "language": "en",
-    "paragraph": "In the harbor city of Thessaly-by-the-Sea lived a mapmaker's apprentice who dreamed of undiscovered shores. The mapmaker's apprentice traced treacherous, tangled trails across the chart room's cluttered tables, copying every river and ridge. Crimson ink crept across the crumpled, creased charts whenever she hurried, so she learned to slow down, to let each line settle. Sketching strange shorelines strained the student's sleepy, squinting eyes, yet she kept going by lamplight, humming under her breath. One night, a stranger with salt-stiffened sleeves brought her a torn scrap showing an island no map had ever recorded. She smiled, spread her brushes, and began, steadily, a story that would take years to draw and a lifetime to tell. The sea, she decided, is simply the longest sentence there is.",
+    "difficulty": "medium",
+    "paragraph": "Yesterday afternoon, the sky turned dark gray within minutes. A cool wind swept across the rooftop, flipping the clothes on the line and sending leaves spinning through the air. Then the thunder rolled in, deep and slow, followed by a heavy curtain of rain. I stood under the stairway roof and watched the streets turn into small rivers. Children shouted happily and splashed through puddles, ignoring their mothers' calls. When the storm finally passed, the air smelled fresh and clean, and a pale rainbow stretched above the buildings.",
     "tongue_twisters": [
-      "The mapmaker's apprentice traced treacherous, tangled trails.",
-      "Crimson ink crept across the crumpled, creased charts.",
-      "Sketching strange shorelines strained the student's sleepy, squinting eyes."
+      "Thunder rolls through the rainy, restless sky.",
+      "Children splash through shallow, silver puddles.",
+      "A pale rainbow rises after the rain."
     ],
-    "tags": ["storytelling", "adventure", "tr-cluster", "cr-cluster", "sk-cluster"]
+    "tags": [
+      "weather",
+      "nature",
+      "description"
+    ]
   },
   {
-    "id": "en_hard_046",
-    "title": "Waiting Room Wisdom",
+    "id": "en_medium_006",
+    "title": "Joining a Language Club",
     "language": "en",
-    "paragraph": "The clinic waiting room is a small theater of patience. Anxious patients practice patience in the plastic, pastel chairs, studying the ceiling tiles, the clock, the fish tank. Stacked magazines slump across the scuffed, scratched side table, all of them at least two years old, and I read about a strange, spectacular festival in Sicily. Stethoscopes shimmer in the strip-lit, sterile stairwell beyond the glass, and somebody laughs quietly at a text message. I decide to use the time wisely. I breathe in for four, out for six, and rehearse how I will describe my symptoms: clearly, calmly, one detail after another. Whatever happens in the examination room, I am entitled to speak at the pace that suits me. When my name is called, I stand, smooth my sleeves and walk in, composed and unhurried.",
+    "difficulty": "medium",
+    "paragraph": "Last month, I joined an English speaking club at my local community center. At first, I was nervous and spoke only when someone asked me a direct question. The members, however, were friendly and patient, and they never laughed at my mistakes. Each week, we choose a topic, share our opinions, and practice new vocabulary. I have noticed that my pronunciation is improving and that I feel more confident when I speak. Learning a language is not about being perfect; it is about showing up regularly and trying again.",
     "tongue_twisters": [
-      "Anxious patients practice patience in the plastic, pastel chairs.",
-      "Stethoscopes shimmer in the strip-lit, sterile stairwell.",
-      "Stacked magazines slump across the scuffed, scratched side table."
+      "Speak simply, speak slowly, speak clearly.",
+      "Friendly members practice pronunciation patiently.",
+      "Learning languages takes lots of little lessons."
     ],
-    "tags": ["daily-life", "health-visits", "breathing", "st-cluster", "sibilants"]
+    "tags": [
+      "learning",
+      "public-speaking",
+      "confidence"
+    ]
   },
   {
-    "id": "en_hard_047",
-    "title": "Volunteer Soup Kitchen",
+    "id": "en_medium_007",
+    "title": "The Old Bookshop",
     "language": "en",
-    "paragraph": "On Fridays at five, the church basement turns into a soup kitchen, and the volunteers arrive in aprons and good spirits. Steaming saucepans simmer beside stacks of scrubbed, stainless trays, and the air smells of garlic, thyme and onions. Volunteers shred sprigs of shallots for the stock's strong, savory base, and Rosa instructs newcomers with sparkling patience. Cheerful chefs chop chunky carrots and crisp chard while a radio murmurs in the corner. We work in a steady, sociable rhythm: slice, stir, season, serve. Guests arrive at six, and we greet them by name whenever we can, listening to their stories, asking about their weeks. Nobody is rushed, nobody is graded, and every bowl is handed over with a smile. Cleaning up afterward, tired and strangely joyful, we stack the chairs and promise to return.",
+    "difficulty": "medium",
+    "paragraph": "At the end of my street, there is a tiny bookshop that smells of dust, paper, and old stories. The owner, Mr. Haque, sits behind a wooden desk with a pair of round glasses and a cup of tea. He knows the location of every book and can recommend something for every mood. Last week, he handed me a worn novel and said, this one will keep you company. He was right. I read it in three evenings, and now I visit the shop every Saturday, even when I do not plan to buy anything.",
     "tongue_twisters": [
-      "Steaming saucepans simmer beside stacks of scrubbed, stainless trays.",
-      "Volunteers shred sprigs of shallots for the stock's strong, savory base.",
-      "Cheerful chefs chop chunky carrots and crisp chard."
+      "Dusty books and wooden shelves.",
+      "Mr. Haque hands me happy, handy hints.",
+      "Worn novels whisper wonderful stories."
     ],
-    "tags": ["community", "volunteering", "sh-sounds", "ch-sounds", "st-cluster"]
+    "tags": [
+      "books",
+      "community",
+      "description"
+    ]
   },
   {
-    "id": "en_hard_048",
-    "title": "Wedding Table Seating",
+    "id": "en_medium_008",
+    "title": "Planning a Surprise Party",
     "language": "en",
-    "paragraph": "Planning the reception seating is, I discover, a diplomatic mission. Strict seating charts separate squabbling, sparring second cousins, but the aunts keep sneaking them back together, apparently out of mischief. Anxious aunts arrange the three-tiered, thistle-trimmed centerpieces with an exactness that would shame a surgeon. At table six, I place the shy ones: shy cousins share shortbread and strangely sweet stories at table six, I have noticed, whenever left alone for ten minutes. I laminate the chart and clip it to a stand by the entrance, then rehearse the welcome speech with my sister, who listens without interrupting. Whatever happens, I decide, the seating will matter less than the strange, sweet chaos of everyone dancing badly together. The band tunes up, glasses sparkle, and the room begins, slowly, to fill with laughter.",
+    "difficulty": "medium",
+    "paragraph": "My friends and I are planning a surprise birthday party for our classmate Nadia. We have booked a small room at a cafe and ordered a chocolate cake with her name written in blue icing. The difficult part is keeping the secret, because Nadia is very curious and asks too many questions. We have agreed to tell her that we are meeting for a study group. When she walks through the door, we will all shout surprise together. I am sure she will laugh, and maybe she will even cry a little.",
     "tongue_twisters": [
-      "Strict seating charts separate squabbling, sparring second cousins.",
-      "Anxious aunts arrange the three-tiered, thistle-trimmed centerpieces.",
-      "Shy cousins share shortbread and strangely sweet stories at table six."
+      "Chocolate cake with creamy blue icing.",
+      "Secret surprises start with simple plans.",
+      "Nadia notices nearly everything."
     ],
-    "tags": ["social-situations", "celebration", "sibilants", "sp-cluster", "th-sounds"]
+    "tags": [
+      "friendship",
+      "celebration",
+      "planning"
+    ]
   },
   {
-    "id": "en_hard_049",
-    "title": "Bridge Builders",
+    "id": "en_medium_009",
+    "title": "Helping a Lost Tourist",
     "language": "en",
-    "paragraph": "Early each morning, the crew arrives at the river and surveys the half-finished bridge. Steel trusses strain beneath the straight, strong, sprawling span, but engineers calculate that strain precisely, and nothing about it is accidental. Crews craft concrete columns across the crashing, craggy gorge, pouring, smoothing and curing in a choreography that seems almost musical. Brave builders brace the bridge's brittle, braided cable bundles as a crane lowers them, their voices calling short, clear instructions across the chasm. I interview the foreman for our community newsletter, and he explains each step patiently, pausing so I can write. Bridges, he says, are conversations between two shores: they need careful listening, accurate measurement, and a willingness to stand in the middle until both sides meet. We shake hands, and I walk home along the rattling, unfinished walkway, delighted.",
+    "difficulty": "medium",
+    "paragraph": "On my way to the bus stop yesterday, a tourist stopped me and asked for directions to the national museum. He held a crumpled map and looked a little confused. I explained that he should walk straight, turn left at the traffic light, and continue until he sees a large white building. He thanked me warmly and asked whether the museum was open on Fridays. I wasn't certain, so I suggested checking the website. As he walked away, I felt happy that I could help a stranger in a small but useful way.",
     "tongue_twisters": [
-      "Steel trusses strain beneath the straight, strong, sprawling span.",
-      "Crews craft concrete columns across the crashing, craggy gorge.",
-      "Brave builders brace the bridge's brittle, braided cable bundles."
+      "Turn left at the tall traffic light.",
+      "The tourist took a thin, torn map.",
+      "Walk straight, then stop at the white building."
     ],
-    "tags": ["community", "engineering", "str-cluster", "br-cluster", "cr-cluster"]
+    "tags": [
+      "travel",
+      "social-situations",
+      "directions"
+    ]
   },
   {
-    "id": "en_hard_050",
-    "title": "Closing Circle",
+    "id": "en_medium_010",
+    "title": "Fixing a Broken Bicycle",
     "language": "en",
-    "paragraph": "At the end of the season, our speaking group forms one last circle on the community hall floor. Sincere, spirited speakers share scattered, stirring stories, one at a time, and the facilitator invites each of us to reflect. Some speak quickly, some slowly, and every voice, I notice, is simply welcome. Thankful friends thread thoughts through the three-hour gathering, laughing about tongue twisters, tricky transitions and the first, nervous Tuesday. I tell them that I began this year dreading microphones and that I am ending it enjoying the sound of my own sentences. Calm, crisp closings crown the crowded circle's final chorus, and we stand, hand in hand, repeating a last line together: take your time, take your breath, take your turn. Outside, the evening is clear, the stars are scattered, and the walk home feels, for once, wonderfully like a speech I am glad to have given.",
+    "difficulty": "medium",
+    "paragraph": "Last weekend, the chain on my bicycle snapped halfway down the road. Instead of walking home, I pushed the bike to a small repair shop run by an old man named Karim. He examined the chain carefully, replaced a few links, and oiled the wheels until they spun smoothly. The whole repair took twenty minutes and cost almost nothing. While he worked, he told me stories about the bicycles he had fixed over forty years. I left the shop with a working bike and a new appreciation for people who repair things with patience.",
     "tongue_twisters": [
-      "Sincere, spirited speakers share scattered, stirring stories.",
-      "Thankful friends thread thoughts through the three-hour gathering.",
-      "Calm, crisp closings crown the crowded circle's final chorus."
+      "The broken bicycle chain snapped suddenly.",
+      "Karim carefully checks each chain link.",
+      "Smooth wheels spin swiftly down the street."
     ],
-    "tags": ["community", "public-speaking", "gratitude", "sibilants", "th-sounds"]
+    "tags": [
+      "daily-life",
+      "problem-solving",
+      "narrative"
+    ]
   }
 ]

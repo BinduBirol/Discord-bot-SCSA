@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
+import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.interactions.commands.build.SlashCommandData;
 import net.dv8tion.jda.api.interactions.commands.build.SubcommandData;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -58,7 +59,10 @@ public class DiscordCommandRegistrar {
                                 new SubcommandData("random", "Get a random practice exercise"),
                                 new SubcommandData("topic", "Get a random speaking practice topic")
                                         .addOption(OptionType.STRING, "category", "Optional topic category", false)
-                                        .addOption(OptionType.STRING, "difficulty", "Optional difficulty: easy, medium, hard", false),
+                                        .addOptions(new OptionData(OptionType.STRING, "difficulty", "Difficulty level", false)
+                                                .addChoice("Easy", "easy")
+                                                .addChoice("Medium", "medium")
+                                                .addChoice("Hard", "hard")),
                                 new SubcommandData("words", "Get 3 random words for story speaking practice"),
                                 new SubcommandData("image", "Get a random image for story speaking practice"),
 
@@ -69,6 +73,10 @@ public class DiscordCommandRegistrar {
                                         .addOption(OptionType.USER, "user3", "Third player (optional)", false),
                                 new SubcommandData("read", "Get a random paragraph and tongue-twisters")
                                         .addOption(OptionType.STRING, "lang", "Language, e.g. english, bangla, hindi", false)
+                                        .addOptions(new OptionData(OptionType.STRING, "difficulty", "Difficulty level", false)
+                                                .addChoice("Easy", "easy")
+                                                .addChoice("Medium", "medium")
+                                                .addChoice("Hard", "hard"))
                         ),
 
                 Commands.slash("timer", "Start a countdown timer")
