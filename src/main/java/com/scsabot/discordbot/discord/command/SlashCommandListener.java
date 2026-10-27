@@ -1,5 +1,7 @@
 package com.scsabot.discordbot.discord.command;
 
+import com.scsabot.discordbot.language.LanguageCommand;
+import com.scsabot.discordbot.language.LanguageInteractionListener;
 import com.scsabot.discordbot.moderation.ModerationCommand;
 import com.scsabot.discordbot.practice.PracticeCommand;
 import com.scsabot.discordbot.resources.ResourcePostCommand;
@@ -21,6 +23,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final PracticeCommand practiceCommand;
     private final TimerCommand timerCommand;
     private final ModerationCommand moderationCommand;
+    private final LanguageCommand languageCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -58,6 +61,9 @@ public class SlashCommandListener extends ListenerAdapter {
             case "warn" -> moderationCommand.handleWarn(event);
 
             case "ban" -> moderationCommand.handleBan(event);
+
+            case "language" -> languageCommand.handleLanguageCommand(event);
+
 
             default -> event.reply("Unknown command.")
                     .setEphemeral(true)

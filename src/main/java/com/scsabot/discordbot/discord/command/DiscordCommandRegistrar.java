@@ -1,5 +1,6 @@
 package com.scsabot.discordbot.discord.command;
 
+import com.scsabot.discordbot.language.LanguageCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;
@@ -25,6 +26,7 @@ public class DiscordCommandRegistrar {
     private static final String GUILD_ID = "1543886876786565140";
 
     private final JDA jda;
+    private final LanguageCommand languageCommand;
 
     public void registerCommands() {
 
@@ -93,7 +95,12 @@ public class DiscordCommandRegistrar {
                         .addOption(OptionType.USER, "user", "User to ban", true)
                         .addOption(OptionType.STRING, "reason", "Reason for the ban", false)
                         .setGuildOnly(true)
-                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.BAN_MEMBERS))
+                        .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.BAN_MEMBERS)),
+
+                Commands.slash("language", "Manage spoken languages")
+                        .addSubcommands(new SubcommandData("setup", "Create or update the language selection panel"),
+                                new SubcommandData("show", "Show available and selected spoken languages"))
+
 
         );
 
