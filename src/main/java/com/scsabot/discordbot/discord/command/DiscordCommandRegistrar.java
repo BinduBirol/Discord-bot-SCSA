@@ -37,17 +37,14 @@ public class DiscordCommandRegistrar {
 
                 Commands.slash("event", "Manage community events")
                         .addSubcommands(
-                                new SubcommandData(
-                                        "create",
-                                        "Create a new community event"
-                                ),
-                                new SubcommandData(
-                                        "list",
-                                        "List upcoming events"
-                                ),
+
                                 new SubcommandData(
                                         "upcoming",
                                         "Show the next upcoming event"
+                                ),
+                                new SubcommandData(
+                                        "announce",
+                                        "Announce the event in event-update channel"
                                 ),
                                 new SubcommandData("import", "Import Discord Scheduled Events")
                         ),
@@ -60,7 +57,6 @@ public class DiscordCommandRegistrar {
                         .addSubcommands(
                                 new SubcommandData("random", "Get a random practice exercise"),
                                 new SubcommandData("topic", "Get a random speaking practice topic")
-                                        .addOption(OptionType.STRING, "category", "Optional topic category", false)
                                         .addOptions(new OptionData(OptionType.STRING, "difficulty", "Difficulty level", false)
                                                 .addChoice("Easy", "easy")
                                                 .addChoice("Medium", "medium")
@@ -74,7 +70,10 @@ public class DiscordCommandRegistrar {
                                         .addOption(OptionType.USER, "user2", "Second player", true)
                                         .addOption(OptionType.USER, "user3", "Third player (optional)", false),
                                 new SubcommandData("read", "Get a random paragraph and tongue-twisters")
-                                        .addOption(OptionType.STRING, "lang", "Language, e.g. english, bangla, hindi", false)
+                                        .addOptions(new OptionData(OptionType.STRING, "lang", "Language", false)
+                                                .addChoice("English", "english")
+                                                .addChoice("Bangla", "bangla")
+                                                .addChoice("Hindi", "hindi"))
                                         .addOptions(new OptionData(OptionType.STRING, "difficulty", "Difficulty level", false)
                                                 .addChoice("Easy", "easy")
                                                 .addChoice("Medium", "medium")

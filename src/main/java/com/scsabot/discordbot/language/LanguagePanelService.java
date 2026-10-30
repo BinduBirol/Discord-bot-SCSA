@@ -21,7 +21,6 @@ import org.springframework.stereotype.Service;
 
 import java.awt.Color;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
@@ -29,7 +28,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 /**
- * Builds the persistent panel / ephemeral views and manages the single panel message.
+ * Builds the persistent panel and ephemeral views, and manages the single panel message.
  */
 @Service
 public class LanguagePanelService {
@@ -44,6 +43,7 @@ public class LanguagePanelService {
     public static final String INPUT_NAME = "name";
 
     static final int PAGE_SIZE = 25;
+    private static final int MAX_LISTED_LANGUAGES = 40;
     private static final Color COLOR = new Color(0x5865F2);
 
     private static final class PanelLocation {
@@ -67,6 +67,7 @@ public class LanguagePanelService {
     }
 
     private final LanguageRoleService roles;
+
     /**
      * Known panel location per guild (in-memory cache; recovered by scanning / interactions).
      */
@@ -79,32 +80,38 @@ public class LanguagePanelService {
 
     // ------------------------------------------------------------ builders
 
+    /**
+     * Public panel message with the first page of languages.
+     */
     public MessageCreateData panelMessage(Guild guild) {
         List<String> all = roles.availableLanguages(guild);
         List<String> first = all.subList(0, Math.min(PAGE_SIZE, all.size()));
+        boolean paged = all.size() > PAGE_SIZE;
 
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(COLOR)
                 .setTitle("🗣️ Spoken Languages")
                 .setDescription("Pick the languages you speak. You can choose several.\n\n"
                         + "• Use the dropdown to select languages.\n"
-                        + "• **My Languages** shows your selections" + (all.size() > PAGE_SIZE ? " and every language (paged)" : "") + ".\n"
+                        + "• **My Languages** shows your selections" + (paged ? " and every language (paged)" : "") + ".\n"
                         + "• **Add Language** adds a new one for everyone.");
-        if (all.size() > PAGE_SIZE) {
-            eb.setFooter("Showing the first " + PAGE_SIZE + " of " + all.size() + " languages. Use “My Languages” to browse all.");
+        if (paged) {
+            eb.setFooter("Showing the first " + PAGE_SIZE + " of " + all.size()
+                    + " languages. Use “My Languages” to browse all.");
         }
 
         return new MessageCreateBuilder()
                 .setEmbeds(eb.build())
                 .setComponents(
                         ActionRow.of(menu(ID_SELECT + 0, first, Set.of(), "Select your spoken languages")),
-                        ActionRow.of(Button.primary(ID_MINE, "My Languages"),
+                        ActionRow.of(
+                                Button.primary(ID_MINE, "My Languages"),
                                 Button.secondary(ID_ADD, "Add Language")))
                 .build();
     }
 
     /**
-     * Personalised ephemeral view with the user's selections pre-ticked on the given page.
+     * Personalised ephemeral picker with the user's selections pre-ticked on the given page.
      */
     public MessageEditData personalView(Guild guild, Set<String> selectedKeys, int page, String note) {
         List<String> all = roles.availableLanguages(guild);
@@ -112,18 +119,10 @@ public class LanguagePanelService {
         page = Math.max(0, Math.min(page, pages - 1));
         List<String> slice = all.subList(page * PAGE_SIZE, Math.min(all.size(), (page + 1) * PAGE_SIZE));
 
-        List<String> mine = all.stream()
-                .filter(n -> selectedKeys.contains(LanguageRoleService.key(n)))
-                .collect(Collectors.toList());
-        String mineText = mine.isEmpty() ? "_none yet_"
-                : mine.stream().limit(40).collect(Collectors.joining(", "))
-                  + (mine.size() > 40 ? " +" + (mine.size() - 40) + " more" : "");
-
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(COLOR)
                 .setTitle("🗣️ Your Languages")
-                .setDescription((note == null || note.isEmpty() ? "" : note + "\n\n")
-                        + "**Selected:** " + mineText)
+                .setDescription(withNote(note, "**Selected:** " + selectedText(all, selectedKeys, "_none yet_")))
                 .setFooter("Page " + (page + 1) + " of " + pages);
 
         Button prev = Button.secondary(ID_PAGE + (page - 1), "◀ Prev").withDisabled(page == 0);
@@ -133,20 +132,31 @@ public class LanguagePanelService {
         return new MessageEditBuilder()
                 .setEmbeds(eb.build())
                 .setComponents(
-                        ActionRow.of(menu(ID_SELECT + page, slice, selectedKeys, "Choose languages (page " + (page + 1) + ")")),
+                        ActionRow.of(menu(ID_SELECT + page, slice, selectedKeys,
+                                "Choose languages (page " + (page + 1) + ")")),
                         ActionRow.of(prev, label, next, Button.success(ID_ADD, "Add Language")))
                 .build();
     }
 
-    private StringSelectMenu menu(String id, List<String> names, Set<String> selectedKeys, String placeholder) {
-        StringSelectMenu.Builder b = StringSelectMenu.create(id)
-                .setPlaceholder(placeholder)
-                .setRequiredRange(0, Math.max(1, names.size()));
-        for (String n : names) {
-            b.addOptions(SelectOption.of(n, n)
-                    .withDefault(selectedKeys.contains(n.toLowerCase(Locale.ROOT))));
-        }
-        return b.build();
+    /**
+     * Read-only summary of the user's languages, with a button to reopen the picker.
+     */
+    /**
+     * Read-only summary of the user's languages (shown after saving).
+     */
+    public MessageEditData showView(Guild guild, Set<String> selectedKeys, String note) {
+        List<String> all = roles.availableLanguages(guild);
+
+        EmbedBuilder eb = new EmbedBuilder()
+                .setColor(COLOR)
+                .setTitle("🗣️ Your Languages")
+                .setDescription(withNote(note,
+                        "**Selected:** " + selectedText(all, selectedKeys, "_You haven't selected any languages yet._")));
+
+        return new MessageEditBuilder()
+                .setEmbeds(eb.build())
+                .setComponents(List.of())   // clears the dropdown and buttons
+                .build();
     }
 
     public Modal addLanguageModal() {
@@ -159,16 +169,46 @@ public class LanguagePanelService {
         return Modal.create(ID_MODAL, "Add a Language").addActionRow(input).build();
     }
 
+    private StringSelectMenu menu(String id, List<String> names, Set<String> selectedKeys, String placeholder) {
+        StringSelectMenu.Builder builder = StringSelectMenu.create(id)
+                .setPlaceholder(placeholder)
+                .setRequiredRange(0, Math.max(1, names.size()));
+        for (String name : names) {
+            builder.addOptions(SelectOption.of(name, name)
+                    .withDefault(selectedKeys.contains(LanguageRoleService.key(name))));
+        }
+        return builder.build();
+    }
+
+    private static String selectedText(List<String> all, Set<String> selectedKeys, String emptyText) {
+        List<String> mine = all.stream()
+                .filter(name -> selectedKeys.contains(LanguageRoleService.key(name)))
+                .collect(Collectors.toList());
+        if (mine.isEmpty()) {
+            return emptyText;
+        }
+        String listed = mine.stream().limit(MAX_LISTED_LANGUAGES).collect(Collectors.joining(", "));
+        return mine.size() > MAX_LISTED_LANGUAGES
+                ? listed + " +" + (mine.size() - MAX_LISTED_LANGUAGES) + " more"
+                : listed;
+    }
+
+    private static String withNote(String note, String body) {
+        return note == null || note.isEmpty() ? body : note + "\n\n" + body;
+    }
+
     // ---------------------------------------------------------- panel mgmt
 
     /**
      * Creates the panel, or updates the existing one. Never posts a duplicate.
      */
     public CompletableFuture<SetupResult> setupPanel(Guild guild, GuildMessageChannel target) {
-        if (!setupInFlight.add(guild.getIdLong())) {
+        long guildId = guild.getIdLong();
+        if (!setupInFlight.add(guildId)) {
             return CompletableFuture.failedFuture(
                     new IllegalStateException("A panel setup is already running for this server."));
         }
+
         CompletableFuture<SetupResult> future;
         try {
             future = locateExisting(guild, target).thenCompose(existing -> {
@@ -177,30 +217,36 @@ public class LanguagePanelService {
                     return existing.editMessage(MessageEditData.fromCreateData(data)).submit()
                             .thenApply(m -> remember(m, true));
                 }
-                return target.sendMessage(data).submit().thenApply(m -> remember(m, false));
+                return target.sendMessage(data).submit()
+                        .thenApply(m -> remember(m, false));
             });
         } catch (RuntimeException e) {
-            setupInFlight.remove(guild.getIdLong());
+            setupInFlight.remove(guildId);
             return CompletableFuture.failedFuture(e);
         }
-        future.whenComplete((r, ex) -> setupInFlight.remove(guild.getIdLong()));
+
+        future.whenComplete((result, error) -> setupInFlight.remove(guildId));
         return future;
     }
 
     private CompletableFuture<Message> locateExisting(Guild guild, GuildMessageChannel target) {
-        PanelLocation loc = panels.get(guild.getIdLong());
+        long guildId = guild.getIdLong();
+        PanelLocation loc = panels.get(guildId);
+
         if (loc != null) {
-            GuildMessageChannel ch = guild.getChannelById(GuildMessageChannel.class, loc.channelId);
-            if (ch != null) {
-                return ch.retrieveMessageById(loc.messageId).submit()
-                        .handle((m, ex) -> ex == null ? m : null)
-                        .thenCompose(m -> {
-                            if (m != null) return CompletableFuture.completedFuture(m);
-                            panels.remove(guild.getIdLong());
+            GuildMessageChannel channel = guild.getChannelById(GuildMessageChannel.class, loc.channelId);
+            if (channel != null) {
+                return channel.retrieveMessageById(loc.messageId).submit()
+                        .handle((message, error) -> error == null ? message : null)
+                        .thenCompose(message -> {
+                            if (message != null) {
+                                return CompletableFuture.completedFuture(message);
+                            }
+                            panels.remove(guildId);
                             return scan(target);
                         });
             }
-            panels.remove(guild.getIdLong());
+            panels.remove(guildId);
         }
         return scan(target);
     }
@@ -210,23 +256,28 @@ public class LanguagePanelService {
                 .thenApply(list -> list.stream().filter(this::isPanel).findFirst().orElse(null));
     }
 
-    private boolean isPanel(Message m) {
-        return m.getAuthor().getIdLong() == m.getJDA().getSelfUser().getIdLong()
-                && m.getButtons().stream().anyMatch(b -> ID_ADD.equals(b.getId()))
-                && m.getButtons().stream().anyMatch(b -> ID_MINE.equals(b.getId()));
+    private boolean isPanel(Message message) {
+        return message.getAuthor().getIdLong() == message.getJDA().getSelfUser().getIdLong()
+                && hasButton(message, ID_ADD)
+                && hasButton(message, ID_MINE);
     }
 
-    private SetupResult remember(Message m, boolean updated) {
-        panels.put(m.getGuildIdLong(), new PanelLocation(m.getChannelIdLong(), m.getIdLong()));
-        return new SetupResult(updated, m.getJumpUrl());
+    private static boolean hasButton(Message message, String id) {
+        return message.getButtons().stream().anyMatch(b -> id.equals(b.getId()));
+    }
+
+    private SetupResult remember(Message message, boolean updated) {
+        registerPanel(message);
+        return new SetupResult(updated, message.getJumpUrl());
     }
 
     /**
      * Called when someone interacts with the public panel; recovers the cache after a restart.
      */
-    public void registerPanel(Message m) {
-        if (m.isFromGuild()) {
-            panels.put(m.getGuildIdLong(), new PanelLocation(m.getChannelIdLong(), m.getIdLong()));
+    public void registerPanel(Message message) {
+        if (message.isFromGuild()) {
+            panels.put(message.getGuildIdLong(),
+                    new PanelLocation(message.getChannelIdLong(), message.getIdLong()));
         }
     }
 
@@ -234,18 +285,21 @@ public class LanguagePanelService {
      * Re-renders the panel so newly added languages show up in its dropdown.
      */
     public void refreshPanel(Guild guild) {
-        PanelLocation loc = panels.get(guild.getIdLong());
+        long guildId = guild.getIdLong();
+        PanelLocation loc = panels.get(guildId);
         if (loc == null) return;
-        GuildMessageChannel ch = guild.getChannelById(GuildMessageChannel.class, loc.channelId);
-        if (ch == null) {
-            panels.remove(guild.getIdLong());
+
+        GuildMessageChannel channel = guild.getChannelById(GuildMessageChannel.class, loc.channelId);
+        if (channel == null) {
+            panels.remove(guildId);
             return;
         }
-        ch.editMessageById(loc.messageId, MessageEditData.fromCreateData(panelMessage(guild)))
-                .queue(null, ex -> {
-                    if (ex instanceof ErrorResponseException
-                            && ((ErrorResponseException) ex).getErrorResponse() == ErrorResponse.UNKNOWN_MESSAGE) {
-                        panels.remove(guild.getIdLong());
+
+        channel.editMessageById(loc.messageId, MessageEditData.fromCreateData(panelMessage(guild)))
+                .queue(null, error -> {
+                    if (error instanceof ErrorResponseException
+                            && ((ErrorResponseException) error).getErrorResponse() == ErrorResponse.UNKNOWN_MESSAGE) {
+                        panels.remove(guildId);
                     }
                 });
     }

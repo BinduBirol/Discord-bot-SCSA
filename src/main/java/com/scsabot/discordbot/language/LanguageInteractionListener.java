@@ -1,4 +1,3 @@
-
 package com.scsabot.discordbot.language;
 
 import lombok.RequiredArgsConstructor;
@@ -24,6 +23,8 @@ import java.util.concurrent.CompletionException;
 @RequiredArgsConstructor
 public class LanguageInteractionListener extends ListenerAdapter {
 
+    private static final String SERVER_ONLY_MESSAGE = "This feature is only available in a server.";
+
     private final LanguageRoleService roles;
     private final LanguagePanelService panels;
 
@@ -41,14 +42,11 @@ public class LanguageInteractionListener extends ListenerAdapter {
         Member member = event.getMember();
 
         if (guild == null || member == null) {
-            event.reply("This feature is only available in a server.")
-                    .setEphemeral(true).queue();
+            event.reply(SERVER_ONLY_MESSAGE).setEphemeral(true).queue();
             return;
         }
 
-        int page = parsePage(
-                id.substring(LanguagePanelService.ID_SELECT.length())
-        );
+        int page = parsePage(id.substring(LanguagePanelService.ID_SELECT.length()));
 
         List<String> pageNames = event.getComponent()
                 .getOptions()
@@ -58,16 +56,16 @@ public class LanguageInteractionListener extends ListenerAdapter {
 
         List<String> selected = event.getValues();
 
-        log.info("Language selection: user={}, values={}",
-                member.getId(), selected);
+        log.info("Language selection: user={}, values={}", member.getId(), selected);
 
+        // Ephemeral message: edit it in place. Public panel: reply privately.
         if (event.getMessage().isEphemeral()) {
             event.deferEdit().queue(hook ->
-                    applySelection(hook, guild, member, pageNames, selected, page)
+                    applySelection(hook, guild, member, pageNames, selected)
             );
         } else {
             event.deferReply(true).queue(hook ->
-                    applySelection(hook, guild, member, pageNames, selected, page)
+                    applySelection(hook, guild, member, pageNames, selected)
             );
         }
     }
@@ -77,21 +75,14 @@ public class LanguageInteractionListener extends ListenerAdapter {
             Guild guild,
             Member member,
             List<String> pageNames,
-            List<String> selected,
-            int page
+            List<String> selected
     ) {
         roles.applyPageSelection(member, pageNames, selected)
                 .thenAccept(keys -> {
-                    log.info("Languages updated: user={}, languages={}",
-                            member.getId(), keys);
+                    log.info("Languages updated: user={}, languages={}", member.getId(), keys);
 
                     hook.editOriginal(
-                            panels.personalView(
-                                    guild,
-                                    keys,
-                                    page,
-                                    "✅ Languages updated."
-                            )
+                            panels.showView(guild, keys, "✅ Languages updated.")
                     ).queue();
                 })
                 .exceptionally(ex -> {
@@ -114,25 +105,17 @@ public class LanguageInteractionListener extends ListenerAdapter {
         Member member = event.getMember();
 
         if (guild == null || member == null) {
-            event.reply("This feature is only available in a server.")
-                    .setEphemeral(true).queue();
+            event.reply(SERVER_ONLY_MESSAGE).setEphemeral(true).queue();
             return;
         }
 
-        log.info("Language button: user={}, id={}",
-                member.getId(), id);
+        log.info("Language button: user={}, id={}", member.getId(), id);
 
-        // Manage Languages button from /language show
+        // Manage Languages button from the show view: edit in place.
+        // Manage Languages button: open a NEW private picker, don't touch the show message
         if (id.equals(LanguageShowSubcommand.ID_SETUP)) {
-            event.deferEdit().queue(hook ->
-                    hook.editOriginal(
-                            panels.personalView(
-                                    guild,
-                                    roles.memberLanguageKeys(member),
-                                    0,
-                                    "Select the languages you speak."
-                            )
-                    ).queue()
+            event.deferReply(true).queue(hook ->
+                    showPicker(hook, guild, member, 0, "Select the languages you speak.")
             );
             return;
         }
@@ -143,49 +126,22 @@ public class LanguageInteractionListener extends ListenerAdapter {
             return;
         }
 
-        // My languages
+        // My languages (from the public panel)
         if (id.equals(LanguagePanelService.ID_MINE)) {
             event.deferReply(true).queue(hook ->
-                    hook.editOriginal(
-                            panels.personalView(
-                                    guild,
-                                    roles.memberLanguageKeys(member),
-                                    0,
-                                    null
-                            )
-                    ).queue()
+                    showPicker(hook, guild, member, 0, null)
             );
             return;
         }
 
         // Pagination
         if (id.startsWith(LanguagePanelService.ID_PAGE)) {
-            int page = parsePage(
-                    id.substring(LanguagePanelService.ID_PAGE.length())
-            );
+            int page = parsePage(id.substring(LanguagePanelService.ID_PAGE.length()));
 
             if (event.getMessage().isEphemeral()) {
-                event.deferEdit().queue(hook ->
-                        hook.editOriginal(
-                                panels.personalView(
-                                        guild,
-                                        roles.memberLanguageKeys(member),
-                                        page,
-                                        null
-                                )
-                        ).queue()
-                );
+                event.deferEdit().queue(hook -> showPicker(hook, guild, member, page, null));
             } else {
-                event.deferReply(true).queue(hook ->
-                        hook.editOriginal(
-                                panels.personalView(
-                                        guild,
-                                        roles.memberLanguageKeys(member),
-                                        page,
-                                        null
-                                )
-                        ).queue()
-                );
+                event.deferReply(true).queue(hook -> showPicker(hook, guild, member, page, null));
             }
             return;
         }
@@ -196,8 +152,7 @@ public class LanguageInteractionListener extends ListenerAdapter {
             return;
         }
 
-        event.reply("Unknown language action.")
-                .setEphemeral(true).queue();
+        event.reply("Unknown language action.").setEphemeral(true).queue();
     }
 
     // ---------------------------------------------------------
@@ -214,14 +169,11 @@ public class LanguageInteractionListener extends ListenerAdapter {
         Member member = event.getMember();
 
         if (guild == null || member == null) {
-            event.reply("This feature is only available in a server.")
-                    .setEphemeral(true).queue();
+            event.reply(SERVER_ONLY_MESSAGE).setEphemeral(true).queue();
             return;
         }
 
-        ModalMapping input = event.getValue(
-                LanguagePanelService.INPUT_NAME
-        );
+        ModalMapping input = event.getValue(LanguagePanelService.INPUT_NAME);
 
         String name = LanguageRoleService.normalize(
                 input == null ? null : input.getAsString()
@@ -268,6 +220,15 @@ public class LanguageInteractionListener extends ListenerAdapter {
     // HELPERS
     // ---------------------------------------------------------
 
+    /**
+     * Renders the personal picker (with the member's current selections) into the hook's message.
+     */
+    private void showPicker(InteractionHook hook, Guild guild, Member member, int page, String note) {
+        hook.editOriginal(
+                panels.personalView(guild, roles.memberLanguageKeys(member), page, note)
+        ).queue();
+    }
+
     private static int parsePage(String value) {
         try {
             return Math.max(0, Integer.parseInt(value));
@@ -279,8 +240,7 @@ public class LanguageInteractionListener extends ListenerAdapter {
     private void fail(InteractionHook hook, Throwable error) {
         Throwable cause = error;
 
-        while (cause instanceof CompletionException
-                && cause.getCause() != null) {
+        while (cause instanceof CompletionException && cause.getCause() != null) {
             cause = cause.getCause();
         }
 

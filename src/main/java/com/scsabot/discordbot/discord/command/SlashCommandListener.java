@@ -1,7 +1,6 @@
 package com.scsabot.discordbot.discord.command;
 
 import com.scsabot.discordbot.language.LanguageCommand;
-import com.scsabot.discordbot.language.LanguageInteractionListener;
 import com.scsabot.discordbot.moderation.ModerationCommand;
 import com.scsabot.discordbot.practice.PracticeCommand;
 import com.scsabot.discordbot.resources.ResourcePostCommand;

@@ -1,0 +1,1862 @@
+[
+  {
+    "id": "RP2_4_1",
+    "title": "The Missing Pen",
+    "category": "Friendship and Conflict",
+    "playerCount": 2,
+    "situation": "A friend has borrowed a special pen without asking and cannot find it.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Owner of the pen",
+        "goal": "Explain why the pen matters and seek accountability."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Friend who borrowed it",
+        "goal": "Admit what happened and make amends."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[angry] Hey! Give my pen back. I left it right here!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[nervous] I borrowed it earlier, but I can’t find it now."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hurt] That pen was a gift. You should have asked first."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[apologetic] You’re right. I’m really sorry."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[frustrated] You always say sorry, but this keeps happening."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[defensive] That’s not fair. I usually return your things."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] I need you to respect my belongings."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[remorseful] I understand. Let me look in my bag again."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[surprised] Wait—is that it behind your notebook?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[relieved] Oh! Yes, it is. Thank goodness."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[sincere] I won’t borrow anything without asking again."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[calm] Thank you. That’s all I wanted."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_2",
+    "title": "The Ruined Birthday Surprise",
+    "category": "Friendship and Trust",
+    "playerCount": 2,
+    "situation": "One friend accidentally reveals a surprise birthday party.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Party organizer",
+        "goal": "Express disappointment and repair the plan."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Friend who spoiled the surprise",
+        "goal": "Explain the mistake and help recover."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[shocked] You told her about the party?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[guilty] I thought she already knew!"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[upset] We spent three weeks planning that surprise."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[anxious] I know. I feel terrible about it."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[disappointed] I wanted her to have one unforgettable moment."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[defensive] I wasn’t trying to ruin anything."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[calm] I know it was an accident, but I’m still upset."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[hopeful] Could we surprise her with something else?"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[curious] Like what? The party is tomorrow."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[excited] A video from all her old friends!"
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[relieved] That might actually be even more special."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[grateful] Thanks for giving me a chance to fix it."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_3",
+    "title": "An Unfair Accusation at Work",
+    "category": "Workplace Conflict",
+    "playerCount": 2,
+    "situation": "A manager blames an employee for a report error that came from outdated data.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Employee",
+        "goal": "Defend your work respectfully and clarify facts."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Manager",
+        "goal": "Question the error and acknowledge evidence."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[stern] Why did you send a report with these numbers?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[surprised] I checked the figures before sending it."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[irritated] The client says the totals are wrong."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[concerned] Can we compare the data sources together?"
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[impatient] We don’t have time for excuses."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[firm] I’m not making excuses. I want to find the cause."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[thoughtful] All right. Show me the source file."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[focused] This file was updated after I generated the report."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[surprised] You’re right. The timestamp is different."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[relieved] That explains the mismatch."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[apologetic] I blamed you too quickly. I’m sorry."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[professional] Thank you. Let’s send the corrected version."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_4",
+    "title": "The Forgotten Anniversary",
+    "category": "Relationships",
+    "playerCount": 2,
+    "situation": "One partner forgot an important anniversary after a difficult week.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Partner who remembered",
+        "goal": "Share hurt feelings and ask for care."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Partner who forgot",
+        "goal": "Apologize without minimizing the hurt."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[quietly hurt] Do you know what today is?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[confused] Wednesday? Wait... oh no."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[sad] I waited all evening for you to remember."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[ashamed] I’m so sorry. I completely lost track."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[tearful] It’s not about a gift. I wanted to feel remembered."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[gentle] You’re right. You deserve that."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[frustrated] I shouldn’t have to remind you every time."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sincere] I understand why you’re upset."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hesitant] Can we talk about how to make this better?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[hopeful] Yes. I’d like us to plan something together."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[warm] I want to make time for us, not just apologize."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[softly] That means more to me than flowers."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_5",
+    "title": "A Delayed Train and a Missed Interview",
+    "category": "Travel and Stress",
+    "playerCount": 2,
+    "situation": "A traveler learns the train delay may cause them to miss a job interview.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Traveler",
+        "goal": "Express urgency and seek alternatives."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Station employee",
+        "goal": "Remain calm and offer practical help."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[panicked] What do you mean the train is delayed an hour?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[calm] I’m sorry. There’s a signal problem ahead."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[desperate] I have a job interview in forty minutes!"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sympathetic] I understand. Let me check other routes."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[frustrated] I can’t afford to miss this opportunity."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reassuring] There may be an express bus outside."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hopeful] Really? How long will that take?"
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[focused] About twenty-five minutes if traffic is light."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[uncertain] That’s close. What if I’m still late?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[encouraging] Call the interviewer now and explain the delay."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[determined] You’re right. I’ll call while I walk."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[supportive] Good luck. I hope you make it!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_6",
+    "title": "The Broken Guitar",
+    "category": "Friendship and Responsibility",
+    "playerCount": 2,
+    "situation": "A friend accidentally damages a borrowed guitar.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Guitar owner",
+        "goal": "Express shock and agree on repair."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Friend who borrowed it",
+        "goal": "Take responsibility for the damage."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[shocked] What happened to my guitar?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[ashamed] It fell when I moved the chair."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[angry] You promised you would be careful!"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[remorseful] I know. I should have put it in its case."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[upset] That guitar means so much to me."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sincere] I’ll pay for a professional repair."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[worried] What if it never sounds the same?"
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[gentle] Let’s ask a guitar technician before assuming."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hesitant] Will you come with me tomorrow?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[determined] Absolutely. I’ll handle the cost."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[calmer] I’m still upset, but I appreciate that."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[grateful] Thank you for letting me make this right."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_7",
+    "title": "The Unexpected Promotion",
+    "category": "Workplace and Celebration",
+    "playerCount": 2,
+    "situation": "An employee receives an unexpected promotion but worries about the responsibility.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Employee",
+        "goal": "Express excitement and insecurity."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Team lead",
+        "goal": "Celebrate and offer support."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[astonished] Wait, are you saying I got the promotion?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[delighted] Yes! The team voted unanimously."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[excited] I can’t believe it. Thank you!"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[proud] You earned it through your work."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[nervous] But what if I’m not ready to lead?"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reassuring] Nobody knows everything on day one."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[uncertain] I’ve never managed a team before."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[encouraging] We’ll help you build those skills."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hopeful] So I can ask for guidance when I need it?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[warm] Of course. Good leaders ask questions."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[determined] Then I’m ready to give this my best."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[cheerful] That’s exactly what we hoped you’d say!"
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_8",
+    "title": "The Lost Dog",
+    "category": "Everyday Emergencies",
+    "playerCount": 2,
+    "situation": "A pet owner asks a neighbor to help find a dog that escaped through a gate.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Pet owner",
+        "goal": "Explain the situation and coordinate search."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Neighbor",
+        "goal": "Offer reassurance and practical help."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[panicked] Have you seen my dog? He ran out of the gate!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[concerned] Oh no! When did you last see him?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[breathless] Just five minutes ago, near the corner."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reassuring] Okay. We still have a good chance of finding him."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[tearful] He’s frightened of traffic. I’m so scared."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[steady] I’ll check the park. You check the next street."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hopeful] Please call me if you see a brown collar."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[alert] Wait! I hear barking behind that fence."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[excited] That sounds like him!"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[relieved] There he is, sitting by the gate."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[overjoyed] Buddy! I thought I’d lost you!"
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[warm] I’m so glad he’s safe."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_9",
+    "title": "A Restaurant Order Gone Wrong",
+    "category": "Customer Service",
+    "playerCount": 2,
+    "situation": "A customer receives the wrong meal after a long wait.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Customer",
+        "goal": "Complain firmly without insulting staff."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Server",
+        "goal": "Acknowledge the problem and offer a solution."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[annoyed] Excuse me, this isn’t what I ordered."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[concerned] I’m sorry. What did you ask for?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[frustrated] A vegetarian meal. This has chicken in it."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[apologetic] That’s our mistake. I’ll replace it immediately."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[upset] I’ve already waited thirty minutes."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[understanding] I understand why you’re frustrated."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] I need to leave in twenty minutes."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[helpful] Would you prefer a quick replacement or a refund?"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[considering] How quickly can the replacement be ready?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[confident] The kitchen can prepare it in ten minutes."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[calmer] All right. Please make sure it’s vegetarian."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sincere] Absolutely. Thank you for letting us fix this."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_10",
+    "title": "The Misunderstood Message",
+    "category": "Friendship and Communication",
+    "playerCount": 2,
+    "situation": "Two friends argue after a short text message sounds rude.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Message recipient",
+        "goal": "Explain why the message felt dismissive."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Message sender",
+        "goal": "Clarify intent and listen."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hurt] Why did you text me, “Whatever, do what you want”?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[confused] I didn’t mean it in a rude way."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[angry] It sounded like you didn’t care at all."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[defensive] I was rushing between meetings!"
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] You could have told me you were busy."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reflective] You’re right. I should have been clearer."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[sad] I thought you were angry with me."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[gentle] No. I was stressed, not angry with you."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[relieved] I wish we’d talked sooner."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[apologetic] I’m sorry my message sounded cold."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[warm] Next time, let’s call instead of guessing."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[agreeing] Deal. Text messages can be misleading."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_11",
+    "title": "The Audition Nerves",
+    "category": "Performance and Confidence",
+    "playerCount": 2,
+    "situation": "A performer freezes just before an audition and talks to a supportive friend.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Performer",
+        "goal": "Express fear and choose to participate."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Friend",
+        "goal": "Encourage without pressuring."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[whispering] I can’t go out there. My hands are shaking."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[gentle] You don’t have to pretend you’re not nervous."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[afraid] What if I forget every word?"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[supportive] Then you pause, find your place, and continue."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[embarrassed] Everyone will be watching me."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[calm] They’re here to listen, not to demand perfection."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[uncertain] Do you really think I should try?"
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[honest] Only if you want to. I’ll support you either way."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[determined] I do want to try. I’ve practiced so much."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[encouraging] Then focus on sharing the story."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[deep breath] Okay. I’m going in."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[proud] Whatever happens, I’m glad you chose for yourself."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_12",
+    "title": "The Surprise Reunion",
+    "category": "Family and Joy",
+    "playerCount": 2,
+    "situation": "Two siblings meet unexpectedly after years apart.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Sibling returning home",
+        "goal": "Reveal the surprise and reconnect."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Sibling at home",
+        "goal": "React and share feelings."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[confused] Hello? Who’s at the door this late?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[playful] Is that how you welcome your favorite sibling?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[shocked] No way! You’re actually here?"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[joyful] Surprise! I got an earlier flight."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[tearful] I haven’t seen you in three years!"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[emotional] I missed you more than I can say."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[laughing] You could have warned me!"
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[teasing] And ruin that expression on your face?"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[warm] Come inside. I need to hear everything."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[excited] I have so many stories to tell you."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[grateful] I’m just happy you’re home."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[softly] Me too. It feels good to be back."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_13",
+    "title": "A Difficult Apology",
+    "category": "Friendship and Accountability",
+    "playerCount": 2,
+    "situation": "One friend publicly embarrassed another with a joke.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Friend who was hurt",
+        "goal": "Set boundaries and describe impact."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Friend who joked",
+        "goal": "Offer a genuine apology."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[cold] Can we talk about what you said yesterday?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[uneasy] Yes. I think I know what this is about."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hurt] Everyone laughed, but I felt humiliated."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[regretful] I thought it was harmless. I was wrong."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[angry] You shared something I told you privately."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sincere] I shouldn’t have repeated it. I’m sorry."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] I need to know I can trust you."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[thoughtful] I understand. Trust takes time to rebuild."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hesitant] Will you tell the others it wasn’t okay?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[determined] Yes. I’ll correct it without making excuses."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[calm] That would help. I still need some space."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[respectful] I understand. I’ll give you that space."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_14",
+    "title": "The Missing Wallet",
+    "category": "Travel and Problem Solving",
+    "playerCount": 2,
+    "situation": "A traveler thinks a wallet was stolen but discovers it was misplaced.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Traveler",
+        "goal": "Describe the loss and avoid accusations."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Travel companion",
+        "goal": "Help search logically."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[alarmed] My wallet is gone! It was in my pocket!"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[concerned] When did you last use it?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[suspicious] Someone bumped into me near the entrance."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[cautious] Let’s not assume they took it."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[frustrated] My cards and identification are inside!"
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[steady] Check your jacket and backpack first."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[impatient] I already checked my pockets twice."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[patient] What about the small zipper compartment?"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[surprised] Wait... there’s something in here."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[relieved] It’s my wallet! I forgot I moved it."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[embarrassed] I nearly accused a stranger unfairly."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[kind] You were scared. I’m glad we checked first."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_15",
+    "title": "The Exam Results",
+    "category": "School and Emotions",
+    "playerCount": 2,
+    "situation": "Two classmates receive very different exam results.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Student disappointed with score",
+        "goal": "Express disappointment and seek perspective."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Student with high score",
+        "goal": "Celebrate sensitively and offer help."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[disappointed] I studied for weeks, and I still failed."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sympathetic] I’m sorry. I know how hard you worked."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[bitter] You got the highest score. You wouldn’t understand."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[gentle] You’re right that our results are different."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[ashamed] Sorry. I shouldn’t take it out on you."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[understanding] It’s okay to feel upset."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[worried] What if I can’t pass the retake?"
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[hopeful] We can review the topics you struggled with."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[uncertain] Would you really help me study?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[warm] Of course. We can make a plan together."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[determined] Then I’ll try again, one chapter at a time."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[encouraging] That sounds like a strong start."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_16",
+    "title": "The Noisy Neighbor",
+    "category": "Everyday Conflict",
+    "playerCount": 2,
+    "situation": "A resident confronts a neighbor about loud music late at night.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Resident needing sleep",
+        "goal": "Request quieter hours respectfully."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Neighbor playing music",
+        "goal": "Respond and negotiate."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[exhausted] Could you please turn the music down?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[surprised] Oh! Is it really that loud?"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[irritated] It’s past midnight. I have work early."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[apologetic] I didn’t realize the sound carried upstairs."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] This has happened three nights in a row."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[defensive] I only have friends over occasionally."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[calm] I’m not asking you to stop having guests."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[listening] Okay. What would help?"
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[clear] Please keep the volume low after ten."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[agreeable] That’s reasonable. I’ll tell everyone."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[relieved] Thank you. I appreciate it."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[friendly] And please knock if it happens again."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_17",
+    "title": "A Family Disagreement",
+    "category": "Family and Boundaries",
+    "playerCount": 2,
+    "situation": "A parent and adult child disagree about a career decision.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Adult child",
+        "goal": "Explain career choice and ask to be heard."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Parent",
+        "goal": "Share concerns without dismissing autonomy."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[determined] I’ve decided to accept the new job."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[worried] But it’s in another city!"
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] I know. I’ve thought about the move carefully."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[anxious] What if it doesn’t work out?"
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[frustrated] I need you to trust me to make decisions."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[softly] I’m worried because I care about you."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[honest] I understand that, but I need your support."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reflective] Perhaps I’ve been focusing only on the risks."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hopeful] Would you like to hear my plan?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[open] Yes. Tell me about the position."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[excited] It’s a chance to work on something I love."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[warm] Then I want to understand why it matters to you."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_18",
+    "title": "A Mistake During a Live Presentation",
+    "category": "Public Speaking",
+    "playerCount": 2,
+    "situation": "A presenter notices an incorrect slide while speaking to an audience.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Presenter",
+        "goal": "Recover from an error calmly."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Co-presenter",
+        "goal": "Support the correction and continue."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[startled] Wait, that number on the slide is incorrect."
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[calm] You’re right. Let’s clarify it for everyone."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[embarrassed] I’m sorry, I should have caught that earlier."
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reassuring] Mistakes happen. What’s the correct figure?"
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[focused] The updated figure is twenty-four percent."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[professional] Thank you. I’ll open the revised chart."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[nervous] I’ve lost my train of thought for a moment."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[gentle] Take your time. We were discussing the results."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[relieved] Right. Let me explain what the figure means."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[encouraging] Go ahead. The audience is following."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[confident] The key point is that the trend remains positive."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[proud] Exactly. Thank you for clearing that up."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_19",
+    "title": "The Unexpected Gift",
+    "category": "Gratitude and Surprise",
+    "playerCount": 2,
+    "situation": "A friend gives another friend a thoughtful handmade gift.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Gift recipient",
+        "goal": "React genuinely and express gratitude."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Gift giver",
+        "goal": "Explain the meaning behind the gift."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[curious] What’s this little package for?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[shy] Open it. I made something for you."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[surprised] You made this yourself?"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[excited] Yes! I remembered your favorite colors."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[touched] I don’t know what to say."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[warm] You don’t have to say anything."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[emotional] Nobody has made me something like this before."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[happy] I’m so glad you like it."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[laughing] I’m going to keep it on my desk forever."
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[playful] Just don’t spill coffee on it!"
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[grateful] Thank you for thinking of me."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sincere] You’ve been a wonderful friend."
+      }
+    ]
+  },
+  {
+    "id": "RP2_4_20",
+    "title": "The Last-Minute Cancellation",
+    "category": "Friendship and Disappointment",
+    "playerCount": 2,
+    "situation": "A friend cancels plans at the last minute for the third time.",
+    "characters": [
+      {
+        "id": "PLAYER_1",
+        "role": "Friend waiting at the venue",
+        "goal": "Express frustration and set expectations."
+      },
+      {
+        "id": "PLAYER_2",
+        "role": "Friend canceling",
+        "goal": "Explain and propose a more reliable plan."
+      }
+    ],
+    "dialogue": [
+      {
+        "step": 1,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[disappointed] I’m already at the restaurant. Are you coming?"
+      },
+      {
+        "step": 2,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[guilty] I’m sorry, I can’t make it tonight."
+      },
+      {
+        "step": 3,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[angry] Again? This is the third time this month!"
+      },
+      {
+        "step": 4,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[apologetic] I know. I should have told you sooner."
+      },
+      {
+        "step": 5,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[hurt] I rearranged my whole evening for this."
+      },
+      {
+        "step": 6,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[defensive] I’ve had a really overwhelming week."
+      },
+      {
+        "step": 7,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[firm] I understand, but my time matters too."
+      },
+      {
+        "step": 8,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[reflective] You’re right. I haven’t respected that."
+      },
+      {
+        "step": 9,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[uncertain] How do we stop this from happening?"
+      },
+      {
+        "step": 10,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[thoughtful] I’ll only commit when I’m sure I’m free."
+      },
+      {
+        "step": 11,
+        "speaker": "PLAYER_1",
+        "type": "EXACT",
+        "text": "[calmer] That would be better than last-minute cancellations."
+      },
+      {
+        "step": 12,
+        "speaker": "PLAYER_2",
+        "type": "EXACT",
+        "text": "[sincere] Agreed. I’ll do better at communicating."
+      }
+    ]
+  }
+]

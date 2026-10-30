@@ -3,6 +3,7 @@ package com.scsabot.discordbot.discord.command;
 import com.scsabot.discordbot.event.EventDateTimes;
 import com.scsabot.discordbot.service.EventPostService;
 import com.scsabot.discordbot.service.EventService;
+import lombok.RequiredArgsConstructor;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
@@ -22,6 +23,7 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 
 @Component
+@RequiredArgsConstructor
 public class EventCommandHandler {
 
     private static final Logger log = LoggerFactory.getLogger(EventCommandHandler.class);
@@ -29,10 +31,6 @@ public class EventCommandHandler {
     private final EventService eventService;
     private final EventPostService eventPostService;
 
-    public EventCommandHandler(EventService eventService, EventPostService eventPostService) {
-        this.eventService = eventService;
-        this.eventPostService = eventPostService;
-    }
 
     public void handleEventCommand(SlashCommandInteractionEvent event) {
         String subcommand = event.getSubcommandName();
@@ -42,70 +40,19 @@ public class EventCommandHandler {
         }
 
         switch (subcommand) {
-            case "create" -> handleCreateEvent(event);
-            case "list" -> handleListEvents(event);
             case "upcoming" -> handleUpcomingEvent(event);
             case "import" -> handleImportEvents(event);
+            case "announce" -> announceEvent(event);
             default -> replyEphemeral(event, "Unknown subcommand: " + subcommand);
         }
     }
 
-    private void handleCreateEvent(SlashCommandInteractionEvent event) {
-        Member member = event.getMember();
-        if (member == null) {
-            replyEphemeral(event, "Member information not available.");
-            return;
-        }
-        if (!hasEventPermission(member)) {
-            replyEphemeral(event, "You need moderator or administrator permissions to create events.");
-            return;
-        }
-        event.replyModal(buildCreateEventModal(event.getUser().getId())).queue();
-    }
 
     private boolean hasEventPermission(Member member) {
         return member.hasPermission(Permission.MODERATE_MEMBERS)
                 || member.hasPermission(Permission.ADMINISTRATOR);
     }
 
-    private Modal buildCreateEventModal(String userId) {
-        TextInput titleInput = TextInput.create("event_title", "Event Title", TextInputStyle.SHORT)
-                .setPlaceholder("e.g., Table Topics with Birol")
-                .setMaxLength(100)
-                .setRequired(true)
-                .build();
-
-        TextInput descriptionInput = TextInput.create("event_description", "Description", TextInputStyle.PARAGRAPH)
-                .setPlaceholder("e.g., Join us for a fun and spontaneous speaking session.")
-                .setMaxLength(1000)
-                .setRequired(false)
-                .build();
-
-        TextInput dateInput = TextInput.create("event_date", "Date (yyyy-MM-dd)", TextInputStyle.SHORT)
-                .setPlaceholder("e.g., 2026-09-12")
-                .setRequired(true)
-                .build();
-
-        TextInput timeInput = TextInput.create("event_time", "Time (HH:mm)", TextInputStyle.SHORT)
-                .setPlaceholder("e.g., 22:00 (Asia/Dhaka timezone)")
-                .setRequired(true)
-                .build();
-
-        TextInput channelInput = TextInput.create("event_channel", "Voice/Stage Channel ID", TextInputStyle.SHORT)
-                .setPlaceholder("The Discord channel ID where the event will happen")
-                .setRequired(true)
-                .build();
-
-        return Modal.create("event_create_modal_" + userId + "_" + System.currentTimeMillis(), "Create an Event")
-                .addComponents(
-                        ActionRow.of(titleInput),
-                        ActionRow.of(descriptionInput),
-                        ActionRow.of(dateInput),
-                        ActionRow.of(timeInput),
-                        ActionRow.of(channelInput)
-                )
-                .build();
-    }
 
     public void handleEventCreateModal(ModalInteractionEvent event) {
         try {
@@ -143,33 +90,6 @@ public class EventCommandHandler {
         }
     }
 
-    private void handleListEvents(SlashCommandInteractionEvent event) {
-        Guild guild = event.getGuild();
-        if (guild == null) {
-            replyEphemeral(event, "Guild information not available.");
-            return;
-        }
-
-        try {
-            var upcomingEvents = eventService.getUpcomingEvents(guild);
-            if (upcomingEvents.isEmpty()) {
-                replyEphemeral(event, "📭 There are no upcoming events.");
-                return;
-            }
-
-            var eventsToShow = upcomingEvents.stream().limit(5).toList();
-            event.deferReply().queue(hook -> {
-                for (var upcomingEvent : eventsToShow) {
-                    hook.sendMessage(formatEventText(upcomingEvent)).queue();
-                }
-            });
-        } catch (Exception e) {
-            if (!event.isAcknowledged()) {
-                replyEphemeral(event, "❌ Failed to list events.");
-            }
-            log.error("Error listing events", e);
-        }
-    }
 
     private void handleUpcomingEvent(SlashCommandInteractionEvent event) {
         Guild guild = event.getGuild();
@@ -186,7 +106,6 @@ public class EventCommandHandler {
             }
 
             var upcomingEvent = upcomingEvents.get(0);
-            eventPostService.postEventAnnouncement(upcomingEvent);
             event.reply(formatEventText(upcomingEvent)).queue();
         } catch (Exception e) {
             if (!event.isAcknowledged()) {
@@ -204,7 +123,7 @@ public class EventCommandHandler {
 
         StringBuilder sb = new StringBuilder();
         sb.append("🎤 **").append(event.getName()).append("**\n\n");
-        sb.append(description).append("\n\n");
+        //sb.append(description).append("\n\n");
         sb.append("📅 **When:** ").append(EventDateTimes.discordTimestamp(event.getStartTime().toInstant())).append("\n");
         sb.append("Event #").append(event.getId());
 
@@ -240,42 +159,52 @@ public class EventCommandHandler {
             return;
         }
 
-        guild.retrieveScheduledEvents().queue(
-                scheduledEvents -> announceScheduledEvents(event, scheduledEvents),
-                error -> {
-                    log.error("Failed to retrieve Discord Scheduled Events", error);
-                    replyEphemeral(event, "❌ Failed to retrieve Discord Scheduled Events.");
-                }
-        );
     }
 
-    private void announceScheduledEvents(SlashCommandInteractionEvent event, List<ScheduledEvent> scheduledEvents) {
-        if (scheduledEvents.isEmpty()) {
-            replyEphemeral(event, "There are no Discord Scheduled Events to announce.");
+    private void announceEvent(SlashCommandInteractionEvent event) {
+        Member member = event.getMember();
+        if (member == null) {
+            replyEphemeral(event, "Member information not available.");
+            return;
+        }
+        if (!hasEventPermission(member)) {
+            replyEphemeral(event, "You need moderator or administrator permissions to announce events.");
             return;
         }
 
-        StringBuilder sb = new StringBuilder("**Announcement Results:**\n\n");
-        int announced = 0;
-        int skipped = 0;
-
-        for (var scheduledEvent : scheduledEvents) {
-            if (scheduledEvent.getStatus() == ScheduledEvent.Status.CANCELED
-                    || scheduledEvent.getStatus() == ScheduledEvent.Status.COMPLETED) {
-                skipped++;
-                continue;
-            }
-            try {
-                eventPostService.postEventAnnouncement(scheduledEvent);
-                sb.append("✅ Announced **").append(scheduledEvent.getName()).append("**\n");
-                announced++;
-            } catch (Exception e) {
-                log.error("Failed to announce scheduled event {}", scheduledEvent.getId(), e);
-                sb.append("❌ Failed to announce **").append(scheduledEvent.getName()).append("**\n");
-            }
+        Guild guild = event.getGuild();
+        if (guild == null) {
+            replyEphemeral(event, "Guild information not available.");
+            return;
         }
 
-        sb.append("\n**").append(announced).append(" announced, ").append(skipped).append(" skipped.**");
-        replyEphemeral(event, sb.toString());
+        var upcomingEvents = eventService.getUpcomingEvents(guild);
+        if (upcomingEvents.isEmpty()) {
+            replyEphemeral(event, "📭 There are no upcoming events to announce.");
+            return;
+        }
+
+        ScheduledEvent upcoming = upcomingEvents.get(0);
+
+        event.deferReply(true).queue();
+        try {
+            eventPostService.announceAndPublish(upcoming).queue(
+                    message -> event.getHook()
+                            .editOriginal("✅ Announced and published **" + upcoming.getName() + "**.")
+                            .queue(),
+                    error -> {
+                        log.error("Failed to announce/publish event ID {}: {}",
+                                upcoming.getId(), error.getMessage(), error);
+                        event.getHook()
+                                .editOriginal("❌ Failed to announce event: " + error.getMessage())
+                                .queue();
+                    }
+            );
+        } catch (Exception e) {
+            event.getHook().editOriginal("❌ " + e.getMessage()).queue();
+            log.error("Error announcing event", e);
+        }
     }
+
+
 }

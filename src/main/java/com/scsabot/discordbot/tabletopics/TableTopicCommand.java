@@ -91,31 +91,27 @@ public class TableTopicCommand {
             SlashCommandInteractionEvent event
     ) {
 
-        String category = event.getOption("category") != null
-                ? event.getOption("category").getAsString()
-                : null;
-
         String difficulty = event.getOption("difficulty") != null
                 ? event.getOption("difficulty").getAsString()
                 : null;
 
         TableTopicQuestion question =
                 topicService.randomQuestion(
-                        category,
+                        null,
                         difficulty,
                         null
                 );
 
         if (question == null) {
             event.reply(
-                    "❌ I couldn't find a topic matching those filters."
+                    "❌ I couldn't find a topic matching that difficulty."
             ).setEphemeral(true).queue();
             return;
         }
 
         TableTopicSession session =
                 new TableTopicSession(
-                        category,
+                        null,
                         difficulty,
                         question
                 );
