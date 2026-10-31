@@ -2,6 +2,7 @@ package com.scsabot.discordbot.language;
 
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
@@ -38,6 +39,7 @@ public class LanguagePanelService {
     public static final String ID_PAGE = "lang:page:";       // + target page index
     public static final String ID_MINE = "lang:mine";
     public static final String ID_ADD = "lang:add";
+    public static final String ID_SAVE = "lang:save";
     public static final String ID_NOOP = "lang:noop";
     public static final String ID_MODAL = "lang:modal";
     public static final String INPUT_NAME = "name";
@@ -45,6 +47,7 @@ public class LanguagePanelService {
     static final int PAGE_SIZE = 25;
     private static final int MAX_LISTED_LANGUAGES = 40;
     private static final Color COLOR = new Color(0x5865F2);
+    private static final Color COLOR_UNSAVED = new Color(0xFAA61A);
 
     private static final class PanelLocation {
         final long channelId;
@@ -111,36 +114,50 @@ public class LanguagePanelService {
     }
 
     /**
-     * Personalised ephemeral picker with the user's selections pre-ticked on the given page.
+     * Personalised ephemeral picker with the member's (unsaved) selections pre-ticked on the
+     * given page. When the selection differs from the member's saved languages, the embed turns
+     * orange, shows an "unsaved changes" line and the Save button turns green; otherwise Save is
+     * grey and disabled.
      */
-    public MessageEditData personalView(Guild guild, Set<String> selectedKeys, int page, String note) {
+    public MessageEditData personalView(Member member, Set<String> selectedKeys, int page, String note) {
+        Guild guild = member.getGuild();
+        boolean dirty = !selectedKeys.equals(roles.memberLanguageKeys(member));
         List<String> all = roles.availableLanguages(guild);
         int pages = Math.max(1, (all.size() + PAGE_SIZE - 1) / PAGE_SIZE);
         page = Math.max(0, Math.min(page, pages - 1));
         List<String> slice = all.subList(page * PAGE_SIZE, Math.min(all.size(), (page + 1) * PAGE_SIZE));
 
+        String body = "**Selected:** " + selectedText(all, selectedKeys, "_none yet_");
+        if (dirty) {
+            body += "\n\n> ⚠️ **Unsaved changes!** Press **💾 Save changes** to apply them.";
+        }
+
         EmbedBuilder eb = new EmbedBuilder()
-                .setColor(COLOR)
+                .setColor(dirty ? COLOR_UNSAVED : COLOR)
                 .setTitle("🗣️ Your Languages")
-                .setDescription(withNote(note, "**Selected:** " + selectedText(all, selectedKeys, "_none yet_")))
-                .setFooter("Page " + (page + 1) + " of " + pages);
+                .setDescription(withNote(note, body))
+                .setFooter("Page " + (page + 1) + " of " + pages
+                        + (dirty ? " • ⚠️ Unsaved changes" : " • Pick languages, then press Save"));
 
         Button prev = Button.secondary(ID_PAGE + (page - 1), "◀ Prev").withDisabled(page == 0);
         Button label = Button.secondary(ID_NOOP, "Page " + (page + 1) + "/" + pages).asDisabled();
         Button next = Button.secondary(ID_PAGE + (page + 1), "Next ▶").withDisabled(page >= pages - 1);
 
         return new MessageEditBuilder()
+                .setContent("")   // clears any earlier error text
                 .setEmbeds(eb.build())
                 .setComponents(
                         ActionRow.of(menu(ID_SELECT + page, slice, selectedKeys,
                                 "Choose languages (page " + (page + 1) + ")")),
-                        ActionRow.of(prev, label, next, Button.success(ID_ADD, "Add Language")))
+                        ActionRow.of(prev, label, next),
+                        ActionRow.of(
+                                Button.secondary(ID_ADD, "Add Language"),
+                                dirty
+                                        ? Button.success(ID_SAVE, "💾 Save changes")
+                                        : Button.secondary(ID_SAVE, "💾 Save").asDisabled()))
                 .build();
     }
 
-    /**
-     * Read-only summary of the user's languages, with a button to reopen the picker.
-     */
     /**
      * Read-only summary of the user's languages (shown after saving).
      */
@@ -154,6 +171,7 @@ public class LanguagePanelService {
                         "**Selected:** " + selectedText(all, selectedKeys, "_You haven't selected any languages yet._")));
 
         return new MessageEditBuilder()
+                .setContent("")             // clears any earlier error text
                 .setEmbeds(eb.build())
                 .setComponents(List.of())   // clears the dropdown and buttons
                 .build();

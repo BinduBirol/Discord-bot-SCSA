@@ -193,6 +193,20 @@ public class LanguageRoleService {
         });
     }
 
+    /**
+     * Makes the member's language roles match {@code keys} exactly, across ALL languages.
+     * Used when a member presses Save in the picker.
+     *
+     * @return the member's full set of language keys after the change
+     */
+    public CompletableFuture<Set<String>> applySelection(Member member, Set<String> keys) {
+        List<String> all = availableLanguages(member.getGuild());
+        List<String> chosen = all.stream()
+                .filter(name -> keys.contains(key(name)))
+                .toList();
+        return applyPageSelection(member, all, chosen);
+    }
+
     public static final class AddResult {
         public final String display;
         public final boolean newToServer;
@@ -209,6 +223,15 @@ public class LanguageRoleService {
      * Custom-language flow: ensure the role exists (making it available to everyone) and assign it.
      */
     public CompletableFuture<AddResult> addLanguage(Member member, String normalized) {
+        return addLanguage(member, normalized, true);
+    }
+
+    /**
+     * Same as above, but with {@code assign = false} it only makes sure the role exists
+     * (available to everyone) and does NOT give it to the member. Used by the picker,
+     * where the language is added to the member's unsaved selection until they press Save.
+     */
+    public CompletableFuture<AddResult> addLanguage(Member member, String normalized, boolean assign) {
         Guild guild = member.getGuild();
         String k = key(normalized);
         String display = availableLanguages(guild).stream()
@@ -222,8 +245,9 @@ public class LanguageRoleService {
         boolean newToServer = !exists && !isDefault(display);
 
         return getOrCreateRole(guild, display).thenCompose(role -> {
-            if (member.getRoles().contains(role)) {
-                return CompletableFuture.completedFuture(new AddResult(display, newToServer, true));
+            boolean has = member.getRoles().contains(role);
+            if (has || !assign) {
+                return CompletableFuture.completedFuture(new AddResult(display, newToServer, has));
             }
             return guild.addRoleToMember(member, role).submit()
                     .thenApply(v -> new AddResult(display, newToServer, false));
