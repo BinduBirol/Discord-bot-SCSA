@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.Permission;
+import net.dv8tion.jda.api.interactions.InteractionContextType;
 
 import net.dv8tion.jda.api.interactions.commands.DefaultMemberPermissions;
 import net.dv8tion.jda.api.interactions.commands.OptionType;
@@ -87,13 +88,13 @@ public class DiscordCommandRegistrar {
                 Commands.slash("warn", "Warn a user and DM them")
                         .addOption(OptionType.USER, "user", "User to warn", true)
                         .addOption(OptionType.STRING, "reason", "Reason for the warning", false)
-                        .setGuildOnly(true)
+                        .setContexts(InteractionContextType.GUILD)
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.KICK_MEMBERS)),
 
                 Commands.slash("ban", "Ban a user and DM them")
                         .addOption(OptionType.USER, "user", "User to ban", true)
                         .addOption(OptionType.STRING, "reason", "Reason for the ban", false)
-                        .setGuildOnly(true)
+                        .setContexts(InteractionContextType.GUILD)
                         .setDefaultPermissions(DefaultMemberPermissions.enabledFor(Permission.BAN_MEMBERS)),
 
                 Commands.slash("language", "Manage spoken languages")

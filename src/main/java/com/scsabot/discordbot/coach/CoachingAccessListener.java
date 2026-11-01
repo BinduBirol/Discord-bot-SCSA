@@ -23,7 +23,8 @@ import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
+import net.dv8tion.jda.api.components.buttons.Button;
 import net.dv8tion.jda.api.requests.ErrorResponse;
 
 /**
@@ -118,10 +119,10 @@ public class CoachingAccessListener extends ListenerAdapter {
     private void publish(Guild guild, TextChannel channel, Coach coach, String lock) {
         long guildId = guild.getIdLong();
         loadCard(guild, coach, embed -> channel.sendMessageEmbeds(embed)
-                .setActionRow(
+            .setComponents(ActionRow.of(
                         Button.secondary(id(coach, STATUS), "ℹ️ Check status"),
                         Button.success(id(coach, GET), "🔓 Get " + coach.label() + " access"),
-                        Button.danger(id(coach, REMOVE), "🔒 Remove access"))
+                Button.danger(id(coach, REMOVE), "🔒 Remove access")))
                 .queue(
                         message -> {
                             store.setMessageId(guildId, coach.key(), message.getIdLong());

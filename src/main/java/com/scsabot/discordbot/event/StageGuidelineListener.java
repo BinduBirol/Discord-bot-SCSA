@@ -7,7 +7,8 @@ import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceRequestToSpeakEvent;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
+import net.dv8tion.jda.api.components.buttons.Button;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -60,7 +61,7 @@ public class StageGuidelineListener extends ListenerAdapter {
 
         chat.sendMessage(member.getAsMention() + " joined!")
                 .addEmbeds(buildGuidelines(member))
-                .addActionRow(Button.link(stageUrl, "🎪 Go to the Stage"))
+                .addComponents(ActionRow.of(Button.link(stageUrl, "🎪 Go to the Stage")))
                 .queue(
                         ok -> {
                         },
@@ -81,7 +82,7 @@ public class StageGuidelineListener extends ListenerAdapter {
         String stageUrl = "https://discord.com/channels/" + event.getGuild().getId() + "/" + stageChannelId;
 
         chat.sendMessage("✋ " + event.getMember().getAsMention() + " wants to speak.")
-                .addActionRow(Button.link(stageUrl, "🎪 Go to the Stage"))
+                .addComponents(ActionRow.of(Button.link(stageUrl, "🎪 Go to the Stage")))
                 .queue(
                         ok -> {
                         },

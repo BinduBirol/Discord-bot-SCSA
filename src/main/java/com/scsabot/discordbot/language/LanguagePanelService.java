@@ -1,18 +1,19 @@
 package com.scsabot.discordbot.language;
 
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
+import net.dv8tion.jda.api.components.buttons.Button;
+import net.dv8tion.jda.api.components.label.Label;
+import net.dv8tion.jda.api.components.selections.SelectOption;
+import net.dv8tion.jda.api.components.selections.StringSelectMenu;
+import net.dv8tion.jda.api.components.textinput.TextInput;
+import net.dv8tion.jda.api.components.textinput.TextInputStyle;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.channel.middleman.GuildMessageChannel;
 import net.dv8tion.jda.api.exceptions.ErrorResponseException;
-import net.dv8tion.jda.api.interactions.components.ActionRow;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
-import net.dv8tion.jda.api.interactions.components.selections.SelectOption;
-import net.dv8tion.jda.api.interactions.components.selections.StringSelectMenu;
-import net.dv8tion.jda.api.interactions.components.text.TextInput;
-import net.dv8tion.jda.api.interactions.components.text.TextInputStyle;
-import net.dv8tion.jda.api.interactions.modals.Modal;
+import net.dv8tion.jda.api.modals.Modal;
 import net.dv8tion.jda.api.requests.ErrorResponse;
 import net.dv8tion.jda.api.utils.messages.MessageCreateBuilder;
 import net.dv8tion.jda.api.utils.messages.MessageCreateData;
@@ -177,14 +178,19 @@ public class LanguagePanelService {
                 .build();
     }
 
+    /**
+     * JDA 6: the text input has no label of its own; it is wrapped in a {@link Label}.
+     */
     public Modal addLanguageModal() {
-        TextInput input = TextInput.create(INPUT_NAME, "Language name", TextInputStyle.SHORT)
+        TextInput input = TextInput.create(INPUT_NAME, TextInputStyle.SHORT)
                 .setPlaceholder("e.g. Sylheti")
                 .setMinLength(2)
                 .setMaxLength(40)
                 .setRequired(true)
                 .build();
-        return Modal.create(ID_MODAL, "Add a Language").addActionRow(input).build();
+        return Modal.create(ID_MODAL, "Add a Language")
+                .addComponents(Label.of("Language name", input))
+                .build();
     }
 
     private StringSelectMenu menu(String id, List<String> names, Set<String> selectedKeys, String placeholder) {
@@ -281,7 +287,8 @@ public class LanguagePanelService {
     }
 
     private static boolean hasButton(Message message, String id) {
-        return message.getButtons().stream().anyMatch(b -> id.equals(b.getId()));
+        return message.getComponentTree().findAll(Button.class).stream()
+                .anyMatch(b -> id.equals(b.getCustomId()));
     }
 
     private SetupResult remember(Message message, boolean updated) {

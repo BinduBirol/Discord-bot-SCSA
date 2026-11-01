@@ -12,8 +12,11 @@ import com.scsabot.discordbot.roles.interest.InterestRoleListener;
 import com.scsabot.discordbot.story.StoryButtonListener;
 import com.scsabot.discordbot.tabletopics.TableTopicButtonListener;
 import com.scsabot.discordbot.timer.TimerButtonListener;
+import moe.kyokobot.libdave.NativeDaveFactory;
+import moe.kyokobot.libdave.jda.LDJDADaveSessionFactory;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.audio.AudioModuleConfig;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
@@ -75,9 +78,14 @@ public class JdaConfig {
         JDA jda = JDABuilder.createDefault(token, intents)
                 .setMemberCachePolicy(MemberCachePolicy.ALL)
                 .enableCache(CacheFlag.SCHEDULED_EVENTS)
+                .setAudioModuleConfig(
+                        new AudioModuleConfig()
+                                .withDaveSessionFactory(
+                                        new LDJDADaveSessionFactory(new NativeDaveFactory())))
                 .setActivity(
                         Activity.watching("Created by Birol to serve StamUnity.")
                 )
+
                 .addEventListeners(
                         guildMemberEventListener,
                         voiceStateListener,

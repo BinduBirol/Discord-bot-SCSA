@@ -9,12 +9,12 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.events.interaction.component.ButtonInteractionEvent;
 import net.dv8tion.jda.api.interactions.callbacks.IReplyCallback;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
-import net.dv8tion.jda.api.interactions.components.buttons.Button;
+import net.dv8tion.jda.api.components.actionrow.ActionRow;
+import net.dv8tion.jda.api.components.buttons.Button;
 import org.springframework.stereotype.Component;
 
 import java.awt.Color;
 import java.time.Instant;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -140,7 +140,7 @@ public class TimerCommand {
         active.put(id, state);
 
         event.replyEmbeds(buildEmbed(state))
-                .addActionRow(buttons(id))
+            .addComponents(buttons(id))
                 .queue(hook -> hook.retrieveOriginal().queue(state.message::set));
     }
 
@@ -229,12 +229,12 @@ public class TimerCommand {
         }
 
         event.editMessageEmbeds(buildEmbed(state))
-                .setActionRow(buttons(id))
+            .setComponents(buttons(id))
                 .queue();
     }
 
-    private List<Button> buttons(String id) {
-        return List.of(
+    private ActionRow buttons(String id) {
+        return ActionRow.of(
                 Button.secondary(ADD_PREFIX + id, "➕ 1 min"),
                 Button.danger(CANCEL_PREFIX + id, "✖ Cancel")
         );

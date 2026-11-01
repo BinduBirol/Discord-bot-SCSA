@@ -6,6 +6,7 @@ logging:
   level:
     root: INFO
     com.scsabot.discordbot: INFO
+    net.dv8tion.jda.internal.audio: DEBUG
 
 discord:
   bot-token: ${DISCORD_BOT_TOKEN:}
@@ -37,3 +38,11 @@ bot:
     restricted: "1559108599286857729"
     coaching-access: "1559596818516418723"
     readaloud: "1560275961042440243"
+
+stamunity:
+  breathing-room:
+    voice-channel-id: "1566394758585126953"
+    text-channel-id: "1566394758585126953"
+    instructions-file: data/audio/instructions.mp3
+    meditation-file: data/audio/meditation.mp3
+    disconnect-delay-seconds: 30
