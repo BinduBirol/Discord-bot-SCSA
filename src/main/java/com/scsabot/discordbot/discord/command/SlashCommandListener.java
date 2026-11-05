@@ -4,6 +4,7 @@ import com.scsabot.discordbot.language.LanguageCommand;
 import com.scsabot.discordbot.moderation.ModerationCommand;
 import com.scsabot.discordbot.practice.PracticeCommand;
 import com.scsabot.discordbot.resources.ResourcePostCommand;
+import com.scsabot.discordbot.speakers.SpeakerCommand;
 import com.scsabot.discordbot.timer.TimerCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,7 @@ public class SlashCommandListener extends ListenerAdapter {
     private final TimerCommand timerCommand;
     private final ModerationCommand moderationCommand;
     private final LanguageCommand languageCommand;
+    private final SpeakerCommand speakerCommand;
 
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
@@ -62,6 +64,8 @@ public class SlashCommandListener extends ListenerAdapter {
             case "ban" -> moderationCommand.handleBan(event);
 
             case "language" -> languageCommand.handleLanguageCommand(event);
+
+            case "speaker" -> speakerCommand.handle(event);
 
 
             default -> event.reply("Unknown command.")

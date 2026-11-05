@@ -99,7 +99,10 @@ public class DiscordCommandRegistrar {
 
                 Commands.slash("language", "Manage spoken languages")
                         .addSubcommands(new SubcommandData("setup", "Create or update the language selection panel"),
-                                new SubcommandData("show", "Show available and selected spoken languages"))
+                                new SubcommandData("show", "Show available and selected spoken languages")),
+
+                Commands.slash("speaker", "Speaker queue tools")
+                        .addSubcommands(new SubcommandData("list", "Generate a speaker list from your voice channel"))
 
 
         );

@@ -9,6 +9,7 @@ import com.scsabot.discordbot.discord.listener.GuildMemberEventListener;
 import com.scsabot.discordbot.discord.listener.VoiceStateListener;
 import com.scsabot.discordbot.event.StageGuidelineListener;
 import com.scsabot.discordbot.roles.interest.InterestRoleListener;
+import com.scsabot.discordbot.speakers.SpeakerButtonListener;
 import com.scsabot.discordbot.story.StoryButtonListener;
 import com.scsabot.discordbot.tabletopics.TableTopicButtonListener;
 import com.scsabot.discordbot.timer.TimerButtonListener;
@@ -50,7 +51,8 @@ public class JdaConfig {
             InterestRoleListener interestRoleListener,
             CoachingAccessListener coachingAccessListener,
             ReadButtonListener readButtonListener,
-            LanguageInteractionListener languageInteractionListener
+            LanguageInteractionListener languageInteractionListener,
+            SpeakerButtonListener speakerButtonListener
 
 
     ) throws InterruptedException {
@@ -98,8 +100,8 @@ public class JdaConfig {
                         interestRoleListener,
                         coachingAccessListener,
                         readButtonListener,
-                        languageInteractionListener
-
+                        languageInteractionListener,
+                        speakerButtonListener
                 )
                 .build()
                 .awaitReady();
