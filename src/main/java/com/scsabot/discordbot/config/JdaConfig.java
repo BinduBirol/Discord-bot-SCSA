@@ -1,6 +1,7 @@
 package com.scsabot.discordbot.config;
 
 import com.scsabot.discordbot.coach.CoachingAccessListener;
+import com.scsabot.discordbot.discord.InviteTracker;
 import com.scsabot.discordbot.discord.command.SlashCommandListener;
 import com.scsabot.discordbot.language.LanguageInteractionListener;
 import com.scsabot.discordbot.read.ReadButtonListener;
@@ -52,7 +53,8 @@ public class JdaConfig {
             CoachingAccessListener coachingAccessListener,
             ReadButtonListener readButtonListener,
             LanguageInteractionListener languageInteractionListener,
-            SpeakerButtonListener speakerButtonListener
+            SpeakerButtonListener speakerButtonListener,
+            InviteTracker inviteTracker
 
 
     ) throws InterruptedException {
@@ -101,7 +103,8 @@ public class JdaConfig {
                         coachingAccessListener,
                         readButtonListener,
                         languageInteractionListener,
-                        speakerButtonListener
+                        speakerButtonListener,
+                        inviteTracker
                 )
                 .build()
                 .awaitReady();
