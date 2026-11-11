@@ -39,7 +39,7 @@ public class GuildMemberEventListener extends ListenerAdapter {
                 member.getEffectiveName(), member.getIdLong());
 
         discordEventExecutor.execute(() -> {
-            voiceActivityLogger.logMemberJoin(member.getEffectiveName());
+            voiceActivityLogger.logMemberJoin(member);
             welcomeService.welcomeMember(member);
 
             var thread = event.getGuild().getThreadChannelById(WELCOME_THREAD_ID);

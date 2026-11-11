@@ -43,6 +43,9 @@ public class WelcomeService {
                         + "🌍 **Then:**\n"
                         + "https://discord.com/channels/1543886876786565140/1559155325385576541\n"
                         + "https://discord.com/channels/1543886876786565140/1559526392889221120"
+                        + "\n\n"
+                        + "🗣️ **Practice activities:**\n"
+                        + "https://discord.com/channels/1543886876786565140/1545351751341834240"
         );
 
 

@@ -53,7 +53,7 @@ public class VoiceStateListener extends ListenerAdapter {
         String channelId = event.getChannelJoined().getId();
 
         voiceTrackingService.trackJoin(guildId, userId, channelId);
-        voiceActivityLogger.logJoin(event.getMember().getEffectiveName(), channelId);
+        voiceActivityLogger.logJoin(event.getMember(), channelId);
         log.info("Member {} joined voice channel {}", userId, channelId);
     }
 
@@ -71,14 +71,14 @@ public class VoiceStateListener extends ListenerAdapter {
 
         String newChannelId = event.getChannelJoined().getId();
         voiceTrackingService.trackJoin(guildId, userId, newChannelId);
-        voiceActivityLogger.logJoin(event.getMember().getEffectiveName(), newChannelId);
+        voiceActivityLogger.logJoin(event.getMember(), newChannelId);
         log.info("Member {} joined new voice channel {}", userId, newChannelId);
     }
 
     private void logLeave(GuildVoiceUpdateEvent event, Optional<ActiveVoiceSession> session, String userId) {
         session.ifPresent(active -> {
             long durationSeconds = active.durationSeconds(Instant.now());
-            voiceActivityLogger.logLeave(event.getMember().getEffectiveName(), active.channelId(), durationSeconds);
+            voiceActivityLogger.logLeave(event.getMember(), active.channelId(), durationSeconds);
             log.info("Member {} left voice channel {} after {} seconds", userId, active.channelId(), durationSeconds);
         });
     }
