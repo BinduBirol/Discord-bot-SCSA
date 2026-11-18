@@ -97,7 +97,6 @@ public class GuildMemberEventListener extends ListenerAdapter {
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(ORANGE)
                 .setTitle("New DM to the bot")
-                .setThumbnail(user.getEffectiveAvatarUrl())
                 .setDescription(content.isBlank() ? "(no text)" : content)
                 .addField("From", user.getAsMention() + " (" + user.getName() + ")", false)
                 .setFooter("ID: " + user.getId())
@@ -111,5 +110,11 @@ public class GuildMemberEventListener extends ListenerAdapter {
         }
 
         channel.sendMessageEmbeds(embed.build()).queue();
+
+        event.getChannel().sendMessage(
+                "Hi! I'm just a bot, so I can't reply to you directly. "
+                        + "I was created by my master Birol (username: **bindubirol**, user ID: `608593805901561857`). "
+                        + "Please contact him directly if you have any questions or problems."
+        ).queue();
     }
 }

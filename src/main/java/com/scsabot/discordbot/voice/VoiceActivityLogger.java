@@ -107,7 +107,6 @@ public class VoiceActivityLogger {
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(GRAY)
                 .setTitle("Member Left")
-                .setThumbnail(user.getEffectiveAvatarUrl())
                 .setDescription(user.getAsMention() + " (" + user.getName() + ") left the community.")
                 .setFooter("ID: " + user.getId())
                 .setTimestamp(Instant.now());
