@@ -2,15 +2,27 @@ package com.scsabot.discordbot.discord.listener;
 
 import com.scsabot.discordbot.service.WelcomeService;
 import com.scsabot.discordbot.voice.VoiceActivityLogger;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
+import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.User;
+import net.dv8tion.jda.api.entities.channel.ChannelType;
+import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberRemoveEvent;
+import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.task.TaskExecutor;
 import org.springframework.stereotype.Component;
+
+import java.time.Instant;
+import java.util.stream.Collectors;
+
+import static java.awt.Color.ORANGE;
 
 @Component
 public class GuildMemberEventListener extends ListenerAdapter {
@@ -21,7 +33,11 @@ public class GuildMemberEventListener extends ListenerAdapter {
     private final WelcomeService welcomeService;
     private final TaskExecutor discordEventExecutor;
 
-    private static final long WELCOME_THREAD_ID = 1559817030511890472L;
+    @Value("${discord.welcome-thread-id}")
+    private long welcomeThreadId;
+
+    @Value("${discord.dm-forward-channel-id}")
+    private long dmForwardChannelId;
 
     public GuildMemberEventListener(
             VoiceActivityLogger voiceActivityLogger,
@@ -42,32 +58,58 @@ public class GuildMemberEventListener extends ListenerAdapter {
             voiceActivityLogger.logMemberJoin(member);
             welcomeService.welcomeMember(member);
 
-            var thread = event.getGuild().getThreadChannelById(WELCOME_THREAD_ID);
+            var thread = event.getGuild().getThreadChannelById(welcomeThreadId);
 
             if (thread == null) {
-                log.warn("Welcome thread not found: {}", WELCOME_THREAD_ID);
+                log.warn("Welcome thread not found: {}", welcomeThreadId);
                 return;
             }
-            /*
-            thread.sendMessage(
-                    "👋 Hi, " + member.getAsMention() + " welcome!\n"
-                            + " Check the https://discord.com/channels/1543886876786565140/1559847169354235954 and then\n" +
-                            "https://discord.com/channels/1543886876786565140/1559155325385576541"
-                            + "https://discord.com/channels/1543886876786565140/1559526392889221120"
-
-            ).queue(
-                    success -> log.info("Welcome message sent in thread for {}",
-                            member.getEffectiveName()),
-                    error -> log.error("Failed to send welcome message in thread", error)
-            );
-            */
 
         });
     }
 
     @Override
     public void onGuildMemberRemove(GuildMemberRemoveEvent event) {
-        log.info("Guild member left: {} ({})", event.getUser().getName(), event.getUser().getId());
-        discordEventExecutor.execute(() -> voiceActivityLogger.logMemberLeave(event.getUser().getName()));
+        User user = event.getUser();
+        log.info("Guild member left: {} ({})", user.getName(), user.getId());
+        discordEventExecutor.execute(() -> {
+            voiceActivityLogger.logMemberLeave(user);
+            voiceActivityLogger.sendLeaveDm(user, event.getGuild().getName());
+        });
+    }
+
+
+    @Override
+    public void onMessageReceived(MessageReceivedEvent event) {
+        if (event.getAuthor().isBot()) return;
+        if (!event.isFromType(ChannelType.PRIVATE)) return;
+
+        TextChannel channel = event.getJDA().getTextChannelById(dmForwardChannelId);
+        if (channel == null) {
+            log.warn("DM forward channel {} not found", dmForwardChannelId);
+            return;
+        }
+
+        User user = event.getAuthor();
+        Message message = event.getMessage();
+        String content = message.getContentDisplay();
+
+        EmbedBuilder embed = new EmbedBuilder()
+                .setColor(ORANGE)
+                .setTitle("New DM to the bot")
+                .setThumbnail(user.getEffectiveAvatarUrl())
+                .setDescription(content.isBlank() ? "(no text)" : content)
+                .addField("From", user.getAsMention() + " (" + user.getName() + ")", false)
+                .setFooter("ID: " + user.getId())
+                .setTimestamp(Instant.now());
+
+        if (!message.getAttachments().isEmpty()) {
+            String files = message.getAttachments().stream()
+                    .map(Message.Attachment::getUrl)
+                    .collect(Collectors.joining("\n"));
+            embed.addField("Attachments", files, false);
+        }
+
+        channel.sendMessageEmbeds(embed.build()).queue();
     }
 }

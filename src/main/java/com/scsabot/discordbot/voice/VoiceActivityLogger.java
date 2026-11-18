@@ -2,10 +2,12 @@ package com.scsabot.discordbot.voice;
 
 import com.scsabot.discordbot.discord.InviteTracker;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Message;
+import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,7 @@ import java.awt.Color;
 import java.time.Instant;
 import java.util.EnumSet;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class VoiceActivityLogger {
@@ -97,17 +100,34 @@ public class VoiceActivityLogger {
         });
     }
 
-    public void logMemberLeave(String username) {
+    public void logMemberLeave(User user) {
         TextChannel channel = getActivityChannel();
         if (channel == null) return;
 
         EmbedBuilder embed = new EmbedBuilder()
                 .setColor(GRAY)
                 .setTitle("Member Left")
-                .setDescription("**" + username + "** left the community.")
+                .setThumbnail(user.getEffectiveAvatarUrl())
+                .setDescription(user.getAsMention() + " (" + user.getName() + ") left the community.")
+                .setFooter("ID: " + user.getId())
                 .setTimestamp(Instant.now());
 
         send(channel, embed);
+    }
+
+    public void sendLeaveDm(User user, String guildName) {
+        if (user.isBot()) return;
+
+        String message = "We're sorry to see you leave " + guildName + ". "
+                + "You're always welcome back!\n\n"
+                + "If you have any complaints, you can always let us know how we can improve our community.";
+
+        user.openPrivateChannel()
+                .flatMap(ch -> ch.sendMessage(message))
+                .queue(
+                        ok -> log.info("Sent leave DM to {}", user.getId()),
+                        err -> log.warn("Could not DM {}: {}", user.getId(), err.getMessage())
+                );
     }
 
     public void logBotOnline() {

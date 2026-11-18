@@ -16,6 +16,8 @@ discord:
   get-your-role-channel-id: "1559155325385576541"
   interest-channel-id: "1559526392889221120"
   coaching-access-channel-id: "1559603453930639490"
+  welcome-thread-id: ${DISCORD_WELCOME_THREAD_ID:}
+  dm-forward-channel-id: ${DISCORD_DM_FORWARD_CHANNEL_ID:}
 
 server:
   shutdown: graceful
